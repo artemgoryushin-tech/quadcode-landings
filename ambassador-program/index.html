@@ -1,0 +1,3210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta content="true" name="HandheldFriendly" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <title>Ambassador Program | Quadcode</title>
+    <meta
+      name="description"
+      content="Refer clients who want to launch their own brokerage business. Earn up to $13,500 per qualified client, or bring 3 clients and get your own brokerage brand for free."
+    />
+    <meta name="theme-color" content="#0c111a" />
+    <link rel="canonical" href="https://quadcode.com/ambassador-program" />
+    <meta property="og:title" content="Ambassador Program | Quadcode" />
+    <meta
+      property="og:description"
+      content="Refer clients who want to launch their own brokerage business. Earn up to $13,500 per qualified client, or bring 3 clients and get your own brokerage brand for free."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://quadcode.com/ambassador-program" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ambassador Program | Quadcode" />
+    <meta
+      name="twitter:description"
+      content="Bring qualified clients to Quadcode and choose your reward path: high-ticket payouts or your own brokerage brand."
+    />
+
+    <style>
+      @font-face {
+        font-family: "SuisseIntl";
+        src: local("Suisse Intl"), local("SuisseIntl-Regular"), local("Suisse Int'l Regular");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "SuisseIntl";
+        src: local("Suisse Intl Medium"), local("SuisseIntl-Medium"), local("Suisse Int'l Medium");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "SuisseIntl";
+        src: local("Suisse Intl Bold"), local("SuisseIntl-Bold"), local("Suisse Int'l Bold");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root {
+        --bg: #eef2f7;
+        --surface: #ffffff;
+        --surface-muted: #f8fafc;
+        --text: #111722;
+        --text-secondary: #4e5b6e;
+        --muted: #738095;
+        --line: #dde5ef;
+        --dark-1: #07090d;
+        --dark-2: #0f141d;
+        --dark-3: #171d28;
+        --dark-line: rgba(255, 255, 255, 0.12);
+        --accent: #111722;
+        --accent-soft: #e63946;
+        --accent-soft-2: #c1121f;
+        --success: #17b26a;
+        --radius-xl: 42px;
+        --radius-lg: 30px;
+        --radius-md: 22px;
+        --radius-sm: 16px;
+        --shadow-soft: 0 20px 60px rgba(14, 24, 40, 0.08);
+        --shadow-hero: 0 32px 90px rgba(8, 12, 18, 0.24);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: "SuisseIntl", "Suisse Int'l", "Suisse", "Proxima Nova", "Segoe UI", system-ui, sans-serif;
+        font-size: 17px;
+        line-height: 1.58;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(230, 57, 70, 0.05), transparent 24%),
+          radial-gradient(circle at top right, rgba(193, 18, 31, 0.06), transparent 20%),
+          var(--bg);
+        overflow-x: hidden;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a,
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      section {
+        scroll-margin-top: 0;
+      }
+
+      .skip-link {
+        position: absolute;
+        left: 16px;
+        top: -48px;
+        z-index: 200;
+        padding: 12px 16px;
+        border-radius: 12px;
+        background: #fff;
+        color: var(--text);
+        text-decoration: none;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .skip-link:focus {
+        top: 16px;
+      }
+
+      .container {
+        width: min(1200px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .btn {
+        min-height: 48px;
+        padding: 0 24px;
+        border: 0;
+        border-radius: 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 15px;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn:active {
+        transform: translateY(1px);
+      }
+
+      .btn:focus-visible {
+        outline: 2px solid var(--accent-soft);
+        outline-offset: 2px;
+      }
+
+      .btn--primary {
+        color: #fff;
+        background: linear-gradient(180deg, #e63946, #c1121f);
+        box-shadow: 0 18px 32px rgba(230, 57, 70, 0.3);
+      }
+
+      .btn--ghost {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(17, 23, 34, 0.12);
+      }
+
+      .btn--light {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(17, 23, 34, 0.05);
+        color: var(--text-secondary);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+      }
+
+      .eyebrow__dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, var(--accent-soft), var(--accent-soft-2));
+        box-shadow: 0 0 0 8px rgba(230, 57, 70, 0.1);
+      }
+
+      /* ═══ Hero ═══ */
+      .hero {
+        position: relative;
+        padding: 0;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.06), transparent 22%),
+          radial-gradient(circle at 80% 70%, rgba(230, 57, 70, 0.12), transparent 22%),
+          radial-gradient(circle at 90% 30%, rgba(193, 18, 31, 0.10), transparent 28%),
+          linear-gradient(180deg, #0a0d12 0%, #0f141d 100%);
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 64px 64px;
+        mask-image: radial-gradient(circle at 68% 50%, black 22%, transparent 58%);
+        -webkit-mask-image: radial-gradient(circle at 68% 50%, black 22%, transparent 58%);
+        pointer-events: none;
+      }
+
+      .hero-layout {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 100vh;
+        min-height: 100svh;
+      }
+
+      /* ── Left: white panel ── */
+      .hero-panel {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        padding: 28px 48px 36px;
+        padding-right: 70px;
+        margin-right: -42px;
+        background: #fff;
+        border-radius: 0 42px 42px 0;
+        box-shadow: 24px 0 80px rgba(3, 8, 16, 0.12);
+      }
+
+      .hero-panel__topbar {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding-bottom: 0;
+      }
+
+      .hero-panel__brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-right: auto;
+      }
+
+      .hero-panel__logo {
+        height: 22px;
+        width: auto;
+      }
+
+      .hero-panel__brand-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 999px;
+        background: var(--text);
+        flex: 0 0 auto;
+      }
+
+      .hero-panel__brand-text {
+        font-size: 13px;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .hero-panel__mini-nav {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .hero-panel__mini-nav a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: color 0.2s;
+        white-space: nowrap;
+      }
+
+      .hero-panel__mini-nav a:hover {
+        color: var(--text);
+      }
+
+      /* ── Dark-side top-right actions ── */
+      .hero-dark-actions {
+        position: absolute;
+        top: 28px;
+        right: 32px;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .hero-icon-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: transparent;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.7);
+        cursor: pointer;
+        transition: border-color 0.2s, color 0.2s, background 0.2s;
+        text-decoration: none;
+      }
+
+      .hero-icon-btn:hover {
+        border-color: rgba(255, 255, 255, 0.36);
+        color: #fff;
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .hero-icon-btn svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .btn--text-sm {
+        background: transparent;
+        color: rgba(255, 255, 255, 0.7);
+        border: 0;
+        padding: 0 14px;
+        min-height: 44px;
+        font-size: 14px;
+        font-weight: 600;
+        transition: color 0.2s;
+      }
+
+      .btn--text-sm:hover {
+        color: #fff;
+      }
+
+      .btn--pill-light {
+        min-height: 44px;
+        padding: 0 22px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+
+      .btn--pill-light:hover {
+        background: rgba(255, 255, 255, 0.18);
+      }
+
+      /* ── Hero copy ── */
+      .hero-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex: 1;
+        padding: 48px 0;
+      }
+
+      .hero-copy h1 {
+        margin: 0;
+        font-size: clamp(52px, 6.4vw, 96px);
+        line-height: 0.94;
+        letter-spacing: -0.055em;
+      }
+
+      .hero-copy h1 em {
+        font-style: italic;
+        color: #ff282b;
+      }
+
+      .hero-cta-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        margin-top: 38px;
+        flex-wrap: wrap;
+      }
+
+      .hero-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        min-height: 62px;
+        padding: 0 8px 0 28px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, #1a1f2b, #0c1017);
+        color: #fff;
+        font-size: 17px;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 18px 42px rgba(8, 12, 18, 0.28);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .hero-pill:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 22px 50px rgba(8, 12, 18, 0.32);
+      }
+
+      .hero-pill:active {
+        transform: translateY(1px);
+      }
+
+      .hero-pill__icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .hero-secondary {
+        color: var(--text-secondary);
+        font-size: 15px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.2s;
+      }
+
+      .hero-secondary:hover {
+        color: var(--text);
+      }
+
+      .hero-secondary span {
+        color: var(--muted);
+        font-weight: 400;
+        margin-right: 4px;
+      }
+
+      /* ── Hero bottom cards ── */
+      .hero-bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        margin-top: auto;
+        border-top: 1px solid var(--line);
+      }
+
+      .hero-bottom__card {
+        padding: 22px 4px 8px;
+      }
+
+      .hero-bottom__card:first-child {
+        padding-right: 22px;
+        border-right: 1px solid var(--line);
+      }
+
+      .hero-bottom__card:last-child {
+        padding-left: 22px;
+      }
+
+      .hero-bottom__card strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 17px;
+        line-height: 1.15;
+      }
+
+      .hero-bottom__card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.48;
+      }
+
+      .hero-bottom__socials {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      .hero-bottom__socials img {
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        object-fit: contain;
+      }
+
+      /* ── Right: full-bleed visual ── */
+      .hero-visual {
+        position: relative;
+        display: flex;
+        align-items: stretch;
+        justify-content: stretch;
+        padding: 0;
+        margin-left: -42px;
+      }
+
+      .hero-visual__stage {
+        position: relative;
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        align-items: stretch;
+        justify-content: stretch;
+        overflow: hidden;
+      }
+
+      .hero-visual-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transform: scale(1.03);
+        filter: contrast(1.05) saturate(1.04) brightness(0.9);
+      }
+
+      .phone {
+        position: relative;
+        width: min(290px, 72vw);
+        border-radius: 42px;
+        padding: 10px;
+        background: linear-gradient(180deg, #2b2f36, #090b0f);
+        box-shadow:
+          0 32px 80px rgba(0, 0, 0, 0.52),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+        z-index: 3;
+      }
+
+      .phone::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 8px;
+        transform: translateX(-50%);
+        width: 110px;
+        height: 26px;
+        border-radius: 999px;
+        background: #050608;
+        z-index: 4;
+      }
+
+      .phone__screen {
+        position: relative;
+        min-height: 560px;
+        border-radius: 34px;
+        overflow: hidden;
+        background:
+          linear-gradient(180deg, rgba(15, 18, 24, 0.9), rgba(8, 11, 16, 0.98)),
+          #0a0d12;
+      }
+
+      .phone__real-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .phone__overlay {
+        position: absolute;
+        left: 24px;
+        right: 24px;
+        bottom: 24px;
+        border-radius: 24px;
+        padding: 18px;
+        background: rgba(8, 11, 16, 0.78);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        color: #fff;
+        z-index: 2;
+      }
+
+      .phone__overlay-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .phone__overlay-row span {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .phone__overlay-row strong {
+        font-size: 22px;
+        letter-spacing: -0.03em;
+      }
+
+      .phone__overlay-label {
+        margin-top: 12px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      .phone__bars {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 6px;
+        align-items: end;
+        height: 64px;
+        margin-top: 14px;
+      }
+
+      .phone__bars span {
+        border-radius: 999px 999px 8px 8px;
+        background: linear-gradient(180deg, #f07178, #e63946);
+        opacity: 0.92;
+        animation: pulse-bar 3.6s ease-in-out infinite;
+      }
+
+      .phone__bars span:nth-child(1) { height: 28%; animation-delay: -0.3s; }
+      .phone__bars span:nth-child(2) { height: 42%; animation-delay: -0.7s; }
+      .phone__bars span:nth-child(3) { height: 56%; animation-delay: -1.2s; }
+      .phone__bars span:nth-child(4) { height: 78%; animation-delay: -1.6s; }
+      .phone__bars span:nth-child(5) { height: 100%; animation-delay: -2.0s; }
+      .phone__bars span:nth-child(6) { height: 68%; animation-delay: -2.4s; }
+      .phone__bars span:nth-child(7) { height: 88%; animation-delay: -2.9s; }
+
+      /* ── Floating icons ── */
+      .coin {
+        position: absolute;
+        display: block;
+        z-index: 1;
+      }
+
+      .coin img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: drop-shadow(0 18px 32px rgba(0, 0, 0, 0.28));
+      }
+
+      .coin--one {
+        width: 140px;
+        height: 140px;
+        left: -48px;
+        top: 18%;
+        animation: coin-float 10s ease-in-out infinite;
+      }
+
+      .coin--two {
+        width: 120px;
+        height: 120px;
+        right: -40px;
+        top: 8%;
+        animation: coin-float 8.5s ease-in-out infinite -2s;
+      }
+
+      .coin--three {
+        width: 100px;
+        height: 100px;
+        left: 10px;
+        bottom: 6%;
+        animation: coin-float 9s ease-in-out infinite -3.5s;
+      }
+
+      .coin--four {
+        width: 110px;
+        height: 110px;
+        right: -16px;
+        bottom: 14%;
+        animation: coin-float 8s ease-in-out infinite -1s;
+      }
+
+      /* Glow behind phone */
+      .hero-visual__stage::before {
+        content: "";
+        position: absolute;
+        width: 520px;
+        height: 520px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(230, 57, 70, 0.10) 0%, transparent 70%);
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .hero-visual__stage::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(8, 11, 16, 0.2) 0%, transparent 26%),
+          linear-gradient(180deg, rgba(8, 11, 16, 0.14) 0%, rgba(8, 11, 16, 0.2) 100%);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .section {
+        padding: 84px 0;
+      }
+
+      .section--tight {
+        padding-top: 28px;
+      }
+
+      .section-heading {
+        max-width: 760px;
+        margin-bottom: 38px;
+      }
+
+      .section-heading h2 {
+        margin: 0;
+        font-size: clamp(34px, 4vw, 52px);
+        line-height: 1.04;
+        letter-spacing: -0.04em;
+      }
+
+      .section-heading p {
+        margin: 16px 0 0;
+        color: var(--text-secondary);
+        max-width: 660px;
+      }
+
+      .section-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        padding: 0 12px;
+        border-radius: 999px;
+        background: rgba(230, 57, 70, 0.08);
+        color: #c1121f;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+
+      /* ═══ Social Proof + Collage (unified block) ═══ */
+      .social-proof {
+        position: relative;
+        background: var(--surface);
+        text-align: center;
+        overflow: hidden;
+        padding: 0;
+      }
+
+      .social-proof__content {
+        position: relative;
+        z-index: 2;
+        padding: 80px 0 40px;
+      }
+
+      .social-proof__title {
+        margin: 0;
+        font-size: clamp(36px, 4.2vw, 56px);
+        line-height: 1.06;
+        letter-spacing: -0.04em;
+        color: var(--text);
+      }
+
+      .social-proof__title span {
+        color: var(--muted);
+        font-weight: 400;
+      }
+
+      .social-proof__sub {
+        margin: 10px 0 0;
+        color: var(--text-secondary);
+        font-size: 17px;
+      }
+
+      .social-proof__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 48px;
+        text-align: center;
+      }
+
+      .social-proof__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 32px 20px 28px;
+      }
+
+      .social-proof__icon {
+        width: 72px;
+        height: 72px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 20px;
+        background: #fff;
+        box-shadow: 0 8px 28px rgba(14, 24, 40, 0.08);
+      }
+
+      .social-proof__icon svg,
+      .social-proof__icon img {
+        width: 42px;
+        height: 42px;
+        border-radius: 999px;
+      }
+
+      .social-proof__info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+
+      .social-proof__name {
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .social-proof__desc {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .collage-wrap {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+        padding: 12px 0 0;
+        mask-image: linear-gradient(180deg, black 0%, black 70%, transparent 100%);
+        -webkit-mask-image: linear-gradient(180deg, black 0%, black 70%, transparent 100%);
+      }
+
+      .collage-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .collage-card {
+        flex: 0 0 auto;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 18px rgba(14, 24, 40, 0.10);
+      }
+
+      .collage-card img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .collage-card--lg {
+        width: 170px;
+        height: 200px;
+      }
+
+      .collage-card--md {
+        width: 150px;
+        height: 150px;
+      }
+
+      .collage-card--sm {
+        width: 130px;
+        height: 120px;
+      }
+
+      .collage-col--edge {
+        opacity: 1;
+      }
+
+      .collage-col--far-edge {
+        opacity: 1;
+      }
+
+      @media (max-width: 720px) {
+        .social-proof {
+          overflow: hidden;
+        }
+
+        .social-proof__content {
+          padding: 48px 0 24px;
+        }
+
+        .social-proof__title {
+          font-size: clamp(24px, 7vw, 36px);
+        }
+
+        .social-proof__grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
+          margin-top: 24px;
+        }
+
+        .social-proof__item {
+          padding: 20px 16px 16px;
+        }
+
+        .social-proof__item-icon {
+          width: 36px;
+          height: 36px;
+        }
+
+        .collage-wrap {
+          gap: 6px;
+          margin-top: -8px;
+        }
+
+        .collage-col {
+          gap: 6px;
+        }
+
+        .collage-card--lg {
+          width: 90px;
+          height: 110px;
+        }
+
+        .collage-card--md {
+          width: 80px;
+          height: 80px;
+        }
+
+        .collage-card--sm {
+          width: 68px;
+          height: 64px;
+        }
+
+        .collage-card {
+          border-radius: 10px;
+        }
+
+        .collage-col--edge,
+        .collage-col--far-edge {
+          display: none;
+        }
+      }
+
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .summary-card,
+      .payout-card,
+      .rules-card,
+      .hooks-card {
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(17, 23, 34, 0.08);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .summary-card {
+        padding: 26px;
+      }
+
+      .summary-card strong {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 22px;
+        line-height: 1;
+      }
+
+      .summary-card p {
+        margin: 0;
+        color: var(--text-secondary);
+      }
+
+      .about-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        align-items: start;
+      }
+
+      .about-card {
+        padding: 32px 28px;
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(17, 23, 34, 0.08);
+        box-shadow: var(--shadow-soft);
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        overflow: hidden;
+      }
+
+      .about-card--dark {
+        background: #111722;
+        color: #f0f2f5;
+        border-color: transparent;
+      }
+
+      .about-card__icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 20px;
+        background: var(--surface-muted);
+        border: 1px solid rgba(17, 23, 34, 0.06);
+        color: var(--text);
+      }
+
+      .about-card--dark .about-card__icon {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.06);
+        color: #f0f2f5;
+      }
+
+      .about-card h3 {
+        margin: 0 0 10px;
+        font-size: 22px;
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+      }
+
+      .about-card--dark h3 {
+        color: #f0f2f5;
+      }
+
+      .about-card p {
+        margin: 0;
+        color: var(--text-secondary);
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      .about-card--dark p {
+        color: rgba(255, 255, 255, 0.5) !important;
+      }
+
+      .about-card__visual {
+        margin-top: auto;
+        padding-top: 20px;
+        border-radius: 16px;
+        overflow: hidden;
+      }
+
+      .about-card__visual img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+      }
+
+      .about-card__visual--globe {
+        margin-left: -28px;
+        margin-right: -28px;
+        margin-bottom: -8px;
+        padding-top: 16px;
+        border-radius: 0;
+        mask-image: linear-gradient(180deg, transparent 0%, black 30%);
+        -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 30%);
+        opacity: 0.7;
+      }
+
+      .about-card__visual--globe img {
+        border-radius: 0;
+      }
+
+      @keyframes ambassador-marquee-scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .ambassador-marquee {
+        margin-top: 8px;
+        padding-top: 12px;
+        overflow: hidden;
+        mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+      }
+
+      .ambassador-marquee__track {
+        display: flex;
+        align-items: stretch;
+        gap: 24px;
+        width: max-content;
+        animation: ambassador-marquee-scroll 30s linear infinite;
+      }
+
+      .ambassador-marquee__item {
+        flex: 0 0 auto;
+        width: 220px;
+        height: 160px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 20px 0;
+        border-radius: 12px;
+        border: 1px solid rgba(17, 23, 34, 0.1);
+        background: #fff;
+        color: #111722;
+        overflow: hidden;
+      }
+
+      .ambassador-marquee__item-header {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 0 24px;
+      }
+
+      .ambassador-marquee__item-title {
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 1.2;
+      }
+
+      .ambassador-marquee__item-badge {
+        display: inline-flex;
+        align-self: flex-start;
+        padding: 2px 8px;
+        border-radius: 9999px;
+        background: rgba(17, 23, 34, 0.06);
+        color: #111722;
+        font-size: 12px;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .ambassador-marquee__item-stats {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0 24px;
+      }
+
+      .ambassador-marquee__item-value {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.2;
+      }
+
+      .ambassador-marquee__item-change {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .ambassador-marquee__item-change--up {
+        color: #17b26a;
+      }
+
+      .ambassador-marquee__item-change--down {
+        color: #e63946;
+      }
+
+      .ambassador-marquee__item-illustration {
+        position: absolute;
+        right: 2px;
+        bottom: 0;
+        width: 105px;
+        height: auto;
+        pointer-events: none;
+        opacity: 0.85;
+      }
+
+      .about-card:hover .ambassador-marquee__track {
+        animation-play-state: paused;
+      }
+
+      /* Refer card pill marquee */
+      .refer-marquee {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 8px;
+        padding-top: 12px;
+        overflow: hidden;
+        mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+      }
+
+      .refer-marquee__row {
+        display: flex;
+        gap: 10px;
+        width: max-content;
+        animation: ambassador-marquee-scroll 22s linear infinite;
+      }
+
+      .refer-marquee__row--reverse {
+        animation-direction: reverse;
+      }
+
+      .refer-marquee__pill {
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 14px;
+        border-radius: 9999px;
+        border: 1px solid rgba(17, 23, 34, 0.1);
+        background: #fff;
+        color: #111722;
+        font-size: 13px;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .refer-marquee__pill-icon {
+        width: 20px;
+        height: 20px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: rgba(17, 23, 34, 0.06);
+        flex-shrink: 0;
+      }
+
+      .refer-marquee__pill-icon svg {
+        width: 12px;
+        height: 12px;
+      }
+
+      .about-card:hover .refer-marquee__row {
+        animation-play-state: paused;
+      }
+
+      /* Why card floating orbit */
+      @keyframes why-float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+      }
+
+      .why-orbit {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 16px;
+        width: 220px;
+        height: 220px;
+      }
+
+      .why-orbit__rings {
+        position: absolute;
+        inset: 0;
+      }
+
+      .why-orbit__rings circle {
+        fill: none;
+        stroke: rgba(255, 255, 255, 0.08);
+        stroke-width: 1;
+      }
+
+      .why-orbit__center {
+        position: relative;
+        z-index: 2;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #fff;
+        display: grid;
+        place-items: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      }
+
+      .why-orbit__center svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      .why-orbit__badge {
+        position: absolute;
+        z-index: 3;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 12px;
+        border-radius: 9999px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 12px;
+        font-weight: 500;
+        white-space: nowrap;
+        animation: why-float 3s ease-in-out infinite;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .why-orbit__badge:nth-child(3) { top: -4px; left: 50%; margin-left: -42px; animation-delay: 0s; }
+      .why-orbit__badge:nth-child(4) { top: 28%; right: -36px; animation-delay: 0.6s; }
+      .why-orbit__badge:nth-child(5) { bottom: 10%; right: -28px; animation-delay: 1.2s; }
+      .why-orbit__badge:nth-child(6) { bottom: -4px; left: 50%; margin-left: -90px; animation-delay: 1.8s; }
+      .why-orbit__badge:nth-child(7) { top: 44%; left: -40px; animation-delay: 2.4s; }
+
+      /* Orbit animation */
+      @keyframes orbit-spin {
+        from { transform: rotate(var(--start)) translateX(var(--r)) rotate(calc(-1 * var(--start))); }
+        to   { transform: rotate(calc(var(--start) + 360deg)) translateX(var(--r)) rotate(calc(-1 * (var(--start) + 360deg))); }
+      }
+
+      .orbit-wrap {
+        position: relative;
+        margin-top: auto;
+        height: 280px;
+        overflow: hidden;
+      }
+
+      .orbit-stage {
+        position: relative;
+        width: 280px;
+        height: 280px;
+        margin: 0 auto;
+      }
+
+      .orbit-ring {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      .orbit-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40px;
+        height: 40px;
+        margin: -20px 0 0 -20px;
+        display: grid;
+        place-items: center;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        animation: orbit-spin var(--dur) linear infinite;
+      }
+
+      .orbit-icon--rev {
+        animation-direction: reverse;
+      }
+
+      .orbit-icon img {
+        border-radius: 6px;
+      }
+
+      .orbit-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 60px;
+        height: 60px;
+        margin: -30px 0 0 -30px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        z-index: 2;
+        overflow: hidden;
+      }
+
+      .orbit-fade {
+        position: absolute;
+        pointer-events: none;
+        z-index: 3;
+      }
+
+      .orbit-fade--t {
+        inset: 0 0 auto 0;
+        height: 50px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.9) 20%, transparent);
+      }
+
+      .orbit-fade--b {
+        inset: auto 0 0 0;
+        height: 50px;
+        background: linear-gradient(0deg, rgba(255,255,255,0.9) 20%, transparent);
+      }
+
+      .orbit-fade--l {
+        inset: 0 auto 0 0;
+        width: 30px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.9), transparent);
+      }
+
+      .orbit-fade--r {
+        inset: 0 0 0 auto;
+        width: 30px;
+        background: linear-gradient(270deg, rgba(255,255,255,0.9), transparent);
+      }
+
+      .rules-card h3,
+      .hooks-card h3 {
+        margin: 0 0 14px;
+        font-size: 26px;
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+      }
+
+      .rules-card p,
+      .hooks-card p {
+        margin: 0;
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      .content-card__sub {
+        margin-top: 24px !important;
+        margin-bottom: 2px !important;
+        font-weight: 600;
+        color: var(--text) !important;
+        font-size: 15px;
+      }
+
+      .bullet-list {
+        margin: 16px 0 0;
+        padding: 0 0 0 20px;
+        list-style: none;
+      }
+
+      .bullet-list--2col {
+        columns: 2;
+        column-gap: 24px;
+      }
+
+      .bullet-list li {
+        position: relative;
+        padding: 4px 0;
+        color: var(--text-secondary);
+        font-size: 15px;
+        line-height: 1.55;
+        break-inside: avoid;
+      }
+
+      .bullet-list li::before {
+        content: "—";
+        position: absolute;
+        left: -20px;
+        color: var(--muted);
+      }
+
+      .integration-options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .integration-option {
+        padding: 16px 18px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .integration-option strong {
+        display: block;
+        font-size: 14px;
+        color: #f0f2f5;
+        margin-bottom: 4px;
+      }
+
+      .integration-option span {
+        font-size: 13px;
+        line-height: 1.45;
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      .banner-previews {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: auto;
+        padding-top: 20px;
+      }
+
+      .banner-preview {
+        border-radius: 12px;
+        overflow: hidden;
+        background: #000;
+      }
+
+      .banner-preview video {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .about-card .bullet-list li::before {
+        color: var(--muted);
+      }
+
+      .about-card--dark .bullet-list li {
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      .about-card--dark .bullet-list li::before {
+        color: rgba(255, 255, 255, 0.25);
+      }
+
+      .topic-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 18px;
+      }
+
+      .topic-pills span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        padding: 0 14px;
+        border-radius: 999px;
+        background: #111722;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+      }
+
+      .topics-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        margin-top: auto;
+        padding-top: 24px;
+        border-top: 1px solid rgba(17, 23, 34, 0.08);
+      }
+
+      .topics-stat {
+        text-align: center;
+      }
+
+      .topics-stat strong {
+        display: block;
+        font-size: 24px;
+        letter-spacing: -0.03em;
+        color: var(--text);
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+
+      .topics-stat span {
+        font-size: 11px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .reward-section {
+        position: relative;
+        padding: 100px 0;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 30% 20%, rgba(230, 57, 70, 0.07), transparent 40%),
+          radial-gradient(circle at 80% 80%, rgba(193, 18, 31, 0.05), transparent 35%),
+          linear-gradient(180deg, #0a0d12 0%, #0f141d 100%);
+      }
+
+      .reward-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        background-size: 64px 64px;
+        mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 70%);
+        -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 70%);
+        pointer-events: none;
+      }
+
+      .reward-section .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .reward-section .section-heading {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .reward-section .section-heading h2 {
+        color: #fff;
+      }
+
+      .reward-section .section-heading p {
+        color: rgba(255, 255, 255, 0.5);
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .reward-choice {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        max-width: 820px;
+        margin: 0 auto;
+      }
+
+      .reward-choice__card {
+        position: relative;
+        padding: 44px 36px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.03);
+        transition: background 0.3s ease;
+      }
+
+      .reward-choice__card:hover {
+        background: rgba(255, 255, 255, 0.055);
+      }
+
+      .reward-choice__icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+      }
+
+      .reward-choice__icon svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .reward-choice__card--left .reward-choice__icon {
+        background: rgba(230, 57, 70, 0.08);
+        color: #e63946;
+      }
+
+      .reward-choice__card--right .reward-choice__icon {
+        background: rgba(255, 255, 255, 0.06);
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .reward-choice__label {
+        display: inline-flex;
+        align-self: flex-start;
+        padding: 5px 14px;
+        border-radius: 9999px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .reward-choice__card--left .reward-choice__label {
+        background: rgba(230, 57, 70, 0.1);
+        color: #f0868e;
+      }
+
+      .reward-choice__card--right .reward-choice__label {
+        background: rgba(255, 255, 255, 0.06);
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      .reward-choice__value {
+        font-size: clamp(36px, 4.5vw, 52px);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: #fff;
+      }
+
+      .reward-choice__desc {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      .reward-choice__divider {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        display: grid;
+        place-items: center;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .step-card {
+        position: relative;
+        padding: 30px 26px 28px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(17, 23, 34, 0.06);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .step-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 999px;
+        background: rgba(230, 57, 70, 0.1);
+        color: #c1121f;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      .step-card h3 {
+        margin: 0 0 10px;
+        font-size: 22px;
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+      }
+
+      /* ═══ Why Quadcode — split layout + card stack ═══ */
+      .why-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .why-split__text {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .why-split__eyebrow {
+        display: inline-flex;
+        align-self: flex-start;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(17, 23, 34, 0.1);
+        background: rgba(17, 23, 34, 0.03);
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-secondary);
+      }
+
+      .why-split__text h2 {
+        margin: 0;
+        font-size: clamp(28px, 3.5vw, 42px);
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+      }
+
+      .why-split__text > p {
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.6;
+        color: var(--text-secondary);
+      }
+
+      .card-stack {
+        position: relative;
+        height: 340px;
+      }
+
+      .card-stack__item {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 280px;
+        padding: 32px 28px;
+        border-radius: 20px;
+        background: var(--surface);
+        border: 1px solid rgba(17, 23, 34, 0.08);
+        box-shadow: var(--shadow-soft);
+        transform-origin: center top;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                    bottom 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .card-stack__item[data-pos="0"] {
+        z-index: 4;
+        transform: scale(1);
+        opacity: 1;
+        bottom: 0;
+      }
+
+      .card-stack__item[data-pos="1"] {
+        z-index: 3;
+        transform: scale(0.94);
+        opacity: 1;
+        bottom: 16px;
+      }
+
+      .card-stack__item[data-pos="2"] {
+        z-index: 2;
+        transform: scale(0.88);
+        opacity: 0.8;
+        bottom: 32px;
+      }
+
+      .card-stack__item[data-pos="3"] {
+        z-index: 1;
+        transform: scale(0.82);
+        opacity: 0.5;
+        bottom: 48px;
+      }
+
+      .card-stack__item-exit {
+        transform: translateY(-30px) scale(1) !important;
+        opacity: 0 !important;
+        z-index: 5 !important;
+        transition: transform 0.4s ease-in, opacity 0.4s ease-in !important;
+      }
+
+      .card-stack__icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        background: rgba(230, 57, 70, 0.08);
+        color: var(--accent-soft);
+      }
+
+      .card-stack__icon svg {
+        width: 26px;
+        height: 26px;
+        stroke-width: 1.6;
+      }
+
+      .card-stack__item h3 {
+        margin: 0;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+      }
+
+      .card-stack__item p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--text-secondary);
+      }
+
+      .card-stack__dots {
+        display: flex;
+        gap: 6px;
+        margin-top: 8px;
+      }
+
+      .card-stack__dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: rgba(17, 23, 34, 0.1);
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        transition: background 0.3s, width 0.3s;
+      }
+
+      .card-stack__dot--active {
+        width: 24px;
+        background: var(--accent-soft);
+      }
+
+      .step-card p {
+        margin: 0;
+        color: var(--text-secondary);
+        line-height: 1.55;
+      }
+
+      .faq-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .faq-item {
+        border: 1px solid rgba(17, 23, 34, 0.08);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.92);
+        padding: 0 18px;
+      }
+
+      .faq-item summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 18px 0;
+        font-weight: 600;
+        color: var(--text);
+      }
+
+      .faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .faq-item p {
+        margin: 0;
+        padding: 0 0 18px;
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      .cta-card {
+        position: relative;
+        overflow: hidden;
+        padding: 80px 42px 100px;
+        border-radius: 28px;
+        background: #111722;
+        color: #fff;
+        text-align: center;
+        box-shadow: 0 30px 70px rgba(9, 13, 20, 0.28);
+      }
+
+      .cta-badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 32px;
+        padding: 0 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+
+      .cta-card h2 {
+        margin: 0;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+      }
+
+      .cta-card p {
+        margin: 16px auto 0;
+        max-width: 520px;
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 17px;
+        line-height: 1.6;
+      }
+
+      .cta-deco {
+        position: absolute;
+        width: 420px;
+        height: 420px;
+        color: rgba(255, 255, 255, 0.03);
+        pointer-events: none;
+      }
+
+      .cta-deco--left {
+        top: -80px;
+        left: -120px;
+        transform: rotate(-25deg);
+      }
+
+      .cta-deco--right {
+        top: -80px;
+        right: -120px;
+        transform: rotate(25deg);
+      }
+
+      .cta-form {
+        display: flex;
+        justify-content: center;
+        margin-top: -28px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .btn--lg {
+        min-height: 52px;
+        padding: 0 32px;
+        font-size: 16px;
+        border-radius: 14px;
+        box-shadow: 0 4px 16px rgba(230, 57, 70, 0.3);
+      }
+
+      .footer {
+        padding: 30px 0 42px;
+      }
+
+      .footer__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding-top: 8px;
+      }
+
+      .footer__logo {
+        width: 148px;
+      }
+
+      .footer__links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .footer__links a,
+      .footer__copy {
+        color: var(--text-secondary);
+        font-size: 14px;
+        text-decoration: none;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.72s ease, transform 0.72s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @keyframes float-soft {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+
+      @keyframes coin-float {
+        0%,
+        100% {
+          transform: translate3d(0, 0, 0) rotate(0deg);
+        }
+        50% {
+          transform: translate3d(0, -16px, 0) rotate(-8deg);
+        }
+      }
+
+      @keyframes pulse-bar {
+        0%,
+        100% {
+          transform: scaleY(1);
+          opacity: 0.95;
+        }
+        50% {
+          transform: scaleY(0.92);
+          opacity: 0.76;
+        }
+      }
+
+      @media (max-width: 1120px) {
+        .hero-copy h1 {
+          font-size: clamp(44px, 5.2vw, 72px);
+        }
+
+        .hero-panel {
+          padding: 24px 32px 30px;
+        }
+
+        .hero-panel__mini-nav {
+          gap: 18px;
+        }
+
+        .summary-grid,
+        .join-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .steps-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 980px) {
+        .hero-layout {
+          grid-template-columns: 1fr;
+          min-height: auto;
+        }
+
+        .hero-panel {
+          border-radius: 0;
+          padding: 24px 28px 30px;
+          margin-right: 0;
+          box-shadow: none;
+        }
+
+        .hero-panel__mini-nav {
+          display: none;
+        }
+
+        .hero-dark-actions {
+          position: static;
+          justify-content: flex-end;
+          padding: 18px 20px 0;
+        }
+
+        .hero-visual {
+          min-height: 480px;
+          margin-left: 0;
+        }
+
+        .about-cards,
+        .join-grid,
+        .summary-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .reward-choice {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        .reward-choice__card {
+          padding: 32px 28px;
+        }
+
+        .reward-choice__divider {
+          position: relative;
+          top: auto;
+          left: auto;
+          transform: none;
+          margin: -8px auto;
+        }
+
+        .steps-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .why-split {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+
+        .card-stack {
+          height: 300px;
+        }
+
+        .card-stack__item {
+          height: 250px;
+        }
+
+        .section-heading h2 {
+          font-size: clamp(28px, 5vw, 44px);
+        }
+      }
+
+      @media (max-width: 720px) {
+        body {
+          font-size: 16px;
+        }
+
+        .container {
+          width: min(100%, calc(100% - 24px));
+        }
+
+        .topbar__inner {
+          gap: 12px;
+        }
+
+        .logo {
+          width: 136px;
+        }
+
+        .topbar .btn {
+          min-height: 42px;
+          padding: 0 16px;
+          font-size: 14px;
+        }
+
+        /* Hero mobile */
+        .hero-panel {
+          padding: 20px 18px 24px;
+          margin-right: 0;
+        }
+
+        .hero-copy h1 {
+          max-width: 100%;
+          font-size: clamp(32px, 10vw, 48px);
+        }
+
+        .hero-copy p {
+          font-size: 15px;
+        }
+
+        .hero-cta-row {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .hero-cta-row .btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .hero-pill {
+          align-self: center;
+        }
+
+        .hero-bottom {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+
+        .hero-bottom__card:first-child {
+          border-right: 0;
+          padding-right: 4px;
+          border-bottom: 1px solid var(--line);
+          padding-bottom: 18px;
+        }
+
+        .hero-bottom__card:last-child {
+          padding-left: 4px;
+        }
+
+        .hero-visual {
+          min-height: 400px;
+          margin-left: 0;
+          padding: 0;
+        }
+
+        .hero-dark-actions {
+          padding: 14px 16px 0;
+        }
+
+        .phone {
+          width: min(240px, 72vw);
+        }
+
+        .phone__screen {
+          min-height: 440px;
+        }
+
+        .coin--one {
+          width: 70px;
+          height: 70px;
+          left: -6px;
+        }
+
+        .coin--two {
+          width: 64px;
+          height: 64px;
+          right: -6px;
+        }
+
+        .coin--three {
+          width: 56px;
+          height: 56px;
+          left: 0;
+        }
+
+        .coin--four {
+          width: 58px;
+          height: 58px;
+          right: 0;
+        }
+
+        .hero-visual__stage::before {
+          width: 220px;
+          height: 220px;
+        }
+
+        /* Social proof mobile */
+        .social-proof__title {
+          font-size: clamp(28px, 7vw, 40px);
+        }
+
+        /* Section headings */
+        .section-heading h2 {
+          font-size: clamp(24px, 7vw, 36px);
+        }
+
+        /* About cards */
+        .about-card,
+        .rules-card,
+        .hooks-card {
+          padding: 24px 20px;
+          border-radius: 24px;
+        }
+
+        .about-card h3 {
+          font-size: 20px;
+        }
+
+        .ambassador-marquee__item {
+          width: 180px;
+          height: 140px;
+          padding: 16px 0;
+          gap: 8px;
+        }
+
+        .ambassador-marquee__item-header {
+          padding: 0 16px;
+          gap: 5px;
+        }
+
+        .ambassador-marquee__item-title {
+          font-size: 13px;
+        }
+
+        .ambassador-marquee__item-badge {
+          font-size: 11px;
+          padding: 1px 6px;
+        }
+
+        .ambassador-marquee__item-stats {
+          padding: 0 16px;
+        }
+
+        .ambassador-marquee__item-value {
+          font-size: 18px;
+        }
+
+        .ambassador-marquee__item-illustration {
+          width: 90px;
+        }
+
+        /* Orbit animation - scale down for mobile */
+        .orbit-wrap {
+          height: 220px;
+        }
+
+        .orbit-stage {
+          width: 220px;
+          height: 220px;
+          transform: scale(0.78);
+        }
+
+        .why-orbit {
+          width: 170px;
+          height: 170px;
+          margin: 12px auto 4px;
+        }
+
+        .why-orbit__center {
+          width: 44px;
+          height: 44px;
+        }
+
+        .why-orbit__center svg {
+          width: 26px;
+          height: 26px;
+        }
+
+        .why-orbit__badge {
+          font-size: 10px;
+          padding: 4px 8px;
+        }
+
+        /* Integration options */
+        .integration-options,
+        .banner-previews {
+          grid-template-columns: 1fr;
+        }
+
+        .bullet-list--2col {
+          columns: 1;
+        }
+
+        .steps-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .why-split__text h2 {
+          font-size: clamp(24px, 7vw, 36px);
+        }
+
+        .card-stack {
+          height: 260px;
+        }
+
+        .card-stack__item {
+          height: 210px;
+          padding: 22px 20px;
+        }
+
+        .card-stack__icon {
+          width: 42px;
+          height: 42px;
+          border-radius: 12px;
+        }
+
+        .card-stack__icon svg {
+          width: 22px;
+          height: 22px;
+        }
+
+        .card-stack__item h3 {
+          font-size: 20px;
+        }
+
+        .card-stack__item p {
+          font-size: 14px;
+        }
+
+        .card-stack__item[data-pos="1"] {
+          transform: scale(0.95);
+          bottom: 12px;
+        }
+
+        .card-stack__item[data-pos="2"] {
+          transform: scale(0.90);
+          bottom: 24px;
+        }
+
+        .card-stack__item[data-pos="3"] {
+          transform: scale(0.85);
+          bottom: 36px;
+        }
+
+        .reward-choice__card {
+          padding: 28px 24px;
+        }
+
+        .reward-choice__icon {
+          width: 42px;
+          height: 42px;
+          border-radius: 12px;
+        }
+
+        .reward-choice__icon svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        .reward-choice__value {
+          font-size: 32px;
+        }
+
+        .reward-choice__desc {
+          font-size: 14px;
+        }
+
+        .reward-section {
+          padding: 64px 0;
+        }
+
+        .refer-marquee__pill {
+          font-size: 12px;
+          padding: 5px 10px;
+        }
+
+        .refer-marquee__pill-icon {
+          width: 16px;
+          height: 16px;
+        }
+
+        .refer-marquee__pill-icon svg {
+          width: 10px;
+          height: 10px;
+        }
+
+        .step-card {
+          padding: 22px 18px;
+          border-radius: 18px;
+        }
+
+        /* CTA */
+        .cta-card {
+          padding: 48px 20px 72px;
+          border-radius: 24px;
+        }
+
+        .cta-card h2 {
+          font-size: clamp(24px, 7vw, 36px);
+        }
+
+        .cta-card p {
+          font-size: 15px;
+        }
+
+        .cta-deco {
+          width: 240px;
+          height: 240px;
+        }
+
+        .cta-deco--left {
+          left: -100px;
+        }
+
+        .cta-deco--right {
+          right: -100px;
+        }
+
+        .btn--lg {
+          min-height: 48px;
+          padding: 0 24px;
+          font-size: 15px;
+        }
+
+        /* Sections */
+        .section {
+          padding: 52px 0;
+        }
+
+        .section--tight {
+          padding-top: 10px;
+        }
+
+        /* Footer */
+        .footer__inner {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 16px;
+        }
+
+        .footer__links {
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+
+        /* Topic pills */
+        .topic-pills {
+          gap: 6px;
+        }
+
+        .topic-pills span {
+          min-height: 30px;
+          padding: 0 12px;
+          font-size: 11px;
+        }
+
+        /* Stats */
+        .topics-stats {
+          gap: 0;
+        }
+
+        .topics-stat strong {
+          font-size: 20px;
+        }
+
+        .topics-stat span {
+          font-size: 10px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .hero-copy h1 {
+          font-size: clamp(28px, 9vw, 38px);
+        }
+
+        .reward-choice__card {
+          padding: 24px 20px;
+        }
+
+        .reward-choice__value {
+          font-size: 28px;
+        }
+
+        .reward-choice__divider {
+          width: 36px;
+          height: 36px;
+          font-size: 10px;
+        }
+
+        .card-stack {
+          height: 240px;
+        }
+
+        .card-stack__item {
+          height: 195px;
+          padding: 20px 18px;
+          gap: 10px;
+        }
+
+        .card-stack__icon {
+          width: 38px;
+          height: 38px;
+        }
+
+        .card-stack__icon svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        .card-stack__item h3 {
+          font-size: 18px;
+        }
+
+        .card-stack__item p {
+          font-size: 13px;
+          line-height: 1.5;
+        }
+
+        .why-orbit {
+          width: 150px;
+          height: 150px;
+        }
+
+        .why-orbit__center {
+          width: 38px;
+          height: 38px;
+        }
+
+        .why-orbit__center svg {
+          width: 22px;
+          height: 22px;
+        }
+
+        .why-orbit__badge {
+          font-size: 9px;
+          padding: 3px 7px;
+        }
+
+        .why-orbit__badge:nth-child(3) { margin-left: -36px; }
+        .why-orbit__badge:nth-child(4) { right: -30px; }
+        .why-orbit__badge:nth-child(5) { right: -22px; }
+        .why-orbit__badge:nth-child(6) { margin-left: -70px; }
+        .why-orbit__badge:nth-child(7) { left: -32px; }
+
+        .step-card {
+          padding: 18px 14px;
+        }
+
+        .hero-bottom__card strong {
+          font-size: 14px;
+        }
+
+        .hero-bottom__card p {
+          font-size: 13px;
+        }
+
+        .phone {
+          width: min(220px, 68vw);
+        }
+
+        .phone__screen {
+          min-height: 400px;
+        }
+
+        .collage-card--lg {
+          width: 80px;
+          height: 100px;
+        }
+
+        .collage-card--md {
+          width: 72px;
+          height: 72px;
+        }
+
+        .collage-card--sm {
+          width: 60px;
+          height: 56px;
+        }
+
+        .cta-form .btn--lg {
+          width: 100%;
+          max-width: 320px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .reveal,
+        .reveal.visible,
+        .coin,
+        .phone__bars span,
+        .btn,
+        .hero-pill,
+        .ambassador-marquee__track,
+        .refer-marquee__row,
+        .why-orbit__badge,
+        .card-stack__item {
+          transition: none;
+          animation: none;
+          transform: none;
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- no global topbar — nav is inside the hero panel -->
+
+    <main id="main">
+      <section class="hero" id="program">
+        <div class="hero-layout">
+          <div class="hero-panel">
+            <div class="hero-panel__topbar">
+              <div class="hero-panel__brand">
+                <img class="hero-panel__logo" src="./assets/resource/lp/light-brokerage/QCBS_logo_blk_Header.svg" alt="Quadcode" />
+                <span class="hero-panel__brand-dot" aria-hidden="true"></span>
+                <span class="hero-panel__brand-text">ambassador program</span>
+              </div>
+              <nav class="hero-panel__mini-nav" aria-label="Hero nav">
+                <a href="#content">Program</a>
+                <a href="#payouts">Rewards</a>
+              </nav>
+            </div>
+
+            <div class="hero-copy">
+              <h1>
+                Bring clients,<br>
+                get <em>rewarded.</em>
+              </h1>
+
+              <div class="hero-cta-row">
+                <a class="hero-pill" href="https://t.me/QC_Software" target="_blank" rel="noopener">
+                  Apply now
+                  <span class="hero-pill__icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                </a>
+                <a class="hero-secondary" href="#content"><span>or</span> Learn more</a>
+              </div>
+            </div>
+
+            <div class="hero-bottom">
+              <article class="hero-bottom__card">
+                <strong>Up to $13,500 per client</strong>
+                <p>Refer qualified entrepreneurs who want to launch their own brokerage business and earn a premium reward for every successful introduction.</p>
+              </article>
+              <article class="hero-bottom__card">
+                <strong>Build your own brand for free</strong>
+                <p>Bring 3 qualified clients and unlock your own brokerage brand at no cost through the ambassador program.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-dark-actions">
+              <a class="btn btn--pill-light" href="https://t.me/QC_Software" target="_blank" rel="noopener">Apply</a>
+            </div>
+            <div class="hero-visual__stage">
+              <video class="hero-visual-video" autoplay loop muted playsinline>
+                <source src="./assets/ambassador-header.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="content">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-eyebrow">Ambassador program</span>
+            <h2>Refer the right clients to the right platform</h2>
+            <p>
+              Quadcode helps entrepreneurs launch their own brokerage business faster with a ready-made white label solution. Instead of building from scratch, they can go live under their own brand with the technology, infrastructure, and support already in place.
+            </p>
+          </div>
+
+          <div class="about-cards">
+            <article class="about-card">
+              <div class="about-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+              </div>
+              <h3>Who you should refer</h3>
+              <p>We’re looking for qualified leads who want to launch a brokerage business or expand into online trading with their own branded platform.</p>
+              <div class="refer-marquee" aria-hidden="true">
+                <div class="refer-marquee__row">
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>Entrepreneurs</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Financial businesses</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>Trading educators</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Affiliate teams</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Introducing brokers</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>Finance influencers</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>Entrepreneurs</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Financial businesses</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>Trading educators</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Affiliate teams</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Introducing brokers</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>Finance influencers</span>
+                </div>
+                <div class="refer-marquee__row refer-marquee__row--reverse">
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Affiliate teams</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Introducing brokers</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>Finance influencers</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>Entrepreneurs</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Financial businesses</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>Trading educators</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Affiliate teams</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Introducing brokers</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>Finance influencers</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>Entrepreneurs</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Financial businesses</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>Trading educators</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="about-card about-card--dark">
+              <div class="why-orbit" aria-hidden="true">
+                <svg class="why-orbit__rings" viewBox="0 0 200 200"><circle cx="100" cy="100" r="94"/><circle cx="100" cy="100" r="72" stroke-opacity="0.6"/><circle cx="100" cy="100" r="48" stroke-opacity="0.9"/></svg>
+                <div class="why-orbit__center">
+                  <svg viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20.4116 9.15171C20.3687 8.34421 19.9983 7.55302 19.3627 6.9739L12.8981 1.06444C11.3541 -0.354812 9.04972 -0.354812 7.49399 1.06444L1.02155 6.9739C0.296329 7.64274 0 8.56444 0 9.49837V12.1941C0.0428897 13.0098 0.382108 13.7928 1.02155 14.3842L7.29124 20.102L7.49789 20.2814C9.04192 21.7007 11.3463 21.7007 12.902 20.2814L13.1086 20.102L19.3783 14.3842C20.0061 13.8051 20.3609 12.9976 20.4155 12.1941V9.15171H20.4116Z" fill="#E62334"/><path fill-rule="evenodd" clip-rule="evenodd" d="M12.2157 1.88053L18.6881 7.78999C19.5849 8.60565 19.5849 10.0698 18.6881 10.8854L14.8943 14.3438L5.65747 5.91805C5.56 5.82833 5.41963 5.82833 5.32215 5.91805L2.37056 8.60565C1.94947 8.99309 1.94947 9.68232 2.37056 10.0698L8.843 15.9792C9.62282 16.6807 10.7652 16.6807 11.5451 15.9792L12.551 15.0616L13.3386 15.7753L12.2157 16.7949C11.0577 17.8512 9.33039 17.8512 8.16067 16.7949L1.68823 10.8895C0.803142 10.0738 0.803142 8.60973 1.68823 7.79407L8.16457 1.88053C9.32259 0.824248 11.0499 0.824248 12.2196 1.88053H12.2157ZM5.48201 8.61789L10.9719 13.6342L10.3558 14.2011C10.2623 14.2908 10.1219 14.2908 10.0283 14.2052H10.0205L4.92055 9.5355C4.80358 9.43355 4.80358 9.24594 4.91665 9.13175H4.92055L5.48201 8.61381V8.61789ZM8.8469 2.68803L6.49967 4.84545C6.3827 4.94741 6.3827 5.13909 6.49967 5.25329L14.7345 12.7614C14.832 12.8512 14.9723 12.8512 15.0698 12.7614L18.0214 10.0738C18.4425 9.6864 18.4425 8.99717 18.0214 8.60973L15.0698 5.92213C14.9723 5.8324 14.832 5.8324 14.7345 5.92213L13.557 6.9988C13.4361 7.10076 13.4361 7.29244 13.557 7.40663L15.4597 9.14399C15.5806 9.24594 15.5806 9.43762 15.4597 9.55182L14.8982 10.0616L9.42006 5.04529L10.0361 4.47841C10.1336 4.38868 10.274 4.38868 10.3714 4.47841L12.3834 6.31772C12.4808 6.40744 12.6212 6.40744 12.7187 6.31772L13.8962 5.24105C14.0171 5.13909 14.0171 4.94741 13.8962 4.83322L11.549 2.68803C10.7691 1.98656 9.62671 1.98656 8.8469 2.68803Z" fill="white"/></svg>
+                </div>
+                <span class="why-orbit__badge">Own brand</span>
+                <span class="why-orbit__badge">Faster setup</span>
+                <span class="why-orbit__badge">Ready infrastructure</span>
+                <span class="why-orbit__badge">Scalable technology</span>
+                <span class="why-orbit__badge">Expert onboarding</span>
+              </div>
+              <h3>Why they’re interested</h3>
+              <p>Your referrals get a faster path to market with a proven white label brokerage solution.</p>
+            </article>
+
+            <article class="about-card">
+              <div class="about-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3>Who can become an ambassador</h3>
+              <p>The program is built for partners who can introduce qualified founders, operators, and business-minded prospects.</p>
+              <div class="ambassador-marquee" aria-hidden="true">
+                <div class="ambassador-marquee__track">
+                  <!-- Set 1 -->
+                  <div class="ambassador-marquee__item">
+                    <div class="ambassador-marquee__item-header">
+                      <span class="ambassador-marquee__item-title">Affiliate</span>
+                      <span class="ambassador-marquee__item-badge">Your commission</span>
+                    </div>
+                    <div class="ambassador-marquee__item-stats">
+                      <span class="ambassador-marquee__item-value">$13.5k</span>
+                    </div>
+                    <img class="ambassador-marquee__item-illustration" src="assets/marquee-ratings.svg" alt="" width="127" height="136" loading="lazy">
+                  </div>
+                  <div class="ambassador-marquee__item">
+                    <div class="ambassador-marquee__item-header">
+                      <span class="ambassador-marquee__item-title">Networker</span>
+                      <span class="ambassador-marquee__item-badge">Your commission</span>
+                    </div>
+                    <div class="ambassador-marquee__item-stats">
+                      <span class="ambassador-marquee__item-value">$11k</span>
+                    </div>
+                    <img class="ambassador-marquee__item-illustration" src="assets/marquee-sessions.svg" alt="" width="126" height="136" loading="lazy">
+                  </div>
+                  <div class="ambassador-marquee__item">
+                    <div class="ambassador-marquee__item-header">
+                      <span class="ambassador-marquee__item-title">Consultant</span>
+                      <span class="ambassador-marquee__item-badge">Your commission</span>
+                    </div>
+                    <div class="ambassador-marquee__item-stats">
+                      <span class="ambassador-marquee__item-value">$12.2k</span>
+                    </div>
+                    <img class="ambassador-marquee__item-illustration" src="assets/marquee-customers.svg" alt="" width="126" height="136" loading="lazy">
+                  </div>
+                  <div class="ambassador-marquee__item">
+                    <div class="ambassador-marquee__item-header">
+                      <span class="ambassador-marquee__item-title">Finance partner</span>
+                      <span class="ambassador-marquee__item-badge">Your commission</span>
+                    </div>
+                    <div class="ambassador-marquee__item-stats">
+                      <span class="ambassador-marquee__item-value">$8.14k</span>
+                    </div>
+                    <img class="ambassador-marquee__item-illustration" src="assets/marquee-orders.svg" alt="" width="126" height="139" loading="lazy">
+                  </div>
+                  <!-- Set 2 (duplicate for seamless loop) -->
+                  <div class="ambassador-marquee__item">
+                    <div class="ambassador-marquee__item-header">
+                      <span class="ambassador-marquee__item-title">Affiliate</span>
+                      <span class="ambassador-marquee__item-badge">Your commission</span>
+                    </div>
+                    <div class="ambassador-marquee__item-stats">
+                      <span class="ambassador-marquee__item-value">$13.5k</span>
+                    </div>
+                    <img class="ambassador-marquee__item-illustration" src="assets/marquee-ratings.svg" alt="" width="127" height="136" loading="lazy">
+                  </div>
+                  <div class="ambassador-marquee__item">
+                    <div class="ambassador-marquee__item-header">
+                      <span class="ambassador-marquee__item-title">Networker</span>
+                      <span class="ambassador-marquee__item-badge">Your commission</span>
+                    </div>
+                    <div class="ambassador-marquee__item-stats">
+                      <span class="ambassador-marquee__item-value">$11k</span>
+                    </div>
+                    <img class="ambassador-marquee__item-illustration" src="assets/marquee-sessions.svg" alt="" width="126" height="136" loading="lazy">
+                  </div>
+                  <div class="ambassador-marquee__item">
+                    <div class="ambassador-marquee__item-header">
+                      <span class="ambassador-marquee__item-title">Consultant</span>
+                      <span class="ambassador-marquee__item-badge">Your commission</span>
+                    </div>
+                    <div class="ambassador-marquee__item-stats">
+                      <span class="ambassador-marquee__item-value">$12.2k</span>
+                    </div>
+                    <img class="ambassador-marquee__item-illustration" src="assets/marquee-customers.svg" alt="" width="126" height="136" loading="lazy">
+                  </div>
+                  <div class="ambassador-marquee__item">
+                    <div class="ambassador-marquee__item-header">
+                      <span class="ambassador-marquee__item-title">Finance partner</span>
+                      <span class="ambassador-marquee__item-badge">Your commission</span>
+                    </div>
+                    <div class="ambassador-marquee__item-stats">
+                      <span class="ambassador-marquee__item-value">$8.14k</span>
+                    </div>
+                    <img class="ambassador-marquee__item-illustration" src="assets/marquee-orders.svg" alt="" width="126" height="139" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="reward-section reveal" id="payouts">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Choose how you want to win</h2>
+            <p>Your choice: earn up to $13,500 per qualified client, or bring 3 qualified clients and unlock your own brokerage brand for free.</p>
+          </div>
+
+          <div class="reward-choice">
+            <article class="reward-choice__card reward-choice__card--left">
+              <div class="reward-choice__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <span class="reward-choice__label">Referral reward</span>
+              <strong class="reward-choice__value">Up to $13,500</strong>
+              <p class="reward-choice__desc">Earn a cash payout for each qualified client who launches their brokerage business with Quadcode.</p>
+            </article>
+            <article class="reward-choice__card reward-choice__card--right">
+              <div class="reward-choice__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <span class="reward-choice__label">Brand reward</span>
+              <strong class="reward-choice__value">3 clients</strong>
+              <p class="reward-choice__desc">Refer 3 qualified clients and receive your own fully branded brokerage platform — free.</p>
+            </article>
+            <span class="reward-choice__divider">or</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="how-it-works">
+        <div class="container">
+          <div class="section-heading">
+            <h2>How it works</h2>
+            <p>A simple partner flow built for high-value referrals.</p>
+          </div>
+
+          <div class="steps-grid">
+            <article class="step-card">
+              <span class="step-number">1</span>
+              <h3>Introduce a qualified client</h3>
+              <p>Send entrepreneurs or businesses that want to launch their own brokerage brand.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-number">2</span>
+              <h3>We qualify the opportunity</h3>
+              <p>Our team speaks with the lead, understands their goals, and guides them through the next steps.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-number">3</span>
+              <h3>You get rewarded</h3>
+              <p>Earn up to $13,500 per qualified referral, or move closer to unlocking your own brokerage brand for free.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="why-quadcode">
+        <div class="container">
+          <div class="why-split">
+            <div class="why-split__text">
+              <span class="why-split__eyebrow">Why Quadcode</span>
+              <h2>Why ambassadors choose Quadcode</h2>
+              <p>This is more than a referral program. It’s a high-value partnership model built around real business opportunities.</p>
+              <div class="card-stack__dots" role="tablist" aria-label="Value cards">
+                <button class="card-stack__dot card-stack__dot--active" data-idx="0" aria-label="Card 1"></button>
+                <button class="card-stack__dot" data-idx="1" aria-label="Card 2"></button>
+                <button class="card-stack__dot" data-idx="2" aria-label="Card 3"></button>
+                <button class="card-stack__dot" data-idx="3" aria-label="Card 4"></button>
+              </div>
+            </div>
+            <div class="card-stack" id="card-stack">
+              <article class="card-stack__item" data-pos="0">
+                <div class="card-stack__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <h3>High-ticket rewards</h3>
+                <p>Each qualified referral earns up to $13,500 — meaningful revenue, not micro-commissions.</p>
+              </article>
+              <article class="card-stack__item" data-pos="1">
+                <div class="card-stack__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16 10-5.12 5.12-2.12-2.12"/></svg>
+                </div>
+                <h3>Clear business value</h3>
+                <p>You’re introducing founders to a real launch solution, not just promoting another software tool.</p>
+              </article>
+              <article class="card-stack__item" data-pos="2">
+                <div class="card-stack__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+                </div>
+                <h3>Two paths to growth</h3>
+                <p>Monetize referrals directly with cash payouts, or turn them into your own branded brokerage opportunity.</p>
+              </article>
+              <article class="card-stack__item" data-pos="3">
+                <div class="card-stack__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3>Dedicated partnership</h3>
+                <p>Get a personal manager, marketing assets, and priority support to help you convert every lead.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="faq">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Frequently asked questions</h2>
+          </div>
+
+          <div class="faq-list">
+            <details class="faq-item" open>
+              <summary>Who is this program for?</summary>
+              <p>The ambassador program is for partners, consultants, affiliates, agencies, and networkers who can introduce qualified clients interested in launching their own brokerage business.</p>
+            </details>
+            <details class="faq-item">
+              <summary>What kind of clients can I refer?</summary>
+              <p>We’re looking for entrepreneurs, finance businesses, and partners who want to start a brokerage brand using a white label solution.</p>
+            </details>
+            <details class="faq-item">
+              <summary>How much can I earn?</summary>
+              <p>You can earn up to $13,500 for each qualified referred client.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Is there an alternative to cash rewards?</summary>
+              <p>Yes. If you refer 3 qualified clients, you can receive your own brokerage brand for free.</p>
+            </details>
+            <details class="faq-item">
+              <summary>What happens after I submit a referral?</summary>
+              <p>Our team reviews the lead, contacts the prospect, and manages the qualification and sales process.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Do I need brokerage experience to join?</summary>
+              <p>No. You mainly need access to the right audience and the ability to introduce relevant prospects.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="apply">
+        <div class="container">
+          <div class="cta-card">
+            <!-- Decorative Quadcode logos -->
+            <svg class="cta-deco cta-deco--left" viewBox="0 0 355 355" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M212.497 31.2675L325.107 129.552C340.71 143.135 340.71 167.469 325.107 181.053L259.121 238.59L98.3849 98.4255C96.6929 96.9163 94.2487 96.9163 92.5567 98.4255L41.234 143.135C33.9023 149.548 33.9023 161.056 41.234 167.469L153.843 265.755C167.38 277.451 187.307 277.451 200.843 265.755L218.325 250.474L232.05 262.359L212.497 279.337C192.383 296.881 162.303 296.881 142 279.337L29.3904 181.053C13.9747 167.469 13.9747 143.135 29.3904 129.552L142 31.2675C162.115 13.7234 192.195 13.7234 212.497 31.2675ZM95.3767 143.323L190.879 226.705L180.163 236.136C178.505 237.616 176.125 237.646 174.437 236.225L174.335 236.136L85.6009 158.604C83.5675 156.933 83.5336 153.805 85.4992 151.908L85.6009 151.813L95.3767 143.323ZM153.843 44.6612L113.048 80.5042C110.98 82.202 110.98 85.409 113.048 87.2953L256.3 212.179C257.992 213.687 260.437 213.687 262.128 212.179L313.451 167.469C320.783 161.055 320.783 149.548 313.451 143.135L262.128 98.4255C260.437 96.9163 257.992 96.9163 256.3 98.4255L235.809 116.347C233.741 118.045 233.741 121.252 235.809 123.138L268.896 152.002C270.965 153.699 270.965 156.905 268.896 158.792L259.121 167.281L163.807 83.8998L174.522 74.4674C176.215 72.9582 178.658 72.9582 180.35 74.4674L215.318 105.028C217.009 106.537 219.454 106.537 221.146 105.028L241.637 87.1067C243.706 85.409 243.706 82.202 241.637 80.3152L200.843 44.6612C187.307 32.9652 167.378 32.9652 153.843 44.6612Z" fill="currentColor"/></svg>
+            <svg class="cta-deco cta-deco--right" viewBox="0 0 355 355" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M212.497 31.2675L325.107 129.552C340.71 143.135 340.71 167.469 325.107 181.053L259.121 238.59L98.3849 98.4255C96.6929 96.9163 94.2487 96.9163 92.5567 98.4255L41.234 143.135C33.9023 149.548 33.9023 161.056 41.234 167.469L153.843 265.755C167.38 277.451 187.307 277.451 200.843 265.755L218.325 250.474L232.05 262.359L212.497 279.337C192.383 296.881 162.303 296.881 142 279.337L29.3904 181.053C13.9747 167.469 13.9747 143.135 29.3904 129.552L142 31.2675C162.115 13.7234 192.195 13.7234 212.497 31.2675ZM95.3767 143.323L190.879 226.705L180.163 236.136C178.505 237.616 176.125 237.646 174.437 236.225L174.335 236.136L85.6009 158.604C83.5675 156.933 83.5336 153.805 85.4992 151.908L85.6009 151.813L95.3767 143.323ZM153.843 44.6612L113.048 80.5042C110.98 82.202 110.98 85.409 113.048 87.2953L256.3 212.179C257.992 213.687 260.437 213.687 262.128 212.179L313.451 167.469C320.783 161.055 320.783 149.548 313.451 143.135L262.128 98.4255C260.437 96.9163 257.992 96.9163 256.3 98.4255L235.809 116.347C233.741 118.045 233.741 121.252 235.809 123.138L268.896 152.002C270.965 153.699 270.965 156.905 268.896 158.792L259.121 167.281L163.807 83.8998L174.522 74.4674C176.215 72.9582 178.658 72.9582 180.35 74.4674L215.318 105.028C217.009 106.537 219.454 106.537 221.146 105.028L241.637 87.1067C243.706 85.409 243.706 82.202 241.637 80.3152L200.843 44.6612C187.307 32.9652 167.378 32.9652 153.843 44.6612Z" fill="currentColor"/></svg>
+
+            <span class="cta-badge">Ambassador program</span>
+            <h2>Ready to become a Quadcode ambassador?</h2>
+            <p>Apply to join the program and start referring qualified clients to Quadcode. Choose your reward path: high-ticket payouts or your own brokerage brand.</p>
+          </div>
+          <div class="cta-form">
+            <a class="btn btn--primary btn--lg" href="https://t.me/QC_Software" target="_blank" rel="noopener">Become an ambassador</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <img class="footer__logo" src="./assets/resource/lp/light-brokerage/QCBS_logo_blk_Header.svg" alt="Quadcode" />
+        <nav class="footer__links" aria-label="Footer">
+          <a href="https://quadcode.com" target="_blank" rel="noopener">quadcode.com</a>
+          <a href="mailto:sales@quadcode.com">sales@quadcode.com</a>
+        </nav>
+      </div>
+      <div class="container">
+        <p class="footer__copy">&copy; 2026 Quadcode. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const revealItems = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.14 }
+        );
+
+        revealItems.forEach((item) => observer.observe(item));
+      } else {
+        document.querySelectorAll(".reveal").forEach((item) => item.classList.add("visible"));
+      }
+
+      /* Card stack cycling animation */
+      (function () {
+        const stack = document.getElementById("card-stack");
+        if (!stack) return;
+        const cards = Array.from(stack.querySelectorAll(".card-stack__item"));
+        const dots = document.querySelectorAll(".card-stack__dot");
+        const total = cards.length;
+        let current = 0;
+        let timer;
+
+        function setPositions(skipIdx) {
+          let pos = 0;
+          for (let i = 0; i < total; i++) {
+            const idx = (current + i) % total;
+            if (idx === skipIdx) continue;
+            cards[idx].classList.remove("card-stack__item-exit");
+            cards[idx].setAttribute("data-pos", pos);
+            pos++;
+          }
+        }
+
+        function updateDots() {
+          dots.forEach((d, i) => {
+            d.classList.toggle("card-stack__dot--active", i === current);
+          });
+        }
+
+        function cycle() {
+          const exitCard = cards[current];
+          exitCard.classList.add("card-stack__item-exit");
+
+          setTimeout(() => {
+            current = (current + 1) % total;
+            setPositions(-1);
+            updateDots();
+          }, 400);
+        }
+
+        function startTimer() {
+          timer = setInterval(cycle, 3500);
+        }
+
+        function goTo(idx) {
+          clearInterval(timer);
+          const exitCard = cards[current];
+          exitCard.classList.add("card-stack__item-exit");
+          setTimeout(() => {
+            current = idx;
+            setPositions(-1);
+            updateDots();
+            startTimer();
+          }, 400);
+        }
+
+        dots.forEach((dot) => {
+          dot.addEventListener("click", () => {
+            const idx = parseInt(dot.dataset.idx, 10);
+            if (idx !== current) goTo(idx);
+          });
+        });
+
+        stack.addEventListener("mouseenter", () => clearInterval(timer));
+        stack.addEventListener("mouseleave", startTimer);
+
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          startTimer();
+        }
+      })();
+    </script>
+  </body>
+</html>
