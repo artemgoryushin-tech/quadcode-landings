@@ -1,0 +1,11 @@
+variables:
+  GIT_STRATEGY: none
+
+deploy:test:
+  only:
+    - dev
+  script:
+    - whoami
+    - cd /var/www/vercel-landings
+    - git fetch
+    - git reset --hard origin/dev
