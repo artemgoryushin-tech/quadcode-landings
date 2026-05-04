@@ -1,0 +1,987 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta content="true" name="HandheldFriendly" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="theme-color" content="#0c111a" />
+    <meta name="color-scheme" content="light" />
+
+    <title>Trading Dashboard for Business — White-label charts for brokers & fintech | Quadcode</title>
+    <meta
+      name="description"
+      content="Embed professional market charts into your website, app, or trading platform. Trading Dashboard for Business is a white-label charting product by Quadcode for brokers, trading platforms and fintech apps."
+    />
+    <link rel="canonical" href="https://quadcode.com/trading-dashboard-business" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Trading Dashboard for Business | Quadcode" />
+    <meta
+      property="og:description"
+      content="White-label market charts for brokers and fintech. Embed a polished charting experience into your product without building charting infrastructure from scratch."
+    />
+    <meta property="og:url" content="https://quadcode.com/trading-dashboard-business" />
+    <meta property="og:image" content="https://quadcode.com/trading-dashboard-business/og-image.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Quadcode" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Trading Dashboard for Business | Quadcode" />
+    <meta
+      name="twitter:description"
+      content="White-label market charts for brokers and fintech. Built by Quadcode."
+    />
+    <meta name="twitter:image" content="https://quadcode.com/trading-dashboard-business/og-image.svg" />
+
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./favicon.svg" />
+
+    <!-- Brand typography preloads (Quadcode stack, mirrors quadcode.com):
+         · Suisse Intl Medium  — display headlines above the fold
+         · Proxima Nova Regular — body / paragraph copy
+         These two cover everything the user sees in the hero without FOUT. -->
+    <link rel="preload" as="font" type="font/woff2" href="./fonts/SuisseIntl-Medium.woff2"   crossorigin="anonymous" />
+    <link rel="preload" as="font" type="font/woff2" href="./fonts/ProximaNova-Regular.woff2" crossorigin="anonymous" />
+
+    <!-- LCP preload of hero screenshot -->
+    <link
+      rel="preload"
+      as="image"
+      href="./hero/dashboard.webp"
+      imagesrcset="hero/dashboard.webp 1024w, hero/dashboard@2x.webp 2048w"
+      imagesizes="(max-width: 1080px) 100vw, 1200px"
+      type="image/webp"
+    />
+
+
+    <!-- Structured data: Product -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Trading Dashboard for Business",
+        "brand": { "@type": "Organization", "name": "Quadcode" },
+        "description": "White-label charting product for brokers, trading platforms and fintech apps. Embed an interactive market chart with multiple timeframes, market context and brand customization — without building charting infrastructure.",
+        "category": "Financial software / Charting SDK",
+        "audience": {
+          "@type": "BusinessAudience",
+          "audienceType": "Brokers, fintech apps, trading platforms, financial media"
+        }
+      }
+    </script>
+    <script type="module" crossorigin src="./assets/index-B7x5ZPh4.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BQ6qXHHX.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#hero">Skip to content</a>
+
+    <!-- ======================== FLOATING PILL NAV (Mobbin-style) ======================== -->
+    <header class="topbar topbar--floating" data-topbar>
+      <div class="topbar__inner">
+        <button
+          class="topbar__menu"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobileNav"
+          aria-label="Open menu"
+          data-menu-toggle
+        >
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 5h16" /><path d="M4 12h16" /><path d="M4 19h16" />
+          </svg>
+          <span class="sr-only">Menu</span>
+        </button>
+
+        <div class="topbar__start">
+          <a class="topbar__brand" href="#hero" aria-label="Quadcode — Trading Dashboard for Business">
+            <img
+              class="topbar__logo-img"
+              src="./logos/QCBS_logo_blk_Header.svg"
+              alt="Quadcode"
+              width="197"
+              height="25"
+            />
+          </a>
+          <nav class="topbar__nav" aria-label="Primary">
+            <a class="topbar__nav-link" href="#use-cases">Use cases</a>
+            <a class="topbar__nav-link" href="#why">Why us</a>
+            <a class="topbar__nav-link" href="#what-you-get">What you get</a>
+            <a class="topbar__nav-link" href="#integration">Integration</a>
+          </nav>
+        </div>
+
+        <div class="topbar__right">
+          <a class="topbar__cta-pill" href="#demo" data-open-modal>Get access</a>
+        </div>
+      </div>
+
+      <div class="mobile-nav" id="mobileNav" data-mobile-nav>
+        <a href="#use-cases" data-mobile-link>Use cases</a>
+        <a href="#why" data-mobile-link>Why us</a>
+        <a href="#what-you-get" data-mobile-link>What you get</a>
+        <a href="#integration" data-mobile-link>Integration</a>
+        <a href="#demo" data-open-modal data-mobile-link>Get early access</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- ======================== HERO (centered: subtitle → H1 → lead → CTAs → live preview) ======================== -->
+      <section class="hero" id="hero">
+        <div class="hero__inner">
+          <div class="hero__center reveal">
+            <p class="hero__subtitle">
+              <span class="hero__subtitle-line hero__subtitle-line--strong">Live market data.</span>
+            </p>
+
+            <h1 class="hero__title">Trading Dashboard for Business.</h1>
+
+            <p class="hero__lead">
+              White-label market charts for brokers and fintech platforms. Embed a polished,
+              professional charting experience into your website, app, or trading platform —
+              without building charting infrastructure from scratch.
+            </p>
+
+            <div class="hero__cta">
+              <a class="btn btn--primary btn--lg" href="#demo" data-open-modal>Request a demo</a>
+              <a
+                class="btn-craft btn-craft--lg"
+                href="https://tradingdashboard.com/en"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Live preview — opens Trading Dashboard in a new tab"
+              >
+                <span class="btn-craft__label">Live preview</span>
+                <span class="btn-craft__icon" aria-hidden="true">
+                  <span class="btn-craft__icon-bloom"></span>
+                  <span class="btn-craft__icon-face">
+                    <svg class="btn-craft__arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Static preview screenshot — gets a subtle 3D mouse-parallax tilt on hover
+               and a perspective-tilt reveal on first scroll-in (see main.ts setupHeroTilt). -->
+          <div class="hero__media reveal" data-hero-tilt>
+            <picture>
+              <source
+                type="image/webp"
+                srcset="hero/dashboard.webp 1024w, hero/dashboard@2x.webp 2048w"
+                sizes="(max-width: 1080px) 100vw, 1024px"
+              />
+              <img
+                src="./hero/dashboard.png"
+                width="2048"
+                height="1653"
+                alt="Trading Dashboard for Business — overview, charts, macro pulse and economic calendar"
+                class="hero__media-img"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+      <!-- ======================== USE CASES ======================== -->
+      <!-- ======================== USE CASES (PORTFOLIO BENTO) ====================
+           shadcn portfolio pattern: 1 large featured card on top + grid of smaller
+           cards beneath. Each card is a pastel tinted "context" showing how the TD
+           chart embeds into a different surface (broker site, platform, portal,
+           media, fintech app, partner page).
+
+           ┌──────────────────────────────────────────────────────────────────┐
+           │ 01 · Broker websites                              [hero mockup]  │
+           │ copy + 4 feature pills                                            │
+           ├──────────┬──────────┬──────────┬──────────┬──────────┐
+           │ 02       │ 03       │ 04       │ 05       │ 06       │
+           │ Trading  │ Client   │ Financial│ Fintech  │ Affiliate│
+           │ platforms│ portals  │ media    │ apps     │ & IB     │
+           └──────────┴──────────┴──────────┴──────────┴──────────┘
+      ============================================================ -->
+      <section class="section" id="use-cases">
+        <div class="container">
+          <header class="section__header reveal">
+            <span class="section__eyebrow">Use cases</span>
+            <h2 class="section__title">Where Trading Dashboard creates <span class="title-accent">real impact</span></h2>
+            <p class="section__lead">
+              From a single asset page to a full trading platform — TD slots into wherever
+              your users meet the market, with the same brand-ready experience underneath.
+            </p>
+          </header>
+
+          <!-- ── Hero card: Broker websites ─────────────────────────────────────── -->
+          <article class="usecase-hero reveal">
+            <div class="usecase-hero__copy">
+              <h3 class="usecase-hero__title">Broker websites</h3>
+              <p class="usecase-hero__lead">
+                Add charts to stocks, forex, crypto, commodities, indices, or ETF pages —
+                instantly upgrade asset-detail UX without rebuilding your front-end.
+              </p>
+              <ul class="usecase-feats">
+                <li>
+                  <span class="usecase-feats__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                  </span>
+                  <div>
+                    <h4>Asset pages</h4>
+                    <p>One embed across every instrument page.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="usecase-feats__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 5 4-7 5 8"/></svg>
+                  </span>
+                  <div>
+                    <h4>Live market charts</h4>
+                    <p>Real-time candles, volume and indicators.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="usecase-feats__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </span>
+                  <div>
+                    <h4>Better engagement</h4>
+                    <p>Longer sessions, deeper exploration.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="usecase-feats__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-13h-7l1-7z"/></svg>
+                  </span>
+                  <div>
+                    <h4>Fast integration</h4>
+                    <p>Drop the widget on a page in days.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="usecase-hero__visual">
+              <picture>
+                <source srcset="usecases/01-broker.webp" type="image/webp" />
+                <img class="usecase-hero__img"
+                     src="./usecases/01-broker.png"
+                     alt="Trading Dashboard chart embedded into a broker website asset page (AAPL on NASDAQ) with watchlist and key stats."
+                     loading="lazy"
+                     decoding="async"
+                     width="1427" height="848" />
+              </picture>
+            </div>
+          </article>
+
+          <!-- ── Sub-cards grid ─────────────────────────────────────────────────── -->
+          <div class="usecase-grid stagger">
+            <!-- 02 Trading platforms (dark dashboard tint) -->
+            <article class="usecase-card usecase-card--platforms reveal">
+              <div class="usecase-card__head">
+                <h3>Trading platforms</h3>
+                <p>Inside a broader trading experience.</p>
+              </div>
+              <div class="usecase-card__visual">
+                <picture>
+                  <source srcset="usecases/02-platforms.webp" type="image/webp" />
+                  <img class="usecase-card__img"
+                       src="./usecases/02-platforms.png"
+                       alt="Trading platforms screen with watchlist, AAPL candlestick chart and order ticket"
+                       loading="lazy"
+                       decoding="async"
+                       width="1105" height="986" />
+                </picture>
+              </div>
+            </article>
+
+            <!-- 03 Client portals (warm cream tint) -->
+            <article class="usecase-card usecase-card--portals reveal">
+              <div class="usecase-card__head">
+                <h3>Client portals</h3>
+                <p>Markets inside your logged-in product.</p>
+              </div>
+              <div class="usecase-card__visual">
+                <picture>
+                  <source srcset="usecases/03-portals.webp" type="image/webp" />
+                  <img class="usecase-card__img"
+                       src="./usecases/03-portals.png"
+                       alt="WealthBridge client portal showing account balances and S&P 500 market overview"
+                       loading="lazy"
+                       decoding="async"
+                       width="849" height="924" />
+                </picture>
+              </div>
+            </article>
+
+            <!-- 04 Financial media (lavender tint) -->
+            <article class="usecase-card usecase-card--media reveal">
+              <div class="usecase-card__head">
+                <h3>Financial media</h3>
+                <p>Live charts inside articles and research.</p>
+              </div>
+              <div class="usecase-card__visual">
+                <picture>
+                  <source srcset="usecases/04-media.webp" type="image/webp" />
+                  <img class="usecase-card__img"
+                       src="./usecases/04-media.png"
+                       alt="MarketLens article page with embedded S&P 500 chart inside the story"
+                       loading="lazy"
+                       decoding="async"
+                       width="918" height="993" />
+                </picture>
+              </div>
+            </article>
+
+            <!-- 05 Fintech apps (peach tint) -->
+            <article class="usecase-card usecase-card--apps reveal">
+              <div class="usecase-card__head">
+                <h3>Fintech apps</h3>
+                <p>Market visualization without a charting engine.</p>
+              </div>
+              <div class="usecase-card__visual">
+                <picture>
+                  <source srcset="usecases/05-apps.webp" type="image/webp" />
+                  <img class="usecase-card__img"
+                       src="./usecases/05-apps.png"
+                       alt="Two iPhone screens — Markets list and AAPL detail with candlestick chart"
+                       loading="lazy"
+                       decoding="async"
+                       width="896" height="915" />
+                </picture>
+              </div>
+            </article>
+
+            <!-- 06 Affiliate & IB (rose / TD-accent tint) -->
+            <article class="usecase-card usecase-card--affiliate reveal">
+              <div class="usecase-card__head">
+                <h3>Affiliate &amp; IB pages</h3>
+                <p>Real-feeling charts on partner pages.</p>
+              </div>
+              <div class="usecase-card__visual">
+                <picture>
+                  <source srcset="usecases/06-affiliate.webp" type="image/webp" />
+                  <img class="usecase-card__img"
+                       src="./usecases/06-affiliate.png"
+                       alt="PartnerBoost affiliate landing page with hero copy, Open Account CTA and EUR/USD chart"
+                       loading="lazy"
+                       decoding="async"
+                       width="844" height="999" />
+                </picture>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- ======================== WHY TRADING DASHBOARD ======================== -->
+      <!-- Scrollytelling pattern: an iPhone-frame "demo" stays sticky on the
+           left while the right column scrolls through 4 feature stories. As
+           the user scrolls, the long composite screenshot inside the phone
+           translates Y to keep visual + copy in sync. JS hooks: see
+           setupWhyScroll() in main.ts. Falls back to a static layout when
+           prefers-reduced-motion is set or on very narrow viewports. -->
+      <section class="section why-scroll" id="why" data-why-scroll>
+        <div class="container">
+          <header class="why-scroll__intro reveal">
+            <span class="section__eyebrow">Why Trading Dashboard</span>
+            <h2 class="section__title" style="margin-top:14px">
+              A trader-grade dashboard, embeddable anywhere
+            </h2>
+            <p class="section__lead">
+              Built by the Quadcode team behind real-world trading platforms used by
+              millions. Start with a single chart widget and scale into a deep
+              white-label integration when your product is ready.
+            </p>
+          </header>
+
+          <!-- Stage = sticky phone overlay + text steps overlapping it via
+               negative margin. Phone sits horizontally CENTERED on top z-axis;
+               text alternates LEFT/RIGHT around it so they spatially never
+               collide. The negative margin on .why-scroll__steps pulls the
+               text container UP by 100vh so step 1 is visible WHILE the phone
+               first appears (instead of after a full empty viewport). -->
+          <!-- data-why-bottom-trim: fraction of the bitmap height to treat as
+               non-scrollable padding at the bottom (long PNGs often end with
+               empty white — without trimming the mock keeps scrolling into
+               that void while the last step is still on screen). Tune 0.08–0.18. -->
+          <div class="why-scroll__stage" data-why-stage data-why-bottom-trim="0.14">
+            <!-- Full-width sticky overlay with phone in the centre -->
+            <div class="why-scroll__device" data-why-device>
+              <div class="why-scroll__phone">
+                <div class="why-scroll__screen">
+                  <picture>
+                    <source srcset="why/screen.webp" type="image/webp" />
+                    <img class="why-scroll__screen-img"
+                         data-why-screen
+                         src="./why/screen.png"
+                         alt="Trading Dashboard mobile preview — global snapshot, top movers, sector spotlight, trade plan, macro pulse, economic calendar and hype feed"
+                         width="375" height="5864"
+                         loading="lazy"
+                         decoding="async" />
+                  </picture>
+                </div>
+                <span class="why-scroll__sidebtn why-scroll__sidebtn--mute" aria-hidden="true"></span>
+                <span class="why-scroll__sidebtn why-scroll__sidebtn--vol-up" aria-hidden="true"></span>
+                <span class="why-scroll__sidebtn why-scroll__sidebtn--vol-down" aria-hidden="true"></span>
+                <span class="why-scroll__sidebtn why-scroll__sidebtn--power" aria-hidden="true"></span>
+              </div>
+            </div>
+
+            <!-- Scroll-driven text steps. Alternating left/right so they
+                 surround the centred sticky phone instead of crashing into
+                 it. Each step is one viewport tall, JS toggles is-active. -->
+            <ol class="why-scroll__steps" data-why-steps>
+              <li class="why-scroll__step why-scroll__step--left" data-why-step="0">
+                <div class="why-scroll__step-inner">
+                  <div class="why-scroll__step-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 3v18h18" />
+                      <path d="M7 14l3-3 3 3 5-5" />
+                      <circle cx="18" cy="9" r="1.5" fill="currentColor" stroke="none" />
+                    </svg>
+                  </div>
+                  <h3>Macro context, in one view</h3>
+                  <p>Inflation, rates and volatility on the same screen as the chart. Your users see the <em>why</em> behind every move — no third-party site needed.</p>
+                </div>
+              </li>
+
+              <li class="why-scroll__step why-scroll__step--right" data-why-step="1">
+                <div class="why-scroll__step-inner">
+                  <div class="why-scroll__step-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 17l5-5 4 4 7-9" />
+                      <path d="M14 7h7v7" />
+                    </svg>
+                  </div>
+                  <h3>Live market movers</h3>
+                  <p>Gainers, losers and breakout tickers refresh in real time. Trader-grade widgets your users actually scan, not toy charts they ignore.</p>
+                </div>
+              </li>
+
+              <li class="why-scroll__step why-scroll__step--left" data-why-step="2">
+                <div class="why-scroll__step-inner">
+                  <div class="why-scroll__step-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2l2.5 5 5.5.8-4 3.9.95 5.5L12 14.6 7.05 17.2 8 11.7 4 7.8 9.5 7z" />
+                    </svg>
+                  </div>
+                  <h3>Editorial &amp; analyst-ready</h3>
+                  <p>Surface your team's calls, ratings and curated picks alongside the data. Perfect for media, research portals and broker education hubs.</p>
+                </div>
+              </li>
+
+              <li class="why-scroll__step why-scroll__step--right" data-why-step="3">
+                <div class="why-scroll__step-inner">
+                  <div class="why-scroll__step-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 12h4l3-7 4 14 3-7h4" />
+                    </svg>
+                  </div>
+                  <h3>Grow at your pace</h3>
+                  <p>Start as a widget today; layer on macro indicators, sentiment, and proprietary signals as your roadmap matures — same SDK, deeper integration.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================== WHAT YOU GET (BENTO) ============================
+           7-card bento targeted at product / growth / CTO at brokers and fintech who
+           are actively comparing charting solutions for their dashboard. Every card
+           answers a real evaluation question:
+
+           ┌──────────────┬──────────────┬──────────────┐
+           │ One canvas,  │ Forex • Crypto│ Lift your   │
+           │ every trader │ • Stocks •    │ funnel      │
+           │ profile      │ Indices       │ metrics     │
+           │              ├──────────────┤              │
+           │              │ Real-time     │              │
+           ├──────────────┤ by default    │              │
+           │ Trading-grade├──────────────┤              │
+           │ reliability  │ Beyond just   ├──────────────┤
+           │              │ price         │ Embed today, │
+           │              │               │ white-label  │
+           │              │               │ tomorrow     │
+           └──────────────┴──────────────┴──────────────┘
+      ============================================================ -->
+      <section class="section section--alt" id="what-you-get">
+        <div class="container">
+          <header class="section__header reveal">
+            <span class="section__eyebrow">What you get</span>
+            <h2 class="section__title">Everything brokers and fintech expect from a charting layer</h2>
+            <p class="section__lead">
+              Stop comparing charting libraries — get a complete, white-label dashboard
+              experience built for the people running broker, fintech and trading products.
+            </p>
+          </header>
+
+          <div class="bento reveal">
+            <div class="bento-grid stagger">
+              <!-- ─── COL 1: audience + reliability ─────────────────────────── -->
+              <div class="bento-col">
+                <article class="bento-card">
+                  <div class="bento-visual bento-users">
+                    <div class="bento-users__scene" aria-hidden="true">
+                      <svg width="390" height="389" viewBox="0 0 390 389" fill="none" xmlns="http://www.w3.org/2000/svg" class="bento-users__bg">
+                        <rect width="389.333" height="389" fill="#e7ecf4" fill-opacity="0.7"></rect>
+                        <path d="M151.116 164.302L0.00195312 61.0625V388.44H389.332V61.0625L237.447 164.302C237.447 164.302 233.621 171.033 231.733 175.844C222.917 198.309 234.257 235.355 225.105 251.844C214.837 270.343 178.11 277.641 165.262 251.844C156.829 234.909 165.644 198.31 156.829 175.844C154.941 171.033 151.116 164.302 151.116 164.302Z" fill="#f9fbff"></path>
+                      </svg>
+
+                      <span class="bento-avatar" style="--x-start:-66px;--x-mid:-54px;--x-end:-8px;--y-mid:72px;--s:0.96;animation-delay:-0.2s;"><img src="https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-1.png" alt=""></span>
+                      <span class="bento-avatar" style="--x-start:68px;--x-mid:58px;--x-end:10px;--y-mid:58px;--s:0.82;animation-delay:-1.4s;"><img src="https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-2.png" alt=""></span>
+                      <span class="bento-avatar" style="--x-start:-24px;--x-mid:-18px;--x-end:-3px;--y-mid:118px;--s:0.88;animation-delay:-2.6s;"><img src="https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-3.png" alt=""></span>
+                      <span class="bento-avatar" style="--x-start:14px;--x-mid:10px;--x-end:6px;--y-mid:144px;--s:0.92;animation-delay:-3.5s;"><img src="https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-4.png" alt=""></span>
+                      <span class="bento-avatar" style="--x-start:-10px;--x-mid:-8px;--x-end:1px;--y-mid:96px;--s:1;animation-delay:-4.6s;"><img src="https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-5.png" alt=""></span>
+
+                      <!-- Real Quadcode emblem (red shield + white "QC" mark) at the convergence point -->
+                      <img class="bento-users__logo" src="./logos/quadcode-emblem.svg" alt="" aria-hidden="true" />
+
+                      <span class="bento-chip" style="--x-start:-10px;--x-end:-84px;--y-end:336px;--s:0.98;animation-delay:-0.8s;"><span class="bento-chip__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17l5-6 4 5 4-7 5 8"></path></svg></span>Active trader</span>
+                      <span class="bento-chip" style="--x-start:4px;--x-end:4px;--y-end:304px;--s:1;animation-delay:-1.7s;"><span class="bento-chip__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>First-time visitor</span>
+                      <span class="bento-chip" style="--x-start:-6px;--x-end:-62px;--y-end:272px;--s:1;animation-delay:-2.7s;"><span class="bento-chip__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>Researcher</span>
+                      <span class="bento-chip" style="--x-start:8px;--x-end:-44px;--y-end:248px;--s:0.78;animation-delay:-3.5s;"><span class="bento-chip__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17l5-6 4 5 4-7 5 8"></path></svg></span>Pro trader</span>
+                      <span class="bento-chip" style="--x-start:-2px;--x-end:-28px;--y-end:354px;--s:0.86;animation-delay:-4.4s;"><span class="bento-chip__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>First-time visitor</span>
+                    </div>
+                  </div>
+                  <div class="bento-body">
+                    <h3>One canvas, every trader profile</h3>
+                    <p>From price-curious newcomers to chart-obsessed pros — a single embedded experience meets every audience that lands on your asset pages.</p>
+                  </div>
+                </article>
+
+                <article class="bento-card">
+                  <div class="bento-visual bento-secure">
+                    <div class="bento-secure__canvas-wrap" aria-hidden="true">
+                      <canvas class="bento-secure__canvas" data-secure-canvas></canvas>
+                    </div>
+                    <div class="bento-secure__center" aria-hidden="true">
+                      <svg class="bento-secure__shield" viewBox="0 0 119 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.8" d="M117.725 81.2252C117.725 117.729 92.1721 135.981 61.8008 146.567C60.2104 147.106 58.4828 147.08 56.9092 146.494C26.4649 135.981 0.912109 117.729 0.912109 81.2252V30.1196C0.912109 28.1833 1.6813 26.3263 3.05047 24.9571C4.41963 23.588 6.27662 22.8188 8.21291 22.8188C22.8145 22.8188 41.0665 14.0578 53.7699 2.96059C55.3166 1.63914 57.2842 0.913086 59.3185 0.913086C61.3528 0.913086 63.3204 1.63914 64.8671 2.96059C77.6435 14.1308 95.8225 22.8188 110.424 22.8188C112.36 22.8188 114.217 23.588 115.587 24.9571C116.956 26.3263 117.725 28.1833 117.725 30.1196V81.2252Z" fill="rgba(230,57,70,0.10)" stroke="url(#secureStroke1)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path opacity="0.8" d="M107.99 80.0097C107.99 110.43 86.6965 125.64 61.387 134.462C60.0617 134.911 58.6221 134.889 57.3108 134.401C31.9405 125.64 10.6465 110.43 10.6465 80.0097V37.4217C10.6465 35.8082 11.2875 34.2607 12.4284 33.1197C13.5694 31.9787 15.1169 31.3377 16.7305 31.3377C28.8985 31.3377 44.1085 24.0369 54.6946 14.7893C55.9836 13.6881 57.6232 13.083 59.3185 13.083C61.0138 13.083 62.6534 13.6881 63.9423 14.7893C74.5893 24.0978 89.7385 31.3377 101.906 31.3377C103.52 31.3377 105.068 31.9787 106.209 33.1197C107.349 34.2607 107.99 35.8082 107.99 37.4217V80.0097Z" fill="rgba(230,57,70,0.08)" stroke="url(#secureStroke2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path opacity="0.6" d="M96.7589 78.6081C96.7589 102.008 80.3789 113.708 60.9101 120.494C59.8906 120.84 58.7832 120.823 57.7745 120.447C38.2589 113.708 21.8789 102.008 21.8789 78.6081V45.8481C21.8789 44.6069 22.372 43.4165 23.2496 42.5388C24.1273 41.6612 25.3177 41.1681 26.5589 41.1681C35.9189 41.1681 47.6189 35.5521 55.7621 28.4385C56.7536 27.5914 58.0148 27.126 59.3189 27.126C60.623 27.126 61.8842 27.5914 62.8757 28.4385C71.0657 35.5989 82.7189 41.1681 92.0789 41.1681C93.3201 41.1681 94.5105 41.6612 95.3882 42.5388C96.2658 43.4165 96.7589 44.6069 96.7589 45.8481V78.6081Z" fill="rgba(230,57,70,0.07)" stroke="url(#secureStroke3)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M84.2774 77.0499C84.2774 92.6499 73.3574 100.45 60.3782 104.974C59.6986 105.204 58.9603 105.193 58.2878 104.943C45.2774 100.45 34.3574 92.6499 34.3574 77.0499V55.2099C34.3574 54.3824 34.6861 53.5889 35.2712 53.0037C35.8564 52.4186 36.6499 52.0899 37.4774 52.0899C43.7174 52.0899 51.5174 48.3459 56.9462 43.6035C57.6072 43.0388 58.448 42.7285 59.3174 42.7285C60.1868 42.7285 61.0276 43.0388 61.6886 43.6035C67.1486 48.3771 74.9174 52.0899 81.1574 52.0899C81.9849 52.0899 82.7785 52.4186 83.3636 53.0037C83.9487 53.5889 84.2774 54.3824 84.2774 55.2099V77.0499Z" fill="#111722"></path>
+                        <defs>
+                          <linearGradient id="secureStroke1" x1="59.3" y1="0.9" x2="59.3" y2="146.9" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="var(--accent)"></stop><stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                          </linearGradient>
+                          <linearGradient id="secureStroke2" x1="59.3" y1="13.1" x2="59.3" y2="134.8" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="var(--accent)"></stop><stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                          </linearGradient>
+                          <linearGradient id="secureStroke3" x1="59.3" y1="27.1" x2="59.3" y2="120.7" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="var(--accent)"></stop><stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div class="bento-secure__vignette" aria-hidden="true"></div>
+                  </div>
+                  <div class="bento-body">
+                    <h3>Trading-grade reliability</h3>
+                    <p>Powered by Quadcode infrastructure — the same backbone running regulated, real-money platforms with millions of active traders. SLA-grade uptime, low-latency feeds.</p>
+                  </div>
+                </article>
+              </div>
+
+              <!-- ─── COL 2: coverage + speed + context ─────────────────────── -->
+              <div class="bento-col">
+                <article class="bento-card bento-balance-card">
+                  <div class="bento-visual">
+                    <div class="bento-balance__chart-wrap">
+                      <div class="bento-balance__days"><span>MO</span><span>TU</span><span>WE</span><span>TH</span><span>FR</span><span>SA</span><span>SU</span></div>
+                      <div class="bento-balance__chart" aria-hidden="true">
+                        <svg viewBox="0 0 620 170" preserveAspectRatio="none">
+                          <defs>
+                            <linearGradient id="balanceFillGrad" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.22"/>
+                              <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+                            </linearGradient>
+                          </defs>
+                          <path d="M0,95 C45,78 75,66 115,74 C160,84 185,116 230,102 C275,86 305,34 345,24 C390,14 430,94 470,88 C515,82 548,42 620,74 L620,170 L0,170 Z" fill="url(#balanceFillGrad)"/>
+                          <path d="M0,95 C45,78 75,66 115,74 C160,84 185,116 230,102 C275,86 305,34 345,24 C390,14 430,94 470,88 C515,82 548,42 620,74" fill="none" stroke="#1a2335" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bento-balance__body">
+                    <p class="bento-balance__label">Asset coverage</p>
+                    <p class="bento-balance__value">1,200+ instruments</p>
+                    <p class="bento-balance__desc">Forex · Stocks · Crypto · Indices · Commodities — all served from one reliable feed, no patching data sources together.</p>
+                  </div>
+                </article>
+
+                <article class="bento-card bento-critical-card">
+                  <div class="bento-critical">
+                    <h3><strong>Real-time</strong> by default</h3>
+                    <span class="bento-critical__icon" aria-hidden="true">
+                      <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M13 2 3 14h7l-1 8 11-13h-7l1-7z" />
+                      </svg>
+                    </span>
+                  </div>
+                </article>
+
+                <article class="bento-card">
+                  <div class="bento-visual bento-feed" data-bento-feed>
+                    <div class="bento-feed__viewport">
+                      <div class="bento-feed__track">
+                        <div class="bento-feed__item" data-feed-item><span class="bento-feed__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h12"/></svg></span><span class="bento-feed__content"><strong>News on chart</strong><span>Live headlines</span></span></div>
+                        <div class="bento-feed__item" data-feed-item><span class="bento-feed__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><span class="bento-feed__content"><strong>Macro events</strong><span>Economic calendar</span></span></div>
+                        <div class="bento-feed__item" data-feed-item><span class="bento-feed__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12h4l3-9 6 18 3-9h4"/></svg></span><span class="bento-feed__content"><strong>Market movers</strong><span>Top gainers / losers</span></span></div>
+                        <div class="bento-feed__item" data-feed-item><span class="bento-feed__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h12"/></svg></span><span class="bento-feed__content"><strong>News on chart</strong><span>Live headlines</span></span></div>
+                        <div class="bento-feed__item" data-feed-item><span class="bento-feed__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><span class="bento-feed__content"><strong>Macro events</strong><span>Economic calendar</span></span></div>
+                        <div class="bento-feed__item" data-feed-item><span class="bento-feed__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12h4l3-9 6 18 3-9h4"/></svg></span><span class="bento-feed__content"><strong>Market movers</strong><span>Top gainers / losers</span></span></div>
+                      </div>
+                    </div>
+                    <div class="bento-feed__fade bento-feed__fade--top" aria-hidden="true"></div>
+                    <div class="bento-feed__fade bento-feed__fade--bottom" aria-hidden="true"></div>
+                  </div>
+                  <div class="bento-body">
+                    <h3>Beyond just price</h3>
+                    <p>News on chart, macro calendar and market movers — show users the <em>why</em> behind every move so they don't bounce to a third-party site for context.</p>
+                  </div>
+                </article>
+              </div>
+
+              <!-- ─── COL 3: conversion + scale ──────────────────────────── -->
+              <div class="bento-col">
+                <article class="bento-card">
+                  <div class="bento-visual bento-convert">
+                    <div class="bento-convert__lane bento-convert__lane--top">
+                      <div class="bento-convert__track">
+                        <div class="bento-convert__item"><span class="bento-convert__avatar"><img src="https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-1.png" alt="Visitor avatar"></span><span class="bento-convert__txt"><strong>Page view</strong><span>BTC / USD</span></span></div>
+                        <div class="bento-convert__item"><span class="bento-convert__avatar"><img src="https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-2.png" alt="Visitor avatar"></span><span class="bento-convert__txt"><strong>Page view</strong><span>EUR / USD</span></span></div>
+                        <div class="bento-convert__item"><span class="bento-convert__avatar"><img src="https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-3.png" alt="Visitor avatar"></span><span class="bento-convert__txt"><strong>Page view</strong><span>S&amp;P 500</span></span></div>
+                        <div class="bento-convert__item"><span class="bento-convert__avatar"><img src="https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-4.png" alt="Visitor avatar"></span><span class="bento-convert__txt"><strong>Page view</strong><span>AAPL</span></span></div>
+                        <div class="bento-convert__item"><span class="bento-convert__avatar"><img src="https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-1.png" alt="Visitor avatar"></span><span class="bento-convert__txt"><strong>Page view</strong><span>BTC / USD</span></span></div>
+                        <div class="bento-convert__item"><span class="bento-convert__avatar"><img src="https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-2.png" alt="Visitor avatar"></span><span class="bento-convert__txt"><strong>Page view</strong><span>EUR / USD</span></span></div>
+                        <div class="bento-convert__item"><span class="bento-convert__avatar"><img src="https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-3.png" alt="Visitor avatar"></span><span class="bento-convert__txt"><strong>Page view</strong><span>S&amp;P 500</span></span></div>
+                        <div class="bento-convert__item"><span class="bento-convert__avatar"><img src="https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-4.png" alt="Visitor avatar"></span><span class="bento-convert__txt"><strong>Page view</strong><span>AAPL</span></span></div>
+                      </div>
+                    </div>
+
+                    <div class="bento-convert__center">
+                      <div class="bento-convert__logo" aria-label="Quadcode — Trading Dashboard for Business">
+                        <img class="bento-convert__logo-img" src="./logos/quadcode-wordmark.svg" alt="Quadcode" />
+                        <span class="bento-convert__logo-divider" aria-hidden="true">|</span>
+                        <span class="bento-convert__logo-product">Trading&nbsp;Dashboard</span>
+                      </div>
+                    </div>
+
+                    <div class="bento-convert__lane bento-convert__lane--bottom">
+                      <div class="bento-convert__track bento-convert__track--delay">
+                        <div class="bento-convert__item"><span class="bento-convert__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="bento-convert__txt"><strong>Account created</strong><span>+1 trader</span></span></div>
+                        <div class="bento-convert__item"><span class="bento-convert__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="bento-convert__txt"><strong>First Time Deposit</strong><span>$279</span></span></div>
+                        <div class="bento-convert__item"><span class="bento-convert__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="bento-convert__txt"><strong>Account created</strong><span>+1 trader</span></span></div>
+                        <div class="bento-convert__item"><span class="bento-convert__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="bento-convert__txt"><strong>First Time Deposit</strong><span>$325</span></span></div>
+                        <div class="bento-convert__item"><span class="bento-convert__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="bento-convert__txt"><strong>Account created</strong><span>+1 trader</span></span></div>
+                        <div class="bento-convert__item"><span class="bento-convert__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="bento-convert__txt"><strong>First Time Deposit</strong><span>$279</span></span></div>
+                        <div class="bento-convert__item"><span class="bento-convert__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="bento-convert__txt"><strong>Account created</strong><span>+1 trader</span></span></div>
+                        <div class="bento-convert__item"><span class="bento-convert__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="bento-convert__txt"><strong>First Time Deposit</strong><span>$325</span></span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bento-body">
+                    <h3>Lift the metrics that matter</h3>
+                    <p>Better charts mean longer asset-page sessions, deeper engagement and a measurable lift in registrations, FTDs and trading activity.</p>
+                  </div>
+                </article>
+
+                <article class="bento-card">
+                  <div class="bento-visual bento-rocket">
+                    <div class="bento-rocket__center">
+                      <div class="bento-rocket__circle">
+                        <div class="bento-rocket__icon" aria-hidden="true">
+                          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bento-body">
+                    <h3>Embed today, white-label tomorrow</h3>
+                    <p>Drop the widget on an asset page in days. Graduate to a full white-label SDK with deeper UI control whenever your roadmap calls for it.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ======================== INTEGRATION OPTIONS ======================== -->
+      <section class="section section--alt" id="integration">
+        <div class="container">
+          <header class="section__header reveal">
+            <span class="section__eyebrow">Integration options</span>
+            <h2 class="section__title">Two paths. Same product DNA.</h2>
+            <p class="section__lead">
+              Pick the integration model that matches your product stage. Switch lanes when
+              you're ready — the underlying charting engine stays the same.
+            </p>
+          </header>
+
+          <div class="tiers tiers--overlap">
+            <article class="tier reveal">
+              <header class="tier__head">
+                <h3 class="tier__title">Embedded widget</h3>
+                <p class="tier__desc">
+                  Best for asset pages, research portals and MVP launches that need fast embedded
+                  market charts.
+                </p>
+              </header>
+              <ul class="tier__list">
+                <li>One-line embed</li>
+                <li>Hosted chart experience</li>
+                <li>Theme customization</li>
+                <li>Configurable controls</li>
+                <li>Lower engineering effort</li>
+              </ul>
+              <a class="tier__cta tier__cta--outline" href="#demo" data-open-modal>Request access</a>
+            </article>
+
+            <article class="tier tier--featured reveal">
+              <header class="tier__head">
+                <h3 class="tier__title">White-label SDK</h3>
+                <p class="tier__desc">
+                  For trading platforms and brokers that need deeper control over layout, data and
+                  branding.
+                </p>
+              </header>
+              <ul class="tier__list">
+                <li>Deeper frontend integration</li>
+                <li>More UI control</li>
+                <li>White-label experience</li>
+                <li>Custom data feed options</li>
+                <li>SDK access on request</li>
+              </ul>
+              <a class="tier__cta tier__cta--on-dark" href="#demo" data-open-modal>Talk to us</a>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- ======================== EARLY ACCESS ======================== -->
+      <section class="section section--narrow section--early-cta" id="early-access">
+        <div class="container">
+          <div class="early early--stack reveal">
+            <h2 class="early__title">Launch market charts without building the infrastructure.</h2>
+            <p class="early__lead">
+              Get early access to a white-label trading dashboard built for brokers and fintech platforms.
+              Connect real market data, customize the experience, and bring professional charting into your
+              product faster.
+            </p>
+            <a class="early__btn" href="#demo" data-open-modal>Get early access</a>
+
+            <!-- Market ribbon: 3 staggered ticker rows (SVG marks © respective owners; illustrative only). -->
+            <div class="logo-ribbon" aria-hidden="true">
+              <div class="logo-ribbon__row logo-ribbon__row--fwd">
+                <div class="logo-ribbon__track">
+                  <div class="logo-ribbon__group">
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/nvidia.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">NVIDIA</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/google.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Google</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/tesla.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Tesla</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/apple.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Apple</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/amazon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Amazon</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/meta.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Meta</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/amd.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">AMD</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/netflix.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Netflix</span></span>
+                  </div>
+                  <div class="logo-ribbon__group">
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/nvidia.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">NVIDIA</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/google.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Google</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/tesla.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Tesla</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/apple.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Apple</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/amazon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Amazon</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/meta.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Meta</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/amd.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">AMD</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/netflix.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Netflix</span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="logo-ribbon__row logo-ribbon__row--rev logo-ribbon__row--off-a">
+                <div class="logo-ribbon__track">
+                  <div class="logo-ribbon__group">
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/bitcoin.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Bitcoin</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/ethereum.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Ethereum</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/solana.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Solana</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/tether.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Tether</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/coinbase.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Coinbase</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/binance.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Binance</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/okx.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">OKX</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/microstrategy.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">MicroStrategy</span></span>
+                  </div>
+                  <div class="logo-ribbon__group">
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/bitcoin.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Bitcoin</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/ethereum.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Ethereum</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/solana.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Solana</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/tether.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Tether</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/coinbase.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Coinbase</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/binance.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Binance</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/okx.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">OKX</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/microstrategy.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">MicroStrategy</span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="logo-ribbon__row logo-ribbon__row--fwd logo-ribbon__row--off-b">
+                <div class="logo-ribbon__track logo-ribbon__track--slow">
+                  <div class="logo-ribbon__group">
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/tradingview.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">TradingView</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/visa.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Visa</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/mastercard.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Mastercard</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/robinhood.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Robinhood</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/revolut.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Revolut</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/wellsfargo.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Wells Fargo</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/ripple.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Ripple</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/chainlink.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Chainlink</span></span>
+                  </div>
+                  <div class="logo-ribbon__group">
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/tradingview.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">TradingView</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/visa.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Visa</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/mastercard.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Mastercard</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/robinhood.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Robinhood</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/revolut.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Revolut</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/wellsfargo.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Wells Fargo</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/ripple.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Ripple</span></span>
+                    <span class="logo-pill"><span class="logo-pill__icon"><img src="./logos/ticker/chainlink.svg" alt="" width="24" height="24" loading="lazy" decoding="async" /></span><span class="logo-pill__name">Chainlink</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__row footer__row_first">
+          <div class="footer__divider"></div>
+
+          <div class="footer__row_first-top">
+            <div class="footer__nav">
+              <div class="footer__nav-column">
+                <div class="footer__nav-title">Solutions</div>
+                <div class="footer__nav-list">
+                  <div class="footer__nav-item"><a href="https://quadcode.com/turnkey-solution" class="footer__nav-link">Turnkey Solution</a></div>
+                  <div class="footer__nav-item"><a href="https://quadcode.com/white-label-broker" class="footer__nav-link">Forex / CFD</a></div>
+                  <div class="footer__nav-item"><a href="https://quadcode.com/#pricing" class="footer__nav-link">Plans &amp; Pricing</a></div>
+                </div>
+              </div>
+
+              <div class="footer__nav-column">
+                <div class="footer__nav-title">Modules</div>
+                <div class="footer__nav-list">
+                  <div class="footer__nav-item"><a href="https://quadcode.com/trading-platform" class="footer__nav-link">Trading Platform</a></div>
+                  <div class="footer__nav-item"><a href="https://quadcode.com/back-office" class="footer__nav-link">Back Office</a></div>
+                </div>
+              </div>
+
+              <div class="footer__nav-column">
+                <div class="footer__nav-title">Resources</div>
+                <div class="footer__nav-list">
+                  <div class="footer__nav-item"><a href="https://quadcode.com/marketing-guide" class="footer__nav-link">Marketing Guide</a></div>
+                  <div class="footer__nav-item"><a href="https://quadcode.com/blog" class="footer__nav-link">Blog</a></div>
+                  <div class="footer__nav-item"><a href="https://quadcode.com/video-tutorials" class="footer__nav-link">Video Tutorials</a></div>
+                </div>
+              </div>
+
+              <div class="footer__nav-column">
+                <div class="footer__nav-title">More</div>
+                <div class="footer__nav-list">
+                  <div class="footer__nav-item"><a href="https://quadcode.com/team" class="footer__nav-link">Team</a></div>
+                  <div class="footer__nav-item"><a href="https://quadcode.com/events" class="footer__nav-link">Events</a></div>
+                  <div class="footer__nav-item"><a href="https://quadcode.com/about" class="footer__nav-link">About</a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer__social">
+              <div class="social__title">We are on social</div>
+              <div class="social">
+                <div class="social__items">
+                  <div class="social__item"><a href="https://twitter.com/Quadcode_SaaS" target="_blank" rel="noopener noreferrer" aria-label="We are on the social network twitter"><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M11.9989%201.99902C14.7147%201.99902%2015.0553%202.0109%2016.1219%202.05957C17.1863%202.10812%2017.9136%202.2772%2018.5497%202.52441C19.2071%202.77991%2019.7644%203.12194%2020.3202%203.67773C20.876%204.23356%2021.218%204.79087%2021.4735%205.44824C21.7207%206.0843%2021.8898%206.81163%2021.9384%207.87598C21.987%208.94258%2021.9989%209.28318%2021.9989%2011.999C21.9989%2014.7148%2021.987%2015.0555%2021.9384%2016.1221C21.8898%2017.1864%2021.7207%2017.9137%2021.4735%2018.5498C21.218%2019.2072%2020.876%2019.7645%2020.3202%2020.3203C19.7644%2020.8761%2019.2071%2021.2181%2018.5497%2021.4736C17.9136%2021.7208%2017.1863%2021.8899%2016.1219%2021.9385C15.0553%2021.9871%2014.7147%2021.999%2011.9989%2021.999C9.28306%2021.999%208.94246%2021.9871%207.87585%2021.9385C6.81151%2021.8899%206.08418%2021.7208%205.44812%2021.4736C4.79075%2021.2181%204.23344%2020.8761%203.67761%2020.3203C3.12182%2019.7645%202.77979%2019.2072%202.52429%2018.5498C2.27708%2017.9137%202.108%2017.1864%202.05945%2016.1221C2.01078%2015.0555%201.9989%2014.7148%201.9989%2011.999C1.9989%209.28318%202.01078%208.94258%202.05945%207.87598C2.108%206.81163%202.27708%206.0843%202.52429%205.44824C2.77979%204.79086%203.12182%204.23357%203.67761%203.67773C4.23345%203.12194%204.79074%202.77991%205.44812%202.52441C6.08418%202.2772%206.81151%202.10812%207.87585%202.05957C8.94246%202.0109%209.28306%201.99902%2011.9989%201.99902ZM6.02625%205.14941C5.69855%205.14941%205.39805%205.33274%205.24792%205.62402C5.09805%205.91538%205.12298%206.26643%205.31335%206.5332L9.62488%2012.5693L5.39539%2016.9561C5.06028%2017.304%205.07013%2017.8579%205.41785%2018.1934C5.76582%2018.5288%206.32058%2018.5189%206.65613%2018.1709L10.66%2014.0186L13.5555%2018.0723C13.7198%2018.3021%2013.9849%2018.4384%2014.2675%2018.4385H17.9764C18.3042%2018.4384%2018.6047%2018.2553%2018.7548%2017.9639C18.9047%2017.6724%2018.8789%2017.3215%2018.6884%2017.0547L14.0262%2010.5273L17.7821%206.63281C18.1176%206.28484%2018.1077%205.73008%2017.7596%205.39453C17.4118%205.05927%2016.8579%205.06929%2016.5223%205.41699L12.9911%209.0791L10.4471%205.51562C10.2828%205.28573%2010.0169%205.14941%209.73425%205.14941H6.02625ZM9.28406%206.90039L16.2753%2016.6885H14.7177L7.72644%206.90039H9.28406Z'%20fill='%231B1C1D'/%3e%3c/svg%3e" alt="X (Twitter)"></a></div>
+                  <div class="social__item"><a href="https://www.facebook.com/Quadcode-108315268769590" target="_blank" rel="noopener noreferrer" aria-label="We are on the social network facebook"><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M21.9978%2011.564C21.9978%205.7534%2017.2968%201.04297%2011.4978%201.04297C5.69881%201.04297%200.997803%205.7534%200.997803%2011.564C0.997803%2016.8154%204.8375%2021.168%209.85718%2021.9573V14.6053H7.19116V11.564H9.85718V9.2461C9.85718%206.60926%2011.4248%205.15275%2013.8232%205.15275C14.972%205.15275%2016.1736%205.35824%2016.1736%205.35824V7.94741H14.8496C13.5452%207.94741%2013.1384%208.75841%2013.1384%209.59044V11.564H16.0505L15.585%2014.6053H13.1384V21.9573C18.1581%2021.168%2021.9978%2016.8154%2021.9978%2011.564Z'%20fill='%231B1C1D'/%3e%3c/svg%3e" alt="Facebook"></a></div>
+                  <div class="social__item"><a href="https://www.linkedin.com/company/quadcode-saas/" target="_blank" rel="noopener noreferrer" aria-label="We are on the social network linkedin"><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M11.999%201.99902C14.7148%201.99902%2015.0555%202.0109%2016.1221%202.05957C17.1864%202.10812%2017.9137%202.2772%2018.5498%202.52441C19.2072%202.77991%2019.7645%203.12194%2020.3203%203.67773C20.8761%204.23356%2021.2181%204.79087%2021.4736%205.44824C21.7208%206.0843%2021.8899%206.81163%2021.9385%207.87598C21.9871%208.94258%2021.999%209.28318%2021.999%2011.999C21.999%2014.7148%2021.9871%2015.0555%2021.9385%2016.1221C21.8899%2017.1864%2021.7208%2017.9137%2021.4736%2018.5498C21.2181%2019.2072%2020.8761%2019.7645%2020.3203%2020.3203C19.7645%2020.8761%2019.2072%2021.2181%2018.5498%2021.4736C17.9137%2021.7208%2017.1864%2021.8899%2016.1221%2021.9385C15.0555%2021.9871%2014.7148%2021.999%2011.999%2021.999C9.28318%2021.999%208.94258%2021.9871%207.87598%2021.9385C6.81163%2021.8899%206.0843%2021.7208%205.44824%2021.4736C4.79087%2021.2181%204.23356%2020.8761%203.67773%2020.3203C3.12194%2019.7645%202.77991%2019.2072%202.52441%2018.5498C2.2772%2017.9137%202.10812%2017.1864%202.05957%2016.1221C2.0109%2015.0555%201.99902%2014.7148%201.99902%2011.999C1.99902%209.28318%202.0109%208.94258%202.05957%207.87598C2.10812%206.81163%202.2772%206.0843%202.52441%205.44824C2.77991%204.79086%203.12194%204.23357%203.67773%203.67773C4.23357%203.12194%204.79086%202.77991%205.44824%202.52441C6.0843%202.2772%206.81163%202.10812%207.87598%202.05957C8.94258%202.0109%209.28318%201.99902%2011.999%201.99902ZM6.69141%209.54199V17.1807H9.06738V9.54199H6.69141ZM15.1084%209.35156C13.9551%209.35156%2013.1799%209.98587%2012.8643%2010.5859H12.833V9.54199H10.5576V17.1807H12.9268V13.4053C12.9268%2012.4083%2013.1143%2011.4425%2014.3486%2011.4424C15.5675%2011.4424%2015.583%2012.5833%2015.583%2013.4678V17.1807H17.9551V12.9893C17.9551%2010.9328%2017.5117%209.35162%2015.1084%209.35156ZM7.87891%205.75098C7.11654%205.75117%206.50107%206.36671%206.50098%207.12598C6.50098%207.88533%207.11648%208.50078%207.87891%208.50098C8.63837%208.50098%209.25488%207.88232%209.25488%207.12598C9.25479%206.36659%208.63832%205.75098%207.87891%205.75098Z'%20fill='%231B1C1D'/%3e%3c/svg%3e" alt="LinkedIn"></a></div>
+                  <div class="social__item"><a href="https://www.instagram.com/quadcode_software/" target="_blank" rel="noopener noreferrer" aria-label="We are on the social network instagram"><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M11.9989%201.99902C9.28306%201.99902%208.94252%202.01054%207.87591%202.0592C6.81153%202.10775%206.0846%202.27681%205.44852%202.52403C4.79093%202.77955%204.23326%203.12148%203.67729%203.67741C3.12136%204.23338%202.77943%204.79106%202.52391%205.44864C2.27669%206.08472%202.10763%206.81165%202.05908%207.87604C2.01041%208.94264%201.9989%209.28319%201.9989%2011.999C1.9989%2014.7149%202.01041%2015.0554%202.05908%2016.122C2.10763%2017.1864%202.27669%2017.9133%202.52391%2018.5494C2.77943%2019.207%203.12136%2019.7647%203.67729%2020.3206C4.23326%2020.8766%204.79093%2021.2185%205.44852%2021.4741C6.0846%2021.7212%206.81153%2021.8903%207.87591%2021.9388C8.94252%2021.9875%209.28306%2021.999%2011.9989%2021.999C14.7147%2021.999%2015.0553%2021.9875%2016.1219%2021.9388C17.1863%2021.8903%2017.9132%2021.7212%2018.5493%2021.4741C19.2069%2021.2185%2019.7645%2020.8766%2020.3205%2020.3206C20.8764%2019.7647%2021.2184%2019.207%2021.4739%2018.5494C21.7211%2017.9133%2021.8902%2017.1864%2021.9387%2016.122C21.9874%2015.0554%2021.9989%2014.7149%2021.9989%2011.999C21.9989%209.28319%2021.9874%208.94264%2021.9387%207.87604C21.8902%206.81165%2021.7211%206.08472%2021.4739%205.44864C21.2184%204.79106%2020.8764%204.23338%2020.3205%203.67741C19.7645%203.12148%2019.2069%202.77955%2018.5493%202.52403C17.9132%202.27681%2017.1863%202.10775%2016.1219%202.0592C15.0553%202.01054%2014.7147%201.99902%2011.9989%201.99902ZM11.998%2015.2439C10.2054%2015.2439%208.75232%2013.7908%208.75232%2011.9983C8.75232%2010.2058%2010.2054%208.75265%2011.998%208.75265C13.7904%208.75265%2015.2436%2010.2058%2015.2436%2011.9983C15.2436%2013.7908%2013.7904%2015.2439%2011.998%2015.2439ZM11.9979%206.99986C9.23641%206.99986%206.99786%209.23842%206.99786%2011.9999C6.99786%2014.7613%209.23641%2016.9999%2011.9979%2016.9999C14.7593%2016.9999%2016.9979%2014.7613%2016.9979%2011.9999C16.9979%209.23842%2014.7593%206.99986%2011.9979%206.99986ZM17.9979%207.00002C17.9979%207.55231%2017.5502%208%2016.9979%208C16.4456%208%2015.9979%207.55231%2015.9979%207.00002C15.9979%206.44773%2016.4456%206%2016.9979%206C17.5502%206%2017.9979%206.44773%2017.9979%207.00002Z'%20fill='%231B1C1D'/%3e%3c/svg%3e" alt="Instagram"></a></div>
+                  <div class="social__item"><a href="https://t.me/quadcode_solutions" target="_blank" rel="noopener noreferrer" aria-label="We are on the social network telegram"><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M12.25%202.25C14.9658%202.25%2015.3064%202.26188%2016.373%202.31055C17.4374%202.3591%2018.1647%202.52818%2018.8008%202.77539C19.4582%203.03089%2020.0155%203.37292%2020.5713%203.92871C21.1271%204.48454%2021.4691%205.04184%2021.7246%205.69922C21.9718%206.33528%2022.1409%207.06261%2022.1895%208.12695C22.2381%209.19356%2022.25%209.53416%2022.25%2012.25C22.25%2014.9658%2022.2381%2015.3064%2022.1895%2016.373C22.1409%2017.4374%2021.9718%2018.1647%2021.7246%2018.8008C21.4691%2019.4582%2021.1271%2020.0155%2020.5713%2020.5713C20.0155%2021.1271%2019.4582%2021.4691%2018.8008%2021.7246C18.1647%2021.9718%2017.4374%2022.1409%2016.373%2022.1895C15.3064%2022.2381%2014.9658%2022.25%2012.25%2022.25C9.53416%2022.25%209.19356%2022.2381%208.12695%2022.1895C7.06261%2022.1409%206.33528%2021.9718%205.69922%2021.7246C5.04184%2021.4691%204.48454%2021.1271%203.92871%2020.5713C3.37292%2020.0155%203.03089%2019.4582%202.77539%2018.8008C2.52818%2018.1647%202.3591%2017.4374%202.31055%2016.373C2.26188%2015.3064%202.25%2014.9658%202.25%2012.25C2.25%209.53416%202.26188%209.19356%202.31055%208.12695C2.3591%207.06261%202.52818%206.33528%202.77539%205.69922C3.03089%205.04184%203.37292%204.48455%203.92871%203.92871C4.48455%203.37292%205.04184%203.03089%205.69922%202.77539C6.33528%202.52818%207.06261%202.3591%208.12695%202.31055C9.19356%202.26188%209.53416%202.25%2012.25%202.25ZM16.9434%208.0957C16.5638%208.10175%2015.9821%208.30172%2013.1787%209.44336C12.1976%209.84311%2010.2352%2010.6721%207.29199%2011.9287C6.81559%2012.1147%206.56524%2012.2975%206.54102%2012.4756C6.49881%2012.8178%207.00104%2012.9251%207.63281%2013.127C8.14743%2013.2912%208.83972%2013.4822%209.20117%2013.4902C9.52821%2013.4981%209.89213%2013.3659%2010.2959%2013.0947C13.0454%2011.2761%2014.4649%2010.3557%2014.5537%2010.3359C14.6183%2010.3221%2014.7052%2010.3041%2014.7637%2010.3555C14.8222%2010.4069%2014.8156%2010.5045%2014.8096%2010.5303C14.7571%2010.7414%2012.1822%2013.0389%2012.0283%2013.1934C11.459%2013.7712%2010.8123%2014.1264%2011.8096%2014.7695C12.6715%2015.3275%2013.1745%2015.6831%2014.0625%2016.2529C14.6298%2016.6171%2015.0767%2017.0505%2015.6621%2016.9971C15.9324%2016.9711%2016.2113%2016.724%2016.3525%2015.9824C16.6856%2014.229%2017.3437%2010.4326%2017.4951%208.86719C17.5092%208.73073%2017.4906%208.55462%2017.4785%208.47754C17.4664%208.40038%2017.4378%208.29202%2017.335%208.21094C17.2138%208.11596%2017.0261%208.09373%2016.9434%208.0957Z'%20fill='%231B1C1D'/%3e%3c/svg%3e" alt="Telegram"></a></div>
+                  <div class="social__item"><a href="https://www.youtube.com/@quadcode_saas" target="_blank" rel="noopener noreferrer" aria-label="We are on the social network youtube"><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M12%203.42871C12.0206%203.42871%2019.5073%203.42962%2021.376%203.93066C22.4092%204.20725%2023.2215%205.01948%2023.498%206.05273C23.9977%207.92359%2024%2011.8291%2024%2011.8291C24%2011.8291%2023.9998%2015.7344%2023.498%2017.6055C23.2215%2018.6387%2022.4092%2019.451%2021.376%2019.7275C19.5072%2020.2286%2012.0206%2020.2295%2012%2020.2295C12%2020.2295%204.49551%2020.2293%202.62402%2019.7275C1.59078%2019.451%200.778542%2018.6387%200.501953%2017.6055C0.000236571%2015.7344%200%2011.8291%200%2011.8291C0%2011.8291%200.000278652%207.92359%200.501953%206.05273C0.778542%205.01948%201.59078%204.20725%202.62402%203.93066C4.4955%203.42894%2012%203.42871%2012%203.42871ZM9.59766%2015.4287L15.833%2011.8291L9.59766%208.22949V15.4287Z'%20fill='%231B1C1D'/%3e%3c/svg%3e" alt="YouTube"></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__row footer__row_middle">
+          <div class="footer__text">
+            <p>All of the information on this website is protected by copyright and is legally owned by Quadcode as its intellectual property (hereinafter - Intellectual Property). You may not copy, link, publish, upload to external resources, transmit, distribute or reproduce by any means or in any form any portion of this website, including any text, images, audio and video materials or any other Intellectual Property without prior written consent of Quadcode.</p>
+            <p>Certain names, logos and signs featured on this website are registered trademarks. Quadcode logo is a registered trademark in the European Union, Russian Federation, Hong Kong and many other countries.</p>
+            <p>The fact that Quadcode has not included any product, feature, service name or logo to the list of its Intellectual Property does not waive any intellectual property rights that Quadcode or its affiliates, partners and (or) licensees have established in any such product, feature, service name or logo, all of which intellectual property rights are expressly reserved. Quadcode trademarks, service marks, trade names, corporate identity are important company's corporate assets and Quadcode requires that they be used properly. In order to preserve its reputation and protect its trademarks and other Intellectual Property, Quadcode diligently guards such objects against any violation.</p>
+          </div>
+        </div>
+
+        <div class="footer__title">
+          <img src="./assets/footer_title-D_lvKiFF.svg" alt="Quadcode Brokerage Solutions" class="footer__title-image">
+        </div>
+
+        <div class="footer__row footer__row_last">
+          <div class="footer__copyright">© Copyright Quadcode 2026</div>
+          <div class="footer__items">
+            <div class="footer__item"><a href="https://quadcode.com/cookie-policy" class="footer__link">Cookies policy</a></div>
+            <div class="footer__item"><a href="https://quadcode.com/privacy-policy" class="footer__link">Privacy policy</a></div>
+            <div class="footer__item"><a href="https://quadcode.com/terms-and-conditions" class="footer__link">Terms &amp; Conditions</a></div>
+            <div class="footer__item"><a href="https://quadcode.com/vulnerability-disclosure-policy" class="footer__link">Vulnerability disclosure policy</a></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ======================== MODAL (compact demo) ======================== -->
+    <div class="modal" data-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal__panel">
+        <button class="modal__close" type="button" data-close-modal aria-label="Close">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+            <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+          </svg>
+        </button>
+        <h3 id="modalTitle" class="modal__title">Request a demo</h3>
+        <p class="modal__lead">Quick form — we'll come back within 1 business day.</p>
+
+        <form class="form" data-form="modal-form" method="POST" novalidate>
+          <div class="form__row">
+            <label class="field">
+              <span class="field__label">Full name *</span>
+              <input type="text" name="name" autocomplete="name" required minlength="2" placeholder="Jane Cooper" />
+            </label>
+            <label class="field">
+              <span class="field__label">Work email *</span>
+              <input type="email" name="email" autocomplete="email" required placeholder="you@company.com" />
+            </label>
+          </div>
+          <label class="field">
+            <span class="field__label">Company</span>
+            <input type="text" name="company" autocomplete="organization" placeholder="Your company" />
+          </label>
+          <label class="field">
+            <span class="field__label">What are you building?</span>
+            <textarea name="message" rows="3" placeholder="Tell us briefly about your charting use case."></textarea>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="consent" required />
+            <span>
+              I agree to be contacted, and I've read the
+              <a href="https://quadcode.com/privacy-policy" target="_blank" rel="noopener">privacy policy</a>.
+            </span>
+          </label>
+          <div class="form__recaptcha-mount" data-recaptcha-mount></div>
+          <div class="form__actions">
+            <button type="submit" class="btn btn--primary" data-submit>Send request</button>
+            <p class="form__note" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

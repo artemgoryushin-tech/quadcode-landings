@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0a0d12"/>
+      <stop offset="1" stop-color="#171d28"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff3d4b"/>
+      <stop offset="1" stop-color="#c1121f"/>
+    </linearGradient>
+    <linearGradient id="chart" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(230,57,70,0.5)"/>
+      <stop offset="1" stop-color="rgba(230,57,70,0)"/>
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0V60" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Glow -->
+  <circle cx="1080" cy="120" r="280" fill="rgba(230,57,70,0.22)"/>
+  <circle cx="200" cy="540" r="260" fill="rgba(230,57,70,0.10)"/>
+
+  <!-- Logo + brand -->
+  <g transform="translate(80, 80)">
+    <rect x="0" y="0" width="56" height="56" rx="14" fill="url(#brand)"/>
+    <path d="M14 38 L24 26 L30 32 L44 18" stroke="#fff" stroke-width="3.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="44" cy="18" r="3.2" fill="#fff"/>
+    <text x="76" y="24" font-family="'Suisse Intl', Inter, sans-serif" font-weight="700" font-size="14" fill="rgba(255,255,255,0.6)" letter-spacing="2">QUADCODE</text>
+    <text x="76" y="48" font-family="'Suisse Intl', Inter, sans-serif" font-weight="700" font-size="22" fill="#ffffff">Trading Dashboard</text>
+  </g>
+
+  <!-- Headline -->
+  <text x="80" y="280" font-family="'Suisse Intl', Inter, sans-serif" font-weight="700" font-size="76" fill="#ffffff" letter-spacing="-2">Trading Dashboard</text>
+  <text x="80" y="360" font-family="'Suisse Intl', Inter, sans-serif" font-weight="700" font-size="76" font-style="italic" fill="url(#brand)" letter-spacing="-2">for Business</text>
+
+  <!-- Subline -->
+  <text x="80" y="420" font-family="'Suisse Intl', Inter, sans-serif" font-weight="500" font-size="26" fill="rgba(255,255,255,0.78)">White-label charts for brokers and fintech platforms.</text>
+
+  <!-- Chart preview -->
+  <g transform="translate(80, 470)">
+    <rect width="1040" height="120" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)"/>
+    <path d="M0,90 C80,80 140,60 220,68 C310,78 360,40 460,42 C560,46 620,18 720,22 C820,26 880,52 980,30 C1010,22 1030,28 1040,18 L1040,120 L0,120 Z" fill="url(#chart)"/>
+    <path d="M0,90 C80,80 140,60 220,68 C310,78 360,40 460,42 C560,46 620,18 720,22 C820,26 880,52 980,30 C1010,22 1030,28 1040,18" stroke="#e63946" stroke-width="2.5" fill="none"/>
+  </g>
+
+  <!-- CTA badge -->
+  <g transform="translate(960, 80)">
+    <rect width="160" height="40" rx="20" fill="rgba(230,57,70,0.18)" stroke="rgba(230,57,70,0.4)"/>
+    <text x="80" y="26" text-anchor="middle" font-family="'Suisse Intl', Inter, sans-serif" font-weight="600" font-size="14" fill="#ffb4ba">B2B � Early access</text>
+  </g>
+</svg>
