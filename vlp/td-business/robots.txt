@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://quadcode.com/trading-dashboard-business/sitemap.xml
