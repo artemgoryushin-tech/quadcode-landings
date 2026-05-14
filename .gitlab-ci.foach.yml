@@ -9,3 +9,5 @@ deploy:test:
     - cd /var/www/vercel-landings
     - git fetch
     - git reset --hard origin/dev
+    # Test server: base href change to foach domain
+    - find vlp -type f -name '*.html' -exec sed -i 's|<base href="https://quadcode.com|<base href="https://quadcode2.foach.site|g' {} +
