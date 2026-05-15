@@ -368,7 +368,8 @@
         left: 0;
         top: calc(100% + 8px);
         position: absolute;
-        width: 140px;
+        min-width: 220px;
+        width: max-content;
         background: rgb(255, 255, 255);
         border-radius: 20px;
         border: 1px solid #d4d8db;
@@ -418,7 +419,8 @@
 
       .lp-qc-lang .lang.svelte-bvm2rm.lang_active .lang__list.svelte-bvm2rm {
         max-height: 400px;
-        width: 140px;
+        min-width: 220px;
+        width: max-content;
         padding: 0;
         border-width: 1px;
         opacity: 1;
@@ -2908,7 +2910,7 @@
                       aria-haspopup="listbox"
                       aria-label="Language"
                     >
-                      <div class="lang__text svelte-bvm2rm">Kor</div>
+                      <div class="lang__text svelte-bvm2rm">한국어</div>
                       <div class="lang__icon svelte-bvm2rm">
                         <div class="lang__arrow lang__arrow-down svelte-bvm2rm"></div>
                         <div class="lang__arrow lang__arrow-up svelte-bvm2rm"></div>
@@ -2916,13 +2918,13 @@
                     </div>
                     <div class="lang__list svelte-bvm2rm" role="listbox" aria-label="Languages">
                       <div class="lang__inner svelte-bvm2rm">
-                        <a href="../" class=" svelte-bvm2rm">Eng</a>
-                        <a href="../ru/" class=" svelte-bvm2rm">Rus</a>
-                        <a href="../pt/" class=" svelte-bvm2rm">Por</a>
-                        <a href="../es/" class=" svelte-bvm2rm">Spa</a>
-                        <a href="../th/" class=" svelte-bvm2rm">Tha</a>
-                        <a href="../ko/" class="active svelte-bvm2rm">Kor</a>
-                        <a href="../vi/" class=" svelte-bvm2rm">Vie</a>
+                        <a href="../" class=" svelte-bvm2rm">English</a>
+                        <a href="../ru/" class=" svelte-bvm2rm">Русский</a>
+                        <a href="../es/" class=" svelte-bvm2rm">Español</a>
+                        <a href="../pt/" class=" svelte-bvm2rm">Português</a>
+                        <a href="../th/" class=" svelte-bvm2rm">ภาษาไทย</a>
+                        <a href="../vi/" class=" svelte-bvm2rm">Tiếng Việt</a>
+                        <a href="../ko/" class="active svelte-bvm2rm">한국어</a>
                       </div>
                     </div>
                   </div>
@@ -2996,24 +2998,24 @@
                   <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>금융 기업</span>
                   <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>트레이딩 교육자</span>
                   <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>제휴 팀</span>
-                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Introducing brokers</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>IB 파트너</span>
                   <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>금융 인플루언서</span>
                   <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>기업가</span>
                   <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>금융 기업</span>
                   <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>트레이딩 교육자</span>
                   <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>제휴 팀</span>
-                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Introducing brokers</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>IB 파트너</span>
                   <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>금융 인플루언서</span>
                 </div>
                 <div class="refer-marquee__row refer-marquee__row--reverse">
                   <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>제휴 팀</span>
-                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Introducing brokers</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>IB 파트너</span>
                   <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>금융 인플루언서</span>
                   <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>기업가</span>
                   <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>금융 기업</span>
                   <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>트레이딩 교육자</span>
                   <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>제휴 팀</span>
-                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>Introducing brokers</span>
+                  <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>IB 파트너</span>
                   <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>금융 인플루언서</span>
                   <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>기업가</span>
                   <span class="refer-marquee__pill"><span class="refer-marquee__pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>금융 기업</span>

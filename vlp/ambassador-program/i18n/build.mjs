@@ -7,8 +7,18 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const programRoot = path.join(__dirname, "..");
 const srcPath = path.join(programRoot, "index.html");
 
-const LANG_ORDER = ["en", "ru", "pt", "es", "th", "ko", "vi"];
-const LANG_LABEL = { en: "Eng", ru: "Rus", pt: "Por", es: "Spa", th: "Tha", ko: "Kor", vi: "Vie" };
+const LANG_ORDER = ["en", "ru", "es", "pt", "th", "vi", "ko"];
+
+/** Native language names — same on every locale page. */
+const LANG_LABEL = {
+  en: "English",
+  ru: "Русский",
+  es: "Español",
+  pt: "Português",
+  th: "ภาษาไทย",
+  vi: "Tiếng Việt",
+  ko: "한국어",
+};
 
 function buildSwitcher(locale, depth) {
   const link = (code) => {
