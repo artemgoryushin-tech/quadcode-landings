@@ -162,7 +162,7 @@ footer a:hover {
   min-height: min(720px, calc(100vh - 68px));
   padding: clamp(54px, 6vw, 78px) clamp(20px, 4vw, 64px) 54px;
   background:
-    url("/assets/dollar-percentage-bg.png") center / cover no-repeat,
+    var(--hero-background) center / cover no-repeat,
     radial-gradient(circle at 28% 30%, rgba(255, 45, 45, 0.08), transparent 30%),
     radial-gradient(circle at 82% 18%, rgba(17, 17, 22, 0.07), transparent 30%),
     linear-gradient(180deg, #fff 0%, #f6f7fa 100%);

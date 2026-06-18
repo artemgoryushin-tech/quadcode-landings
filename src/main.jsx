@@ -2,24 +2,30 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
 
+const basePath = import.meta.env.BASE_URL || "/";
+
+function assetPath(path) {
+  return `${basePath}${path.replace(/^\/+/, "")}`;
+}
+
 const videos = [
   {
     title: "Affiliate World floor",
     copy: "Find us inside the Bangkok event flow and plan the conversation before the rush.",
-    src: "/media/floor-view.mp4",
-    poster: "/posters/floor-view.jpg"
+    src: assetPath("media/floor-view.mp4"),
+    poster: assetPath("posters/floor-view.jpg")
   },
   {
     title: "Booth conversations",
     copy: "Talk through launch, acquisition and brokerage operations with the Quadcode team.",
-    src: "/media/booth-talk.mp4",
-    poster: "/posters/booth-talk.jpg"
+    src: assetPath("media/booth-talk.mp4"),
+    poster: assetPath("posters/booth-talk.jpg")
   },
   {
     title: "Live product talks",
     copy: "Bring your traffic questions, broker roadmap and market priorities to the booth.",
-    src: "/media/live-product-talk.mp4",
-    poster: "/posters/booth.jpg"
+    src: assetPath("media/live-product-talk.mp4"),
+    poster: assetPath("posters/booth.jpg")
   }
 ];
 
@@ -46,19 +52,19 @@ const prizeCards = [
   {
     title: "AirPods",
     label: "Audio prize",
-    src: "/assets/prize-airpods.png",
+    src: assetPath("assets/prize-airpods.png"),
     className: "airpods"
   },
   {
     title: "iPhone",
     label: "Headline prize",
-    src: "/assets/prize-iphone.png",
+    src: assetPath("assets/prize-iphone.png"),
     className: "iphone"
   },
   {
     title: "Apple Watch",
     label: "Wearable prize",
-    src: "/assets/prize-watch.png",
+    src: assetPath("assets/prize-watch.png"),
     className: "watch"
   }
 ];
@@ -154,7 +160,7 @@ function Header() {
   return (
     <header className="site-header">
       <a className="brand" href="#top" aria-label="Quadcode Brokerage Solutions home">
-        <img src="/assets/qbs_logo.png" alt="Quadcode Brokerage Solutions" />
+        <img src={assetPath("assets/qbs_logo.png")} alt="Quadcode Brokerage Solutions" />
       </a>
       <nav aria-label="Main navigation">
         <a href="#why-meet">Why meet</a>
@@ -168,12 +174,16 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="hero">
+    <section
+      id="top"
+      className="hero"
+      style={{ "--hero-background": `url("${assetPath("assets/dollar-percentage-bg.png")}")` }}
+    >
       <div className="hero-copy reveal">
         <div className="event-lockup" aria-label="Affiliate World Asia 2026">
           <img
             className="event-lockup-mark"
-            src="/assets/affiliate-world-logo-white.svg"
+            src={assetPath("assets/affiliate-world-logo-white.svg")}
             alt=""
             aria-hidden="true"
           />
@@ -181,7 +191,7 @@ function Hero() {
             Affiliate World Asia
             <img
               className="event-lockup-title"
-              src="/assets/affiliate-world-bangkok-title.svg"
+              src={assetPath("assets/affiliate-world-bangkok-title.svg")}
               alt="Bangkok"
             />
           </span>
@@ -217,10 +227,10 @@ function Hero() {
       </div>
 
       <div className="hero-media reveal" aria-label="Quadcode expo booth video">
-        <img className="hero-poster" src="/posters/floor-view.jpg" alt="" aria-hidden="true" />
+        <img className="hero-poster" src={assetPath("posters/floor-view.jpg")} alt="" aria-hidden="true" />
         <video
-          src="/media/hero-expo.mp4"
-          poster="/posters/floor-view.jpg"
+          src={assetPath("media/hero-expo.mp4")}
+          poster={assetPath("posters/floor-view.jpg")}
           muted
           playsInline
           loop
@@ -371,7 +381,7 @@ function RequestSection() {
   return (
     <section id="request" className="request-section">
       <div className="request-copy reveal">
-        <img src="/assets/qbs_logo_white.png" alt="Quadcode Brokerage Solutions" />
+        <img src={assetPath("assets/qbs_logo_white.png")} alt="Quadcode Brokerage Solutions" />
         <h2>Request a meeting at Affiliate World Asia.</h2>
         <p>
           Share your details and preferred time. Our team will review the request and confirm the slot manually before
