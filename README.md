@@ -64,6 +64,10 @@ This reads **`vlp/ambassador-program/index.html`** (source of truth for English 
 
 Landing for **Trading Dashboard for Business**: white-label market charts for brokers, trading platforms, and fintech apps (embeddable charting, brand customization, demo / lead flow). Single-language build; assets under **`vlp/td-business/assets/`** (fonts, hero imagery, logos, OG image, favicon).
 
+### Trading Traffic Meetup (`vlp/trading-traffic-meetup/`)
+
+BeBroker Trading Traffic Meetup page copied 1:1 by structure and adapted only at the brand layer: Quadcode fonts, red accent color, Quadcode logos, and favicon. Single-language static page with original event media and interactions preserved.
+
 ## Repository layout
 
 ```
@@ -76,8 +80,12 @@ vlp/
 │   ├── ru/ … vi/           # Localized index.html per locale
 │   ├── i18n/               # build + translation data (see above)
 │   └── assets/
-└── td-business/
+├── td-business/
+│   ├── index.html
+│   └── assets/
+└── trading-traffic-meetup/
     ├── index.html
+    ├── event-*.jpg / event-*.mp4
     └── assets/
 ```
 
