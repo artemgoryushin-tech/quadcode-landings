@@ -38,6 +38,22 @@
   padding: 0 24px;
 }
 
+.event-hero__meta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+}
+
+.event-hero__meta span:nth-child(2) {
+  justify-self: center;
+  text-align: center;
+}
+
+.event-hero__meta span:last-child {
+  justify-self: end;
+  text-align: right;
+}
+
 @media (max-width: 760px) {
   .event-shell {
     align-items: center;
@@ -56,5 +72,16 @@
   .event-shell .event-text-button--right {
     min-height: 38px;
     padding: 0 14px;
+  }
+
+  .event-hero__meta {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .event-hero__meta span:nth-child(2),
+  .event-hero__meta span:last-child {
+    justify-self: start;
+    text-align: left;
   }
 }
