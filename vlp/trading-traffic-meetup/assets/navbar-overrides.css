@@ -38,6 +38,27 @@
   padding: 0 24px;
 }
 
+.event-hero__cursor-card--brand {
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  background: #fffaf0;
+}
+
+.event-hero__cursor-card--brand img {
+  z-index: 1;
+  position: relative;
+  width: min(76%, 300px);
+  height: auto;
+  object-fit: contain;
+}
+
+.event-hero__cursor-card--brand::after {
+  background:
+    linear-gradient(180deg, transparent 58%, rgb(11 11 11 / 0.08)),
+    radial-gradient(circle at 78% 20%, rgb(230 35 52 / 0.12), transparent 34%);
+}
+
 @media (max-width: 760px) {
   .event-shell {
     align-items: center;
