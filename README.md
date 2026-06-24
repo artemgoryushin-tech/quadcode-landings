@@ -68,6 +68,10 @@ Landing for **Trading Dashboard for Business**: white-label market charts for br
 
 BeBroker Trading Traffic Meetup page copied 1:1 by structure and adapted only at the brand layer: Quadcode fonts, red accent color, Quadcode logos, and favicon. Single-language static page with original event media and interactions preserved.
 
+### Giveaway (`vlp/giveaway/`)
+
+BeBroker Giveaway page copied 1:1 by structure and adapted only at the brand layer: Quadcode fonts/assets, red accent color, Quadcode logos, favicon, and OG preview. Single-language static page with original giveaway layout and interactions preserved.
+
 ## Repository layout
 
 ```
@@ -83,9 +87,12 @@ vlp/
 ├── td-business/
 │   ├── index.html
 │   └── assets/
-└── trading-traffic-meetup/
+├── trading-traffic-meetup/
+│   ├── index.html
+│   ├── event-*.jpg / event-*.mp4
+│   └── assets/
+└── giveaway/
     ├── index.html
-    ├── event-*.jpg / event-*.mp4
     └── assets/
 ```
 
