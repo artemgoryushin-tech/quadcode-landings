@@ -8,6 +8,10 @@ Static landing pages for Quadcode partner products and campaigns. Pages live und
 
 Landing for the content creator partnership: short-form video (TikTok, Reels, YouTube Shorts) about the white-label brokerage platform, with performance-based rewards.
 
+### Colombia Audience to Broker (`vlp/colombia-audience-to-broker/`)
+
+Bilingual Spanish / English B2B landing for Colombian IBs, trading academies, communities, affiliates, acquisition teams, and financial content creators considering a brokerage brand of their own. The self-contained Vite project includes the lead API handler and CRM attribution flow.
+
 ### Ambassador Program (`vlp/ambassador-program/`)
 
 Landing for the ambassador / referral partnership: introduce qualified brokerage leads, choose cash rewards or a branded brokerage offer.
@@ -79,6 +83,11 @@ vlp/
 ├── creator-program/
 │   ├── index.html
 │   └── assets/
+├── colombia-audience-to-broker/
+│   ├── src/
+│   ├── public/
+│   ├── api/
+│   └── package.json
 ├── ambassador-program/
 │   ├── index.html          # English (source for i18n build)
 │   ├── ru/ … vi/           # Localized index.html per locale
