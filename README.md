@@ -68,14 +68,7 @@ This reads **`vlp/ambassador-program/index.html`** (source of truth for English 
 
 Bilingual Bahasa Indonesia / English B2B landing for IBs, trading academies, communities, affiliates, acquisition teams, and financial content creators who want to turn their access to traders into a brokerage brand.
 
-This landing is a React/Vite project with the production base path `/vlp/indonesia-audience-to-broker/`. Bahasa Indonesia is served at `/id/`, English at `/en/`, and demo requests are validated and forwarded through the included `/api/leads` serverless endpoint.
-
-From the landing directory:
-
-```bash
-corepack pnpm install
-corepack pnpm build
-```
+The committed folder is the production-ready static Vite build. Bahasa Indonesia is served at the root and `/id/`, English at `/en/`, and demo requests are validated and forwarded through the root Vercel function mapped from the landing’s `/api/leads/` route.
 
 ### Trading Dashboard for Business (`vlp/td-business/`)
 
@@ -102,10 +95,10 @@ vlp/
 │   ├── en/                 # English direct URL
 │   └── assets/
 ├── indonesia-audience-to-broker/
-│   ├── src/
-│   ├── public/
-│   ├── api/
-│   └── package.json
+│   ├── index.html          # Bahasa Indonesia default
+│   ├── id/                 # Bahasa Indonesia direct URL
+│   ├── en/                 # English direct URL
+│   └── assets/
 ├── ambassador-program/
 │   ├── index.html          # English (source for i18n build)
 │   ├── ru/ … vi/           # Localized index.html per locale

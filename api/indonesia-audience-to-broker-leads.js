@@ -47,7 +47,7 @@ function parseResponse(text) {
   }
 }
 
-export default async function handler(request, response) {
+module.exports = async function handler(request, response) {
   if (request.method !== "POST") {
     response.setHeader("Allow", "POST");
     return response.status(405).json({ success: false, message: "Method not allowed." });
