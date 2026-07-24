@@ -64,6 +64,19 @@ This reads **`vlp/ambassador-program/index.html`** (source of truth for English 
 2. Update **`strings.ru.mjs`** and/or **`pt.json`** (then re-run **`compose-locales.mjs`** if `pt.json` changed).
 3. Run **`build.mjs`** and commit the updated locale **`index.html`** files.
 
+### Indonesia Audience to Broker (`vlp/indonesia-audience-to-broker/`)
+
+Bilingual Bahasa Indonesia / English B2B landing for IBs, trading academies, communities, affiliates, acquisition teams, and financial content creators who want to turn their access to traders into a brokerage brand.
+
+This landing is a React/Vite project with the production base path `/vlp/indonesia-audience-to-broker/`. Bahasa Indonesia is served at `/id/`, English at `/en/`, and demo requests are validated and forwarded through the included `/api/leads` serverless endpoint.
+
+From the landing directory:
+
+```bash
+corepack pnpm install
+corepack pnpm build
+```
+
 ### Trading Dashboard for Business (`vlp/td-business/`)
 
 Landing for **Trading Dashboard for Business**: white-label market charts for brokers, trading platforms, and fintech apps (embeddable charting, brand customization, demo / lead flow). Single-language build; assets under **`vlp/td-business/assets/`** (fonts, hero imagery, logos, OG image, favicon).
@@ -84,6 +97,11 @@ vlp/
 │   ├── index.html
 │   └── assets/
 ├── colombia-audience-to-broker/
+│   ├── src/
+│   ├── public/
+│   ├── api/
+│   └── package.json
+├── indonesia-audience-to-broker/
 │   ├── src/
 │   ├── public/
 │   ├── api/
