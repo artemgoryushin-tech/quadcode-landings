@@ -1,4 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "trailingSlash": true
+  "trailingSlash": true,
+  "rewrites": [
+    {
+      "source": "/vlp/colombia-audience-to-broker/api/leads/",
+      "destination": "/api/colombia-audience-to-broker-leads"
+    }
+  ]
 }
