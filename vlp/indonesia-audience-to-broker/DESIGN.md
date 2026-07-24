@@ -23,16 +23,16 @@ The page is deliberately editorial and direct. It uses the official Quadcode ide
 
 Red is used for primary actions and the demo-conversion surface. Black is used for the economics explanation and form. White owns the reading experience.
 
-The supplied blurred finance-symbol image is reserved for the hero. It runs full-width behind the opening proposition as a quiet environmental texture, while the infrastructure section returns to a solid warm-neutral surface. The supplied black texture unifies every major dark surface: the award carousel, Featured In strip, hero-video fallback, compact ownership box, form shell, and footer. It remains subtle enough to preserve hierarchy and reading contrast.
+The supplied blurred finance-symbol image is reserved for the hero. It runs full-width behind the opening proposition as a quiet environmental texture, while the infrastructure section returns to a solid warm-neutral surface. The supplied black texture unifies every major dark surface: the award carousel, Featured In strip, compact ownership box, form shell, and footer. It remains subtle enough to preserve hierarchy and reading contrast. The hero media uses a light fallback and a slight edge crop so no dark video boundary appears around the footage.
 
 ## Typography
 
-Use only the approved Proxima Nova files. Display copy uses weight `900`, line-height `0.90–0.94`, and tracking no tighter than `-0.04em`. The opening phrase of the hero title uses a permanent red, line-cloned background with white text; the rest of the title remains black. Body copy uses regular or semibold weight at `1.5–1.65` line-height. Uppercase labels are limited to short orientation text.
+Use only the approved Proxima Nova files. Display copy uses weight `900`, line-height `0.90–0.94`, and tracking no tighter than `-0.04em`. The opening phrase of the hero title uses a permanent red, line-cloned background with white text; the rest of the title remains black. Body copy uses regular or semibold weight at `1.5–1.65` line-height and stays at or above approximately `16px` on desktop. Navigation, trust labels, form labels, and supporting copy remain deliberately legible against the oversized editorial headings. Uppercase labels are limited to short orientation text.
 
 ## Layout
 
-- Maximum content width: `1280px`.
-- Desktop gutters: `32px` minimum.
+- Maximum content width: `1400px`.
+- Desktop gutters: `24px` minimum.
 - Mobile gutters: `16px`.
 - Hero: direct copy and CTA beside approved Quadcode brand footage.
 - Body: a simple linear sequence — 1/2/3 explanation, infrastructure, demo form, FAQ.
@@ -50,11 +50,11 @@ Square-cornered, minimum `48px` high, bold label and right arrow. The label is a
 
 ### Hero video
 
-A silent, continuously looping `16:10` crop of the supplied Quadcode building footage. The video fills the visual area without controls. On a visible page it automatically recovers from an unexpected pause, restarts after completion, and resumes when the visitor returns to the tab. Browsers may suspend media while a tab is hidden, but the static fallback must not remain after the page becomes visible. It contains no overlay copy, improvised branding, or decorative framing.
+A silent, continuously looping `16:10` crop of the supplied Quadcode building footage. The video fills the visual area without controls and is edge-cropped by approximately one percent so no dark source edge or fallback frame is visible. On a visible page it automatically recovers from an unexpected pause, restarts after completion, and resumes when the visitor returns to the tab. Browsers may suspend media while a tab is hidden, but the static fallback must not remain after the page becomes visible. It contains no overlay copy, improvised branding, or decorative framing.
 
 ### Award carousel
 
-One compact dark carousel sits directly below the hero visual slot. It displays one supplied award trophy at a time with its approved title and the year `2025`. The transparent trophy artwork sits directly on the dark surface without an individual card or background. Slides rotate automatically with a restrained opacity transition; there are no arrows, pagination, or counters. The block and artwork dimensions remain fixed between slides, and reduced-motion users receive a static slide.
+One compact dark carousel sits directly below the hero visual slot. It displays one supplied award trophy at a time with its approved title and the year `2025`. The strip is large enough for the recognition label and award title to read as a genuine trust signal rather than fine print. The transparent trophy artwork sits directly on the dark surface without an individual card or background. Slides rotate automatically with a restrained opacity transition; there are no arrows, pagination, or counters. The block and artwork dimensions remain fixed between slides, and reduced-motion users receive a static slide.
 
 ### Featured In marquee
 

@@ -5,6 +5,10 @@
     {
       "source": "/vlp/colombia-audience-to-broker/api/leads/",
       "destination": "/api/colombia-audience-to-broker-leads"
+    },
+    {
+      "source": "/vlp/indonesia-audience-to-broker/api/leads/",
+      "destination": "/api/indonesia-audience-to-broker-leads"
     }
   ]
 }

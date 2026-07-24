@@ -629,7 +629,7 @@ function LeadForm({ t, locale }) {
     };
 
     try {
-      const response = await fetch("/api/leads", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
+      const response = await fetch(`${appBase}/api/leads`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
       const result = await response.json().catch(() => ({}));
       if (!response.ok || result.success === false) throw new Error(result.message || t.error);
       form.reset();
