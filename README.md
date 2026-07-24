@@ -10,7 +10,7 @@ Landing for the content creator partnership: short-form video (TikTok, Reels, Yo
 
 ### Colombia Audience to Broker (`vlp/colombia-audience-to-broker/`)
 
-Bilingual Spanish / English B2B landing for Colombian IBs, trading academies, communities, affiliates, acquisition teams, and financial content creators considering a brokerage brand of their own. The self-contained Vite project includes the lead API handler and CRM attribution flow.
+Bilingual Spanish / English B2B landing for Colombian IBs, trading academies, communities, affiliates, acquisition teams, and financial content creators considering a brokerage brand of their own. Spanish is served from the folder root and `es/`; English is served from `en/`. The compiled static assets use the production path prefix, and form submissions are handled by `api/colombia-audience-to-broker-leads.js`.
 
 ### Ambassador Program (`vlp/ambassador-program/`)
 
@@ -97,10 +97,10 @@ vlp/
 │   ├── index.html
 │   └── assets/
 ├── colombia-audience-to-broker/
-│   ├── src/
-│   ├── public/
-│   ├── api/
-│   └── package.json
+│   ├── index.html          # Spanish default
+│   ├── es/                 # Spanish direct URL
+│   ├── en/                 # English direct URL
+│   └── assets/
 ├── indonesia-audience-to-broker/
 │   ├── src/
 │   ├── public/

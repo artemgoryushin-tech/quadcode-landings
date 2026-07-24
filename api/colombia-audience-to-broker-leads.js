@@ -1,5 +1,3 @@
-import { isSupportedCountry, parsePhoneNumber } from "libphonenumber-js/min";
-
 const DEFAULT_FORMS_API_URL = "https://group.quadcode.com";
 const DEFAULT_FORMS_API_ENDPOINT = "/api/notPopup";
 const SOURCE_FORM = "quadcode_colombia_audience_to_broker";
@@ -19,13 +17,9 @@ function isEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-function normalizePhone(phone, country) {
-  try {
-    const parsed = isSupportedCountry(country) ? parsePhoneNumber(phone, country) : parsePhoneNumber(phone);
-    return parsed?.isPossible() ? parsed.number : "";
-  } catch {
-    return "";
-  }
+function normalizePhone(value) {
+  const digits = value.replace(/\D/g, "");
+  return /^[1-9]\d{7,14}$/.test(digits) ? `+${digits}` : "";
 }
 
 function appendIfPresent(payload, key, value) {
@@ -38,7 +32,7 @@ function landingReference(sourceUrl, pagePath) {
       const url = new URL(sourceUrl);
       return `${url.host}${url.pathname}`;
     } catch {
-      // Fall back to the page path.
+      // Use the page path below when the submitted URL is malformed.
     }
   }
   return pagePath || "Quadcode Colombia audience-to-broker landing";
@@ -53,7 +47,7 @@ function parseResponse(text) {
   }
 }
 
-export default async function handler(request, response) {
+module.exports = async function handler(request, response) {
   if (request.method !== "POST") {
     response.setHeader("Allow", "POST");
     return response.status(405).json({ success: false, message: "Method not allowed." });
@@ -72,7 +66,7 @@ export default async function handler(request, response) {
   const launchHorizon = readString(body, "launch_horizon", 120);
   const regulatoryStatus = readString(body, "regulatory_status", 180);
   const termsAgree = readBoolean(body, "terms_agree");
-  const phone = normalizePhone(phoneInput, phoneCountry);
+  const phone = normalizePhone(phoneInput);
 
   if (!firstName || !email || !phoneInput || !currentModel || !launchHorizon || !regulatoryStatus || !termsAgree) {
     return response.status(400).json({ success: false, message: "Complete all required demo-request fields." });
@@ -90,7 +84,6 @@ export default async function handler(request, response) {
   const pagePath = readString(body, "page_path", 220);
   const roistatId = readString(body, "roistat_id", 120);
   const reference = landingReference(sourceUrl, pagePath);
-
   const context = [
     `${SOURCE_SITE} lead`,
     "Request type: Colombia Brokerage Demo Request",
@@ -120,11 +113,13 @@ export default async function handler(request, response) {
   crmPayload.set("source_site", SOURCE_SITE);
   crmPayload.set("comment", context.join("\n"));
   appendIfPresent(crmPayload, "roistat_id", roistatId);
-  for (const field of UTM_FIELDS) appendIfPresent(crmPayload, field, readString(body, field, 180));
+  for (const field of UTM_FIELDS) {
+    appendIfPresent(crmPayload, field, readString(body, field, 180));
+  }
 
   const endpoint = new URL(
-    process.env.FORMS_API_ENDPOINT ?? DEFAULT_FORMS_API_ENDPOINT,
-    process.env.FORMS_API_URL ?? DEFAULT_FORMS_API_URL
+    process.env.FORMS_API_ENDPOINT || DEFAULT_FORMS_API_ENDPOINT,
+    process.env.FORMS_API_URL || DEFAULT_FORMS_API_URL
   );
 
   if (process.env.FORMS_API_DRY_RUN === "true") {
@@ -134,18 +129,27 @@ export default async function handler(request, response) {
   try {
     const crmResponse = await fetch(endpoint, {
       method: "POST",
-      headers: { Accept: "application/json, text/plain, */*", "X-Requested-With": "XMLHttpRequest" },
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "X-Requested-With": "XMLHttpRequest"
+      },
       body: crmPayload,
       cache: "no-store"
     });
     const responseText = await crmResponse.text();
     const result = parseResponse(responseText);
     if (!crmResponse.ok || (result && typeof result === "object" && result.success === false)) {
-      console.error("CRM rejected Colombia demo request", { status: crmResponse.status, body: responseText.slice(0, 500) });
-      return response.status(crmResponse.status === 422 ? 422 : 502).json({ success: false, message: "The CRM rejected the request. Check the fields and try again." });
+      console.error("CRM rejected Colombia demo request", {
+        status: crmResponse.status,
+        body: responseText.slice(0, 500)
+      });
+      return response.status(crmResponse.status === 422 ? 422 : 502).json({
+        success: false,
+        message: "The CRM rejected the request. Check the fields and try again."
+      });
     }
     return response.status(200).json({ success: true, message: "Demo request sent." });
   } catch {
     return response.status(502).json({ success: false, message: "We could not send the request right now." });
   }
-}
+};
