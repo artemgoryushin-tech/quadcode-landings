@@ -1,6 +1,6 @@
 const DEFAULT_FORMS_API_URL = "https://group.quadcode.com";
 const DEFAULT_FORMS_API_ENDPOINT = "/api/notPopup";
-const SOURCE_FORM = "quadcode_colombia_audience_to_broker";
+const SOURCE_FORM = "quadcode_colombia_ready_to_go_business";
 const SOURCE_SITE = "Quadcode Brokerage Solutions";
 const UTM_FIELDS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
 
@@ -35,7 +35,7 @@ function landingReference(sourceUrl, pagePath) {
       // Use the page path below when the submitted URL is malformed.
     }
   }
-  return pagePath || "Quadcode Colombia audience-to-broker landing";
+  return pagePath || "Quadcode Colombia ready-to-go brokerage business landing";
 }
 
 function parseResponse(text) {
@@ -86,8 +86,8 @@ module.exports = async function handler(request, response) {
   const reference = landingReference(sourceUrl, pagePath);
   const context = [
     `${SOURCE_SITE} lead`,
-    "Request type: Colombia Brokerage Demo Request",
-    `Current model: ${currentModel}`,
+    "Request type: Colombia Ready-to-Go Brokerage Business Demo",
+    `Entrepreneur starting point: ${currentModel}`,
     `Launch horizon: ${launchHorizon}`,
     `Regulatory setup: ${regulatoryStatus}`,
     comment ? `Additional context: ${comment}` : "",

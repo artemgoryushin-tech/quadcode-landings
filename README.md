@@ -10,7 +10,7 @@ Landing for the content creator partnership: short-form video (TikTok, Reels, Yo
 
 ### Colombia Audience to Broker (`vlp/colombia-audience-to-broker/`)
 
-Bilingual Spanish / English B2B landing for Colombian IBs, trading academies, communities, affiliates, acquisition teams, and financial content creators considering a brokerage brand of their own. Spanish is served from the folder root and `es/`; English is served from `en/`. The compiled static assets use the production path prefix, and form submissions are handled by `api/colombia-audience-to-broker-leads.js`.
+Bilingual Spanish / English B2B landing for a broad Colombian audience exploring which online business to start. It positions a white-label brokerage as a ready-to-adapt business model under the founder’s own brand. Spanish is served from the folder root and `es/`; English is served from `en/`. The compiled static assets use the production path prefix, and form submissions are handled by `api/colombia-audience-to-broker-leads.js`.
 
 ### Ambassador Program (`vlp/ambassador-program/`)
 
