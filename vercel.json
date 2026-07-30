@@ -9,6 +9,10 @@
     {
       "source": "/vlp/indonesia-audience-to-broker/api/leads/",
       "destination": "/api/indonesia-audience-to-broker-leads"
+    },
+    {
+      "source": "/vlp/indonesia-ready-to-go-business/api/leads/",
+      "destination": "/api/indonesia-ready-to-go-business-leads"
     }
   ]
 }

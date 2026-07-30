@@ -70,6 +70,12 @@ Bilingual Bahasa Indonesia / English B2B landing for IBs, trading academies, com
 
 The committed folder is the production-ready static Vite build. Bahasa Indonesia is served at the root and `/id/`, English at `/en/`, and demo requests are validated and forwarded through the root Vercel function mapped from the landing’s `/api/leads/` route.
 
+### Indonesia Ready-to-Go Business (`vlp/indonesia-ready-to-go-business/`)
+
+Bilingual Bahasa Indonesia / English B2B landing for a broad Indonesian audience deciding what online business to start. It is an independent localization of the Colombia ready-to-go business concept and does not replace the existing Indonesia Audience to Broker landing.
+
+Bahasa Indonesia is served at the root and `/id/`, English at `/en/`. Demo requests use the separate `quadcode_indonesia_ready_to_go_business` CRM source and are forwarded through `api/indonesia-ready-to-go-business-leads.js`.
+
 ### Trading Dashboard for Business (`vlp/td-business/`)
 
 Landing for **Trading Dashboard for Business**: white-label market charts for brokers, trading platforms, and fintech apps (embeddable charting, brand customization, demo / lead flow). Single-language build; assets under **`vlp/td-business/assets/`** (fonts, hero imagery, logos, OG image, favicon).
@@ -95,6 +101,11 @@ vlp/
 │   ├── en/                 # English direct URL
 │   └── assets/
 ├── indonesia-audience-to-broker/
+│   ├── index.html          # Bahasa Indonesia default
+│   ├── id/                 # Bahasa Indonesia direct URL
+│   ├── en/                 # English direct URL
+│   └── assets/
+├── indonesia-ready-to-go-business/
 │   ├── index.html          # Bahasa Indonesia default
 │   ├── id/                 # Bahasa Indonesia direct URL
 │   ├── en/                 # English direct URL
