@@ -88,6 +88,10 @@ BeBroker Trading Traffic Meetup page copied 1:1 by structure and adapted only at
 
 BeBroker Giveaway page copied 1:1 by structure and adapted only at the brand layer: Quadcode fonts/assets, red accent color, Quadcode logos, favicon, and OG preview. Single-language static page with original giveaway layout and interactions preserved.
 
+### Brokerage Business in the Philippines webinar (`vlp/brokerage-business-philippines-webinar/`)
+
+Two-page on-demand webinar flow for Quadcode Brokerage Solutions: a registration landing page followed by a recording room with a custom player and session chat. The static prototype stores registration, playback progress, and chat messages in the browser; documented hooks are ready for CRM, hosted video, analytics, and chat delivery.
+
 ## Repository layout
 
 ```
@@ -121,6 +125,15 @@ vlp/
 ├── trading-traffic-meetup/
 │   ├── index.html
 │   ├── event-*.jpg / event-*.mp4
+│   └── assets/
+├── brokerage-business-philippines-webinar/
+│   ├── index.html
+│   ├── registration.js
+│   ├── styles.css
+│   ├── watch/
+│   │   ├── index.html
+│   │   ├── watch.css
+│   │   └── watch.js
 │   └── assets/
 └── giveaway/
     ├── index.html
