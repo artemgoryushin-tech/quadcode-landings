@@ -76,6 +76,12 @@ Bilingual Bahasa Indonesia / English B2B landing for a broad Indonesian audience
 
 Bahasa Indonesia is served at the root and `/id/`, English at `/en/`. Demo requests use the separate `quadcode_indonesia_ready_to_go_business` CRM source and are forwarded through `api/indonesia-ready-to-go-business-leads.js`.
 
+### Philippines Ready-to-Go Business (`vlp/philippines-ready-to-go-business/`)
+
+Bilingual Filipino / English B2B landing for a broad Philippine audience deciding what online business to start. It adapts the Indonesia ready-to-go business landing while preserving the original structure, interactions, analytics, and lead flow.
+
+Filipino is served at the root and `/tl/`, English at `/en/`. Demo requests use the separate `quadcode_philippines_ready_to_go_business` CRM source and are forwarded through `api/philippines-ready-to-go-business-leads.js`.
+
 ### Trading Dashboard for Business (`vlp/td-business/`)
 
 Landing for **Trading Dashboard for Business**: white-label market charts for brokers, trading platforms, and fintech apps (embeddable charting, brand customization, demo / lead flow). Single-language build; assets under **`vlp/td-business/assets/`** (fonts, hero imagery, logos, OG image, favicon).
@@ -112,6 +118,11 @@ vlp/
 ├── indonesia-ready-to-go-business/
 │   ├── index.html          # Bahasa Indonesia default
 │   ├── id/                 # Bahasa Indonesia direct URL
+│   ├── en/                 # English direct URL
+│   └── assets/
+├── philippines-ready-to-go-business/
+│   ├── index.html          # Filipino default
+│   ├── tl/                 # Filipino direct URL
 │   ├── en/                 # English direct URL
 │   └── assets/
 ├── ambassador-program/

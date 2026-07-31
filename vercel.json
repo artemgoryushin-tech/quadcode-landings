@@ -13,6 +13,10 @@
     {
       "source": "/vlp/indonesia-ready-to-go-business/api/leads/",
       "destination": "/api/indonesia-ready-to-go-business-leads"
+    },
+    {
+      "source": "/vlp/philippines-ready-to-go-business/api/leads/",
+      "destination": "/api/philippines-ready-to-go-business-leads"
     }
   ]
 }
