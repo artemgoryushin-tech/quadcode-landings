@@ -1,7 +1,6 @@
 const TELEGRAM_BOT_URL = "https://t.me/quadcode_events_bot";
 const FORMS_API_URL = "https://quadcode.foach.site";
 const FORMS_API_ENDPOINT = "/api/notPopup";
-const REDIRECT_DELAY_MS = 1400;
 const UTM_FIELDS = ["utm_campaign", "utm_medium", "utm_source", "utm_content", "utm_term"];
 
 const form = document.querySelector(".event-apply-form");
@@ -157,10 +156,6 @@ const showTelegramNextStep = (telegramUrl) => {
 	if (nextStep) nextStep.hidden = false;
 	if (telegramCta) telegramCta.href = telegramUrl;
 	telegramCta?.focus();
-
-	window.setTimeout(() => {
-		window.location.assign(telegramUrl);
-	}, REDIRECT_DELAY_MS);
 };
 
 form?.addEventListener(
@@ -193,10 +188,13 @@ form?.addEventListener(
 				utm_source: payload.utm_source,
 				utm_campaign: payload.utm_campaign,
 				event_lead_id: leadId,
-				next_step: "telegram_bot"
+				next_step: "telegram_bot_required"
 			});
 			form.reset();
-			setStatus("Thanks. Your application has been submitted. Continue in Telegram to finish moderation.", "success");
+			setStatus(
+				"Thanks. Your application has been submitted. Please continue in Telegram to complete confirmation and verification.",
+				"success"
+			);
 			showTelegramNextStep(telegramUrl);
 		} catch (error) {
 			console.error("Trading Traffic Meetup form submit error", error);

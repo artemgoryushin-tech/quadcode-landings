@@ -63,51 +63,51 @@ const config = {
 const questions = [
 	{
 		key: "full_name",
-		label: "Имя и фамилия",
-		prompt: "Укажи имя и фамилию."
+		label: "Full name",
+		prompt: "Please enter your first and last name."
 	},
 	{
 		key: "instagram",
 		label: "Instagram",
-		prompt: "Поделись ссылкой на свой Instagram"
+		prompt: "Share a link to your Instagram profile."
 	},
 	{
 		key: "company",
-		label: "Компания",
-		prompt: "Идем дальше! В какой компании работаешь?"
+		label: "Company",
+		prompt: "Great, let's continue. Which company do you work for?"
 	},
 	{
 		key: "position",
-		label: "Должность",
-		prompt: "Огонь! Следующий вопрос: твоя должность"
+		label: "Position",
+		prompt: "Next question: what is your role or job title?"
 	},
 	{
 		key: "experience",
-		label: "Опыт и кейсы",
-		prompt: "И последнее: кратко расскажи о своем опыте и ключевых кейсах."
+		label: "Experience and cases",
+		prompt: "Last one: briefly tell us about your experience and key cases."
 	}
 ];
 
 const welcomeMessage =
-	"Привет! Я бот iGaming chat. Чтобы начать обсуждение, нужно пройти идентификацию — приступим?";
-const receivedMessage = "Спасибо! Заявка принята, в ближайшее время мы ознакомимся с информацией.";
+	"Hi! I'm the iGaming chat bot. To join the discussion, please complete a short verification first. Let's begin.";
+const receivedMessage = "Thank you! Your application has been received. We'll review the information shortly.";
 
 const approvedMessage = () =>
 	[
-		"Привет!",
-		"Большое спасибо за заполнение анкеты.",
-		"Твоя заявка прошла модерацию — будем рады видеть тебя на Trading Traffic Meetup.",
-		"Детали и дальнейшие шаги отправим здесь в ближайшее время.",
-		`По всем вопросам обращайся к @${config.moderatorUsername}💙`
+		"Hi!",
+		"Thank you for completing the application.",
+		"Your application has passed moderation — we're glad to welcome you to Trading Traffic Meetup.",
+		"We'll send the event details and next steps here shortly.",
+		`If you have any questions, contact @${config.moderatorUsername}💙`
 	].join("\n");
 
 const declinedMessage = () =>
 	[
-		"Привет!",
-		"Большое спасибо за заполнение анкеты.",
-		"К сожалению, она не прошла модерацию по ряду критериев.",
-		"Благодарим за понимание!",
-		`По всем вопросам обращайся к @${config.moderatorUsername}💙`
+		"Hi!",
+		"Thank you for completing the application.",
+		"Unfortunately, your application did not pass moderation based on several criteria.",
+		"Thank you for your understanding.",
+		`If you have any questions, contact @${config.moderatorUsername}💙`
 	].join("\n");
 
 const statusLabels = {
@@ -373,18 +373,18 @@ const handleStart = (state, message, leadId = "") => {
 const handleCancel = (state, message) => {
 	delete state.sessions[message.chat.id];
 	return {
-		messages: ["Анкета сброшена. Чтобы начать заново, отправь /start."]
+		messages: ["Your application form has been reset. Send /start to begin again."]
 	};
 };
 
 const handleStatus = (state, message) => {
 	const application = latestApplicationForChat(state, message.chat.id);
 	if (!application) {
-		return { messages: ["Пока нет отправленной анкеты. Чтобы начать, отправь /start."] };
+		return { messages: ["You don't have a submitted application yet. Send /start to begin."] };
 	}
 
 	const label = statusLabels[application.status] || application.status;
-	return { messages: [`Статус твоей последней заявки: ${label}.`] };
+	return { messages: [`Your latest application status: ${label}.`] };
 };
 
 const buildApplication = (state, session, message) => {
@@ -419,7 +419,7 @@ const handleQuestionAnswer = (state, message) => {
 	const session = state.sessions[chatId];
 
 	if (!session) {
-		return { messages: ["Чтобы пройти идентификацию, отправь /start."] };
+		return { messages: ["Send /start to complete verification."] };
 	}
 
 	const stepIndex = Number(session.step || 0);
