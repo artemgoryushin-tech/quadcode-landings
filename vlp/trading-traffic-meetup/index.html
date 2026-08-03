@@ -36,7 +36,9 @@
   <link rel="stylesheet" crossorigin href="./assets/phone-picker-hhwl6nNl.css">
   <link rel="stylesheet" crossorigin href="./assets/event-BQCJBrR_.css">
   <link rel="stylesheet" href="./assets/navbar-overrides.css">
+  <link rel="stylesheet" href="./assets/telegram-cta-overrides.css">
   <script type="module" src="./assets/performance-overrides.js"></script>
+  <script type="module" src="./assets/trading-traffic-telegram.js"></script>
 </head>
 
 <body class="event-page" data-theme="light">
@@ -129,18 +131,6 @@
           </div>
         </div>
         <label>
-          <span>Role *</span>
-          <select name="role" required>
-            <option value="" selected disabled>Select your role</option>
-            <option>Affiliate / media buyer</option>
-            <option>Traffic owner</option>
-            <option>Fintech / broker project</option>
-            <option>IB network</option>
-            <option>Trading academy</option>
-            <option>Trading community</option>
-          </select>
-        </label>
-        <label>
           <span>Tell about yourself *</span>
           <textarea name="about" rows="3" placeholder="Who are you, what do you do, and what market are you focused on?" required></textarea>
         </label>
@@ -154,6 +144,13 @@
         </label>
         <p class="event-apply-form__status" data-event-form-status role="status" aria-live="polite"></p>
         <button class="event-button event-button--block" type="submit">Submit</button>
+        <div class="event-telegram-next" data-telegram-next hidden>
+          <span>Next step</span>
+          <strong>Continue in Telegram bot</strong>
+          <p>Your application is saved. The bot will ask a few quick moderation questions so we can confirm your access.</p>
+          <a class="event-button event-button--block" href="https://t.me/quadcode_events_bot" data-telegram-cta>Continue in Telegram</a>
+          <small>Redirecting you to Telegram automatically...</small>
+        </div>
         <small>All fields are required. We will review your application and get back to you.</small>
       </form>
     </div>
@@ -351,7 +348,7 @@
         </h2>
       </div>
       <div class="event-apply-block__copy">
-        <p>Tell us your role, GEOs, audience and what kind of partners you want to meet.</p>
+        <p>Tell us your GEOs, audience and what kind of partners you want to meet.</p>
         <button class="event-apply-link" type="button" data-apply-open>Request invite <span aria-hidden="true">→</span></button>
       </div>
     </section>

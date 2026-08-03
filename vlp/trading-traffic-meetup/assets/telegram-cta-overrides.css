@@ -1,0 +1,54 @@
+.event-apply-form.is-submitted > label,
+.event-apply-form.is-submitted > .event-apply-form__field,
+.event-apply-form.is-submitted > button[type="submit"],
+.event-apply-form.is-submitted > small {
+	display: none;
+}
+
+.event-telegram-next {
+	display: grid;
+	gap: 14px;
+	border: 1px solid rgba(47, 102, 246, 0.22);
+	border-radius: var(--event-radius);
+	padding: 18px;
+	background: rgba(47, 102, 246, 0.08);
+}
+
+.event-telegram-next[hidden] {
+	display: none;
+}
+
+.event-telegram-next span {
+	color: var(--event-blue);
+	font-size: 12px;
+	font-weight: 900;
+	letter-spacing: 0.08em;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+.event-telegram-next strong {
+	color: var(--event-form-ink);
+	font-size: clamp(26px, 3.2vw, 38px);
+	font-weight: 950;
+	letter-spacing: -0.04em;
+	line-height: 0.95;
+	text-transform: uppercase;
+}
+
+.event-telegram-next p {
+	margin: 0;
+	color: var(--event-form-muted);
+	font-size: 15px;
+	line-height: 1.4;
+}
+
+.event-telegram-next small {
+	color: rgba(11, 11, 11, 0.58);
+	font-size: 13px;
+	line-height: 1.4;
+}
+
+.event-telegram-next .event-button {
+	margin-top: 2px;
+}
