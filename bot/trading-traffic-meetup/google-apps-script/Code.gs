@@ -1,3 +1,4 @@
+const SPREADSHEET_ID = "1I3W0FJlE_arAUuNsmsZguBn8YVsafO9xhuiAcw8k2D0";
 const SHEET_NAME = "Applications";
 
 const HEADERS = [
@@ -55,7 +56,7 @@ function upsertApplication(payload) {
 }
 
 function getApplicationsSheet() {
-  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
   return spreadsheet.getSheetByName(SHEET_NAME) || spreadsheet.insertSheet(SHEET_NAME);
 }
 
