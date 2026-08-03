@@ -53,7 +53,7 @@ const config = {
 			.map((value) => value.trim())
 			.filter(Boolean),
 	),
-	moderatorUsername: (process.env.MODERATOR_USERNAME || "moderator_iG").replace(/^@/, ""),
+	contactUsername: (process.env.CONTACT_TELEGRAM_USERNAME || "qc_software").replace(/^@/, ""),
 	sheetsWebhookUrl: process.env.SHEETS_WEBHOOK_URL || "",
 	sheetsWebhookSecret: process.env.SHEETS_WEBHOOK_SECRET || "",
 	crmWebhookUrl: process.env.CRM_WEBHOOK_URL || "",
@@ -73,13 +73,13 @@ const questions = [
 	},
 	{
 		key: "company",
-		label: "Company",
-		prompt: "Great, let's continue. Which company do you work for?"
+		label: "Activity",
+		prompt: "Great, let's continue. What do you do? For example: affiliate, entrepreneur, blogger, media buyer, fintech project owner, or trading community."
 	},
 	{
 		key: "position",
 		label: "Position",
-		prompt: "Next question: what is your role or job title?"
+		prompt: "How should we describe your role? A short title or self-description is enough."
 	},
 	{
 		key: "experience",
@@ -89,7 +89,7 @@ const questions = [
 ];
 
 const welcomeMessage =
-	"Hi! I'm the iGaming chat bot. To join the discussion, please complete a short verification first. Let's begin.";
+	"Hi! I'm the Quadcode Events bot. To continue your application, please complete a short verification. Let's begin.";
 const receivedMessage = "Thank you! Your application has been received. We'll review the information shortly.";
 
 const approvedMessage = () =>
@@ -98,7 +98,7 @@ const approvedMessage = () =>
 		"Thank you for completing the application.",
 		"Your application has passed moderation — we're glad to welcome you to Trading Traffic Meetup.",
 		"We'll send the event details and next steps here shortly.",
-		`If you have any questions, contact @${config.moderatorUsername}💙`
+		`For updates and questions, follow @${config.contactUsername}💙`
 	].join("\n");
 
 const declinedMessage = () =>
@@ -107,7 +107,7 @@ const declinedMessage = () =>
 		"Thank you for completing the application.",
 		"Unfortunately, your application did not pass moderation based on several criteria.",
 		"Thank you for your understanding.",
-		`If you have any questions, contact @${config.moderatorUsername}💙`
+		`For updates and questions, follow @${config.contactUsername}💙`
 	].join("\n");
 
 const statusLabels = {
@@ -757,7 +757,7 @@ const renderAdminPage = (state, notice = "") => {
 						<th>Lead sync ID</th>
 						<th>Name</th>
 						<th>Telegram</th>
-						<th>Company</th>
+						<th>Activity</th>
 						<th>Position</th>
 						<th>Moderate</th>
 					</tr>

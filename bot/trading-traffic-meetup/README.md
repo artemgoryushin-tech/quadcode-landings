@@ -41,7 +41,7 @@ PUBLIC_URL=https://events-bot.example.com
 TELEGRAM_WEBHOOK_SECRET=random-secret-from-openssl
 MODERATION_CHAT_ID=-1001234567890
 MODERATOR_TELEGRAM_IDS=123456789,987654321
-MODERATOR_USERNAME=moderator_iG
+CONTACT_TELEGRAM_USERNAME=qc_software
 SHEETS_WEBHOOK_URL=https://script.google.com/macros/s/.../exec
 SHEETS_WEBHOOK_SECRET=random-secret-for-google-script
 CRM_WEBHOOK_URL=https://crm-or-n8n.example.com/quadcode-events
@@ -134,8 +134,8 @@ CRM lead by `event_lead_id`.
 1. `/start`
 2. Name and surname
 3. Instagram link
-4. Company
-5. Position
+4. Activity
+5. Role or self-description
 6. Short experience and key cases
 7. Pending moderation message
 
