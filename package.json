@@ -1,0 +1,9 @@
+{
+  "name": "quadcode-landings",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "libphonenumber-js": "1.13.9"
+  }
+}
