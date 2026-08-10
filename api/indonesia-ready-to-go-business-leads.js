@@ -1,8 +1,6 @@
-import { isSupportedCountry, parsePhoneNumber } from "libphonenumber-js/min";
-
 const DEFAULT_FORMS_API_URL = "https://group.quadcode.com";
 const DEFAULT_FORMS_API_ENDPOINT = "/api/notPopup";
-const SOURCE_FORM = "quadcode_indonesia_ready_to_go_business";
+const SOURCE_FORM = "quadcode_indonesia_audience_to_broker";
 const SOURCE_SITE = "Quadcode Brokerage Solutions";
 const UTM_FIELDS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
 
@@ -19,13 +17,9 @@ function isEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-function normalizePhone(phone, country) {
-  try {
-    const parsed = isSupportedCountry(country) ? parsePhoneNumber(phone, country) : parsePhoneNumber(phone);
-    return parsed?.isPossible() ? parsed.number : "";
-  } catch {
-    return "";
-  }
+function normalizePhone(value) {
+  const digits = value.replace(/\D/g, "");
+  return /^[1-9]\d{7,14}$/.test(digits) ? `+${digits}` : "";
 }
 
 function appendIfPresent(payload, key, value) {
@@ -72,7 +66,7 @@ export default async function handler(request, response) {
   const launchHorizon = readString(body, "launch_horizon", 120);
   const regulatoryStatus = readString(body, "regulatory_status", 180);
   const termsAgree = readBoolean(body, "terms_agree");
-  const phone = normalizePhone(phoneInput, phoneCountry);
+  const phone = normalizePhone(phoneInput);
 
   if (!firstName || !email || !phoneInput || !currentModel || !launchHorizon || !regulatoryStatus || !termsAgree) {
     return response.status(400).json({ success: false, message: "Complete all required demo-request fields." });
