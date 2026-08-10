@@ -3,8 +3,8 @@
   "trailingSlash": true,
   "rewrites": [
     {
-      "source": "/vlp/webinar/vibecode/thank-you/",
-      "destination": "/webinar/vibecode/thank-you/"
+      "source": "/vlp/webinar/vibecode/thank-you/:path*",
+      "destination": "/webinar/vibecode/thank-you/:path*"
     },
     {
       "source": "/vlp/colombia-audience-to-broker/api/leads/",
