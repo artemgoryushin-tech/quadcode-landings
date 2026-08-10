@@ -3,6 +3,10 @@
   "trailingSlash": true,
   "rewrites": [
     {
+      "source": "/vlp/webinar/vibecode/thank-you/",
+      "destination": "/webinar/vibecode/thank-you/"
+    },
+    {
       "source": "/vlp/webinar/vibecode/thank-you/:path*",
       "destination": "/webinar/vibecode/thank-you/:path*"
     },
