@@ -94,7 +94,7 @@ BeBroker Trading Traffic Meetup page copied 1:1 by structure and adapted only at
 
 BeBroker Giveaway page copied 1:1 by structure and adapted only at the brand layer: Quadcode fonts/assets, red accent color, Quadcode logos, favicon, and OG preview. Single-language static page with original giveaway layout and interactions preserved.
 
-### Start Brokerage (`vlp/start-brokerage/`)
+### Start Brokerage Indonesia (`vlp/start-brokerage-id/`)
 
 Short mobile-first B2B landing for entrepreneurs who want to launch a brokerage under their own brand. Its CRM-connected modal follows the `td-business` form contract: full name, email, international phone, optional initial investment, required launch-goal/current-business answer, consent, and reCAPTCHA.
 
@@ -137,7 +137,7 @@ vlp/
 ├── td-business/
 │   ├── index.html
 │   └── assets/
-├── start-brokerage/
+├── start-brokerage-id/
 │   ├── index.html
 │   └── assets/
 ├── trading-traffic-meetup/

@@ -29,6 +29,10 @@
     {
       "source": "/vlp/start-brokerage/api/leads/",
       "destination": "/api/start-brokerage-leads"
+    },
+    {
+      "source": "/vlp/start-brokerage-id/api/leads/",
+      "destination": "/api/start-brokerage-leads"
     }
   ]
 }
