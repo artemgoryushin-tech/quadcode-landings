@@ -2,6 +2,73 @@ const TELEGRAM_BOT_URL = "https://t.me/quadcode_events_bot";
 const FORMS_API_URL = "https://quadcode.foach.site";
 const FORMS_API_ENDPOINT = "/api/notPopup";
 const UTM_FIELDS = ["utm_campaign", "utm_medium", "utm_source", "utm_content", "utm_term"];
+const locale = document.documentElement.lang.toLowerCase().split("-")[0];
+const localizedCopy = {
+	th: {
+		validationFallback: "กรุณาตรวจสอบข้อมูลในแบบฟอร์มแล้วลองอีกครั้ง",
+		invalidValue: "กรุณาตรวจสอบข้อมูล",
+		labels: {
+			first_name: "ชื่อ",
+			email: "อีเมล",
+			tg: "Telegram",
+			phone: "WhatsApp",
+			event_about: "แนะนำตัว",
+			event_why_join: "เหตุผลที่ต้องการเข้าร่วม",
+			event_experience: "ประสบการณ์"
+		},
+		sending: "กำลังส่งใบสมัคร...",
+		success: "ส่งใบสมัครเรียบร้อยแล้ว โปรดดำเนินการต่อใน Telegram เพื่อยืนยันข้อมูลให้เสร็จสมบูรณ์",
+		error: "ไม่สามารถส่งใบสมัครได้ โปรดลองอีกครั้ง"
+	},
+	ms: {
+		validationFallback: "Sila semak medan borang dan cuba lagi.",
+		invalidValue: "Sila semak maklumat ini",
+		labels: {
+			first_name: "Nama",
+			email: "E-mel",
+			tg: "Telegram",
+			phone: "WhatsApp",
+			event_about: "Tentang anda",
+			event_why_join: "Sebab ingin menyertai",
+			event_experience: "Pengalaman"
+		},
+		sending: "Menghantar permohonan...",
+		success: "Permohonan telah dihantar. Sila teruskan di Telegram untuk melengkapkan pengesahan.",
+		error: "Permohonan tidak dapat dihantar. Sila cuba lagi."
+	},
+	zh: {
+		validationFallback: "请检查表单内容后重试。",
+		invalidValue: "请检查此项内容",
+		labels: {
+			first_name: "姓名",
+			email: "电子邮箱",
+			tg: "Telegram",
+			phone: "WhatsApp",
+			event_about: "个人介绍",
+			event_why_join: "参加原因",
+			event_experience: "行业经验"
+		},
+		sending: "正在提交申请...",
+		success: "申请已提交。请前往 Telegram 完成确认。",
+		error: "申请无法提交，请重试。"
+	}
+};
+const copy = localizedCopy[locale] || {
+		validationFallback: "Please check the form fields and try again.",
+		invalidValue: "Invalid value",
+		labels: {
+			first_name: "Name",
+			email: "Email",
+			tg: "Telegram",
+			phone: "WhatsApp",
+			event_about: "Tell about yourself",
+			event_why_join: "Why would you like to join",
+			event_experience: "Experience"
+		},
+		sending: "Sending application...",
+		success: "Thanks. Your application has been submitted. Please continue in Telegram to complete confirmation and verification.",
+		error: "Could not send the application. Please try again."
+	};
 
 const form = document.querySelector(".event-apply-form");
 const statusNode = document.querySelector("[data-event-form-status]");
@@ -62,20 +129,11 @@ const setStatus = (message, type = "idle") => {
 
 const getValidationMessage = (errors) => {
 	const [field, messages] = Object.entries(errors || {})[0] || [];
-	if (!field) return "Please check the form fields and try again.";
+	if (!field) return copy.validationFallback;
 
-	const labels = {
-		first_name: "Name",
-		email: "Email",
-		tg: "Telegram",
-		phone: "WhatsApp",
-		event_about: "Tell about yourself",
-		event_why_join: "Why would you like to join",
-		event_experience: "Experience"
-	};
-	const label = labels[field] || field.replace(/_/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+	const label = copy.labels[field] || field.replace(/_/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
 	const message = Array.isArray(messages) ? messages[0] : messages;
-	return `${label}: ${message || "Invalid value"}`;
+	return `${label}: ${locale === "en" ? message || copy.invalidValue : copy.invalidValue}`;
 };
 
 const buildPayload = (targetForm, leadId) => {
@@ -175,7 +233,7 @@ form?.addEventListener(
 			form.classList.add("is-loading");
 			form.setAttribute("aria-busy", "true");
 			submitButton?.setAttribute("disabled", "disabled");
-			setStatus("Sending application...");
+			setStatus(copy.sending);
 
 			const result = await submitLead(payload);
 
@@ -191,14 +249,11 @@ form?.addEventListener(
 				next_step: "telegram_bot_required"
 			});
 			form.reset();
-			setStatus(
-				"Thanks. Your application has been submitted. Please continue in Telegram to complete confirmation and verification.",
-				"success"
-			);
+			setStatus(copy.success, "success");
 			showTelegramNextStep(telegramUrl);
 		} catch (error) {
 			console.error("Trading Traffic Meetup form submit error", error);
-			setStatus("Could not send the application. Please try again.", "error");
+			setStatus(copy.error, "error");
 		} finally {
 			form.classList.remove("is-loading");
 			form.removeAttribute("aria-busy");

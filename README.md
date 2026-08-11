@@ -88,7 +88,7 @@ Landing for **Trading Dashboard for Business**: white-label market charts for br
 
 ### Trading Traffic Meetup (`vlp/trading-traffic-meetup/`)
 
-BeBroker Trading Traffic Meetup page copied 1:1 by structure and adapted only at the brand layer: Quadcode fonts, red accent color, Quadcode logos, and favicon. Single-language static page with original event media and interactions preserved.
+BeBroker Trading Traffic Meetup page copied 1:1 by structure and adapted only at the brand layer: Quadcode fonts, red accent color, Quadcode logos, and favicon. English is served from the folder root; Thai, Malay, and Simplified Chinese are served from `/th/`, `/ms/`, and `/zh/`. All locales reuse the same event media, interactions, and CRM-connected application flow.
 
 ### Giveaway (`vlp/giveaway/`)
 
@@ -97,6 +97,8 @@ BeBroker Giveaway page copied 1:1 by structure and adapted only at the brand lay
 ### Start Brokerage Indonesia (`vlp/start-brokerage-id/`)
 
 Short mobile-first B2B landing for entrepreneurs who want to launch a brokerage under their own brand. Its CRM-connected modal follows the `td-business` form contract: full name, email, international phone, optional initial investment, required launch-goal/current-business answer, consent, and reCAPTCHA.
+
+Bahasa Indonesia is served from the folder root; Malay and Simplified Chinese are served from `/ms/` and `/zh/`. All three locales share the same media, responsive layout, animations, and lead endpoint.
 
 ### Brokerage Business in the Philippines webinar (`vlp/brokerage-business-philippines-webinar/`)
 
