@@ -25,6 +25,10 @@
     {
       "source": "/vlp/philippines-ready-to-go-business/api/leads/",
       "destination": "/api/philippines-ready-to-go-business-leads"
+    },
+    {
+      "source": "/vlp/start-brokerage/api/leads/",
+      "destination": "/api/start-brokerage-leads"
     }
   ]
 }

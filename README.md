@@ -94,6 +94,10 @@ BeBroker Trading Traffic Meetup page copied 1:1 by structure and adapted only at
 
 BeBroker Giveaway page copied 1:1 by structure and adapted only at the brand layer: Quadcode fonts/assets, red accent color, Quadcode logos, favicon, and OG preview. Single-language static page with original giveaway layout and interactions preserved.
 
+### Start Brokerage (`vlp/start-brokerage/`)
+
+Short mobile-first B2B landing for entrepreneurs who want to launch a brokerage under their own brand. Its CRM-connected modal follows the `td-business` form contract: full name, email, international phone, optional initial investment, required launch-goal/current-business answer, consent, and reCAPTCHA.
+
 ### Brokerage Business in the Philippines webinar (`vlp/brokerage-business-philippines-webinar/`)
 
 Two-page on-demand webinar flow for Quadcode Brokerage Solutions: a registration landing page followed by a recording room with a custom player and session chat. The static prototype stores registration, playback progress, and chat messages in the browser; documented hooks are ready for CRM, hosted video, analytics, and chat delivery.
@@ -131,6 +135,9 @@ vlp/
 │   ├── i18n/               # build + translation data (see above)
 │   └── assets/
 ├── td-business/
+│   ├── index.html
+│   └── assets/
+├── start-brokerage/
 │   ├── index.html
 │   └── assets/
 ├── trading-traffic-meetup/
