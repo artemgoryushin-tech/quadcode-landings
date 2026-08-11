@@ -268,6 +268,32 @@
         to { transform: translate3d(calc(-100% - var(--gap)), 0, 0); }
       }
 
+      /* Opening the form should only composite two cheap layers. */
+      .modal__backdrop {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        background: rgba(3, 7, 13, 0.76);
+        animation: modal-backdrop-in 0.18s ease-out both;
+      }
+      .modal__dialog {
+        will-change: transform;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+      }
+      body.modal-open .hero__tile,
+      body.modal-open .hero-grow__marquee-track,
+      body.modal-open .social-proof__panel,
+      body.modal-open .ga-bento-avatar,
+      body.modal-open .ga-bento-chip,
+      body.modal-open .pv-stream__track,
+      body.modal-open .ga-bento-convert__track {
+        animation-play-state: paused !important;
+      }
+      @keyframes modal-backdrop-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
       /* Compact lead form: keep every field, reduce the amount of scrolling. */
       .modal__dialog {
         width: min(1040px, calc(100% - 32px));
@@ -402,7 +428,7 @@
           max-height: calc(100dvh - max(16px, env(safe-area-inset-top)));
           margin: 0;
           border-radius: 24px 24px 0 0;
-          animation: mobile-sheet-in 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+          animation: mobile-sheet-in 0.26s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .modal__dialog::before {
           content: "";
@@ -427,8 +453,8 @@
           box-shadow: 0 -18px 50px rgba(6, 12, 22, 0.28);
         }
         @keyframes mobile-sheet-in {
-          from { opacity: 0.7; transform: translate3d(0, 100%, 0); }
-          to { opacity: 1; transform: translate3d(0, 0, 0); }
+          from { transform: translate3d(0, 100%, 0); }
+          to { transform: translate3d(0, 0, 0); }
         }
         .modal__close {
           top: 14px;
@@ -1148,6 +1174,7 @@
       let lastScrollY = window.scrollY;
       let recaptchaWidgetId = null;
       let recaptchaLoader = null;
+      let recaptchaPrepareTimer = 0;
 
       const recaptchaSiteKey = ['localhost', '127.0.0.1'].includes(window.location.hostname)
         ? '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
@@ -1187,6 +1214,23 @@
         } catch (error) {
           if (modalFormStatus) modalFormStatus.textContent = error.message;
         }
+      };
+
+      const scheduleRecaptcha = () => {
+        if (!recaptchaMount) return;
+        if (recaptchaPrepareTimer) window.clearTimeout(recaptchaPrepareTimer);
+
+        recaptchaPrepareTimer = window.setTimeout(async () => {
+          recaptchaPrepareTimer = 0;
+          if (!modal?.classList.contains('is-open')) return;
+
+          if (recaptchaWidgetId !== null && window.grecaptcha?.reset) {
+            window.grecaptcha.reset(recaptchaWidgetId);
+            return;
+          }
+
+          await renderRecaptcha();
+        }, reduceMotion ? 0 : 280);
       };
 
       const observer = new IntersectionObserver(
@@ -1354,10 +1398,10 @@
         );
       };
 
-      const resetModalState = () => {
+      const resetModalState = ({ resetCaptcha = true } = {}) => {
         if (!modalForm || !modalFormWrap || !modalSuccess) return;
         modalForm.reset();
-        if (recaptchaWidgetId !== null && window.grecaptcha?.reset) {
+        if (resetCaptcha && recaptchaWidgetId !== null && window.grecaptcha?.reset) {
           window.grecaptcha.reset(recaptchaWidgetId);
         }
         recaptchaMount?.classList.remove('is-error');
@@ -1369,17 +1413,21 @@
       const openModal = () => {
         if (!modal) return;
         previouslyFocused = document.activeElement;
-        resetModalState();
+        resetModalState({ resetCaptcha: false });
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('modal-open');
-        renderRecaptcha();
+        scheduleRecaptcha();
         const focusables = getFocusableElements();
         if (focusables.length) focusables[0].focus();
       };
 
       const closeModal = () => {
         if (!modal) return;
+        if (recaptchaPrepareTimer) {
+          window.clearTimeout(recaptchaPrepareTimer);
+          recaptchaPrepareTimer = 0;
+        }
         modal.classList.remove('is-open');
         modal.setAttribute('aria-hidden', 'true');
         document.body.classList.remove('modal-open');
