@@ -30,6 +30,11 @@ const pauseVideo = (video) => {
   video.pause();
 };
 
+const isInViewport = (video) => {
+  const rect = video.getBoundingClientRect();
+  return rect.bottom > 0 && rect.top < window.innerHeight;
+};
+
 if ("IntersectionObserver" in window) {
   const videoObserver = new IntersectionObserver(
     (entries) => {
@@ -93,3 +98,26 @@ if (hero && heroPreviewVideo && !reduceMotion) {
     { passive: true }
   );
 }
+
+const syncOverlayPlayback = () => {
+  const overlayOpen =
+    document.body.classList.contains("is-apply-open") ||
+    document.body.classList.contains("is-menu-open");
+
+  lazyVideos.forEach((video) => {
+    if (overlayOpen) {
+      pauseVideo(video);
+      return;
+    }
+
+    if (isInViewport(video)) {
+      playVideo(video);
+    }
+  });
+};
+
+const overlayObserver = new MutationObserver(syncOverlayPlayback);
+overlayObserver.observe(document.body, {
+  attributes: true,
+  attributeFilter: ["class"],
+});
