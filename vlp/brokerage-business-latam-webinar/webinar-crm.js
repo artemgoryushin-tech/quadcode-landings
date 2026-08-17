@@ -7,6 +7,7 @@
   const WEBINAR_TITLE = "Negocio de Brokerage en LATAM: ¿Cómo Empezar?";
   const REGISTERED_WEBINAR_FIELD = "UF_CRM_1758615537942";
   const WEBINAR_DATE_TIME_FIELD = "UF_CRM_1760090758537";
+  const WEBINAR_ACCESS_URL_FIELD = "UF_CRM_1786963871";
   const SESSION_TIME =
     "18:00 UTC (12:00 México; 13:00 Colombia y Perú; 14:00 Venezuela; 15:00 Argentina y São Paulo)";
   const DEFAULT_WEBINAR_URL =
@@ -161,6 +162,7 @@
     // the normal sales funnel.
     payload.set(REGISTERED_WEBINAR_FIELD, "1");
     optionalSet(payload, WEBINAR_DATE_TIME_FIELD, sessionStart);
+    payload.set(WEBINAR_ACCESS_URL_FIELD, accessUrl);
     payload.set("registered_webinar", "1");
     optionalSet(payload, "webinar_date_time", sessionStart);
     optionalSet(payload, "registration_id", registration.registrationId);

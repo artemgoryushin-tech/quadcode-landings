@@ -43,10 +43,12 @@ En producción, `webinar-crm.js` envía el formulario al proxy existente:
 
 La integración no cambia la etapa comercial del lead. Marca la inscripción en
 `Registered Webinar` (`UF_CRM_1758615537942`) y guarda el inicio de la sesión
-concreta en `Webinar Date / Time` (`UF_CRM_1760090758537`). También usa el
-identificador independiente `source_form=quadcode_latam_webinar`. Las respuestas
-abiertas, Telegram, país telefónico, URL personal del webinar y parámetros UTM
-se incluyen en el payload.
+concreta en `Webinar Date / Time` (`UF_CRM_1760090758537`). La URL personal se
+guarda por separado en `Webinar Access URL` (`UF_CRM_1786963871`) para que los
+mensajes de Bitrix mantengan el `registration_id` y el tracking de asistencia.
+También usa el identificador independiente `source_form=quadcode_latam_webinar`.
+Las respuestas abiertas, Telegram, país telefónico y parámetros UTM se incluyen
+en el payload.
 
 La página confirma el registro después de que el endpoint responde. Los avisos
 externos se programan desde el registro persistido, no desde una etapa de CRM,
@@ -76,6 +78,20 @@ Los IDs aprobados se guardan únicamente en el `.env` del VPS como
 `WEBINAR_CHATAPP_TEMPLATE_REMINDER_1H` y `WEBINAR_CHATAPP_TEMPLATE_LIVE`.
 `WEBINAR_MESSAGES_ENABLED=true` se establece solo después de una prueba real
 en un número interno. Mientras tanto, la cola se llena sin enviar mensajes.
+
+### Email desde Bitrix
+
+El template nativo de Lead `LATAM Webinar - Email sequence (18:00 UTC)
+[DRAFT]` (`ID 271`) exige `Registered Webinar = Yes` y que `Webinar Date /
+Time`, `Webinar Access URL` y el email de trabajo estén completos. Dentro de
+esa rama envía la confirmación, espera hasta una hora antes del webinar, envía
+el recordatorio, espera hasta el comienzo y envía el enlace en directo. La
+rama alternativa está vacía y el proceso no cambia la etapa del lead.
+
+El autorun permanece desactivado hasta desplegar el campo `Webinar Access URL`
+y validar los tres mensajes con un lead interno. ActiveCampaign es únicamente
+un fallback: no debe activarse a la vez que la secuencia de Bitrix para evitar
+emails duplicados.
 
 ## Horario
 

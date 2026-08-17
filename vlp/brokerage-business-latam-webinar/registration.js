@@ -158,27 +158,32 @@
       const isLocalPreview =
         window.location.protocol === "file:" ||
         ["localhost", "127.0.0.1", "::1"].includes(window.location.hostname);
+      let completedRegistration = registration;
+
+      if (window.QuadcodeWebinarTracking) {
+        window.QuadcodeWebinarTracking.saveRegistration(registration);
+        if (!isLocalPreview) {
+          try {
+            completedRegistration =
+              await window.QuadcodeWebinarTracking.register(registration);
+          } catch (trackingError) {
+            console.warn("Webinar tracking queued", trackingError);
+          }
+        }
+      }
 
       if (!isLocalPreview) {
         if (!window.QuadcodeWebinarCRM?.submit) {
           throw new Error("El servicio de registro no está disponible.");
         }
-        await window.QuadcodeWebinarCRM.submit(registration);
+        await window.QuadcodeWebinarCRM.submit(completedRegistration);
       }
 
-      if (window.QuadcodeWebinarTracking) {
-        window.QuadcodeWebinarTracking.saveRegistration(registration);
-        if (!isLocalPreview) {
-          void window.QuadcodeWebinarTracking.register(registration).catch(
-            (trackingError) =>
-              console.warn("Webinar tracking queued", trackingError),
-          );
-        }
-      } else {
+      if (!window.QuadcodeWebinarTracking) {
         try {
           localStorage.setItem(
             "quadcodeLatamWebinarRegistration",
-            JSON.stringify(registration),
+            JSON.stringify(completedRegistration),
           );
         } catch {
           // Access still works when storage is unavailable.
@@ -187,7 +192,7 @@
 
       window.dispatchEvent(
         new CustomEvent("quadcode:webinar-register", {
-          detail: registration,
+          detail: completedRegistration,
         }),
       );
 
@@ -200,7 +205,7 @@
         page_location: window.location.href,
       });
 
-      showSuccess(registration);
+      showSuccess(completedRegistration);
     } catch (error) {
       console.error("Webinar registration error", error);
       submitButton.disabled = false;
