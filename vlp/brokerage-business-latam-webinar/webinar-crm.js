@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const DEFAULT_ENDPOINT = "https://group.quadcode.com/api/notPopup";
+  const DEFAULT_ENDPOINT = "https://quadcode.foach.site/api/notPopup";
   const SOURCE_FORM = "quadcode_latam_webinar";
   const SOURCE_SITE = "Quadcode Brokerage Solutions";
   const WEBINAR_TITLE = "Negocio de Brokerage en LATAM: ¿Cómo Empezar?";

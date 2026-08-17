@@ -39,7 +39,7 @@ movimiento del puntero o navegación por teclado.
 
 En producción, `webinar-crm.js` envía el formulario al proxy existente:
 
-`https://group.quadcode.com/api/notPopup`
+`https://quadcode.foach.site/api/notPopup`
 
 La integración no cambia la etapa comercial del lead. Marca la inscripción en
 `Registered Webinar` (`UF_CRM_1758615537942`) y guarda el inicio de la sesión

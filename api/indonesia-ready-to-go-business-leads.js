@@ -1,4 +1,4 @@
-const DEFAULT_FORMS_API_URL = "https://group.quadcode.com";
+const DEFAULT_FORMS_API_URL = "https://quadcode.foach.site";
 const DEFAULT_FORMS_API_ENDPOINT = "/api/notPopup";
 const SOURCE_FORM = "quadcode_indonesia_audience_to_broker";
 const SOURCE_SITE = "Quadcode Brokerage Solutions";

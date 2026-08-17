@@ -39,7 +39,7 @@ The registration object is intentionally not placed in the page URL.
 On `http`/`https`, `webinar-crm.js` sends the validated registration to the
 existing Quadcode lead proxy:
 
-`https://group.quadcode.com/api/notPopup`
+`https://quadcode.foach.site/api/notPopup`
 
 The request uses the existing Quadcode field contract (`first_name`, `email`,
 `phone`, `tg`, `comment`, consent, UTM fields, and `roistat_id`) and requests
@@ -63,7 +63,7 @@ this before `webinar-crm.js`:
 ```html
 <script>
   window.QUADCODE_WEBINAR_CRM = {
-    endpoint: "https://group.quadcode.com/api/notPopup",
+    endpoint: "https://quadcode.foach.site/api/notPopup",
     statusId: "UC_SDFUX2",
     webinarUrl:
       "https://quadcode.com/vlp/brokerage-business-philippines-webinar/watch/",
