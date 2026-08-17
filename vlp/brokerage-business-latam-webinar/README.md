@@ -83,8 +83,9 @@ Los tres templates WABA deben aprobarse en español antes de activar el worker:
 Los IDs aprobados se guardan únicamente en el `.env` del VPS como
 `WEBINAR_CHATAPP_TEMPLATE_CONFIRMATION`,
 `WEBINAR_CHATAPP_TEMPLATE_REMINDER_1H` y `WEBINAR_CHATAPP_TEMPLATE_LIVE`.
-`WEBINAR_MESSAGES_ENABLED=true` se establece solo después de una prueba real
-en un número interno. Mientras tanto, la cola se llena sin enviar mensajes.
+`WEBINAR_MESSAGES_ENABLED=true` está activo. La única inscripción interna de
+QA y sus tres entregas quedaron marcadas como `skipped`, por lo que el worker
+solo procesa nuevas inscripciones persistidas.
 
 ### Email desde Bitrix
 
