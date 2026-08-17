@@ -1,5 +1,4 @@
-const DEFAULT_FORMS_API_URL = "https://quadcode.foach.site";
-const DEFAULT_FORMS_API_ENDPOINT = "/api/notPopup";
+const DEFAULT_LEADS_API_URL = "https://quadcode.com/api/send";
 const SOURCE_FORM = "quadcode_start_brokerage";
 const SOURCE_SITE = "Quadcode Brokerage Solutions";
 const UTM_FIELDS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
@@ -22,8 +21,8 @@ function normalizePhone(value) {
   return `+${digits}`;
 }
 
-function appendIfPresent(payload, key, value) {
-  if (value) payload.set(key, value);
+function setIfPresent(payload, key, value) {
+  if (value) payload[key] = value;
 }
 
 function landingReference(sourceUrl, pagePath) {
@@ -95,33 +94,33 @@ export default async function handler(request, response) {
     }),
   ].filter(Boolean);
 
-  const crmPayload = new FormData();
-  crmPayload.set("name", fullName);
-  crmPayload.set("first_name", fullName);
-  crmPayload.set("email", email);
-  crmPayload.set("phone", phone);
-  crmPayload.set("text", text);
-  crmPayload.set("message", text);
-  crmPayload.set("agreement", "on");
-  crmPayload.set("terms_agree", "on");
-  crmPayload.set("token", token);
-  crmPayload.set("landing_url", reference);
-  crmPayload.set("referrer", reference);
-  crmPayload.set("lang_by_browser", language);
-  crmPayload.set("source_form", SOURCE_FORM);
-  crmPayload.set("source_site", SOURCE_SITE);
-  crmPayload.set("comment", context.join("\n"));
-  appendIfPresent(crmPayload, "initialInvestment", initialInvestment);
-  appendIfPresent(crmPayload, "phone_country", phoneCountry);
-  appendIfPresent(crmPayload, "roistat_id", roistatId);
+  const crmPayload = {
+    name: fullName,
+    first_name: fullName,
+    email,
+    phone,
+    tg: "",
+    text,
+    message: context.join("\n"),
+    agreement: true,
+    terms_agree: true,
+    token,
+    landing_url: sourceUrl || reference,
+    referrer: reference,
+    language,
+    lang_by_browser: language,
+    source_form: SOURCE_FORM,
+    source_site: SOURCE_SITE,
+    comment: context.join("\n"),
+  };
+  setIfPresent(crmPayload, "initialInvestment", initialInvestment);
+  setIfPresent(crmPayload, "phone_country", phoneCountry);
+  setIfPresent(crmPayload, "roistatId", roistatId);
   for (const field of UTM_FIELDS) {
-    appendIfPresent(crmPayload, field, readString(body, field, 180));
+    setIfPresent(crmPayload, field, readString(body, field, 180));
   }
 
-  const endpoint = new URL(
-    process.env.FORMS_API_ENDPOINT ?? DEFAULT_FORMS_API_ENDPOINT,
-    process.env.FORMS_API_URL ?? DEFAULT_FORMS_API_URL,
-  );
+  const endpoint = process.env.QUADCODE_LEADS_API_URL ?? DEFAULT_LEADS_API_URL;
 
   if (process.env.FORMS_API_DRY_RUN === "true") {
     return response.status(200).json({ success: true, message: "Pengujian formulir berhasil." });
@@ -131,22 +130,28 @@ export default async function handler(request, response) {
     const crmResponse = await fetch(endpoint, {
       method: "POST",
       headers: {
+        "Content-Type": "application/json",
         Accept: "application/json, text/plain, */*",
-        "X-Requested-With": "XMLHttpRequest",
       },
-      body: crmPayload,
+      body: JSON.stringify(crmPayload),
       cache: "no-store",
     });
     const responseText = await crmResponse.text();
     const result = parseResponse(responseText);
 
-    if (!crmResponse.ok || (result && typeof result === "object" && result.success === false)) {
+    const rejectedByBody = result && typeof result === "object" && (
+      result.success === false ||
+      result.status === "error" ||
+      result.error === true
+    );
+
+    if (!crmResponse.ok || rejectedByBody) {
       console.error("CRM rejected start-brokerage request", {
         status: crmResponse.status,
         body: responseText.slice(0, 500),
       });
       return response
-        .status(crmResponse.status === 422 ? 422 : 502)
+        .status([400, 403, 422].includes(crmResponse.status) ? crmResponse.status : 502)
         .json({ success: false, message: "Permintaan tidak diterima. Periksa kembali kolom formulir dan coba lagi." });
     }
 
