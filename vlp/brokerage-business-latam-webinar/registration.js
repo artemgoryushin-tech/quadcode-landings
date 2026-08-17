@@ -129,6 +129,29 @@
     const whyJoin = data.whyJoin?.trim() || "";
     const sessionStart =
       window.QuadcodeWebinarSchedule?.getNextSession?.()?.toISOString?.() || "";
+    const trackingFields = [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_term",
+      "utm_content",
+    ];
+    const pageParams = new URLSearchParams(window.location.search);
+    const storedTrackingValue = (field) => {
+      try {
+        return localStorage.getItem(`param__${field}`) || "";
+      } catch {
+        return "";
+      }
+    };
+    const tracking = Object.fromEntries(
+      trackingFields
+        .map((field) => [
+          field,
+          pageParams.get(field) || storedTrackingValue(field),
+        ])
+        .filter(([, value]) => value),
+    );
     const registration = {
       registrationId:
         window.QuadcodeWebinarTracking?.createRegistrationId?.() ||
@@ -147,6 +170,7 @@
       registeredAt: new Date().toISOString(),
       sessionStart,
       sourceForm: "quadcode_latam_webinar",
+      tracking,
     };
 
     submitButton.disabled = true;

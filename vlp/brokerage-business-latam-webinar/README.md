@@ -56,6 +56,13 @@ y usan una URL personal con el `registration_id`:
 
 `https://quadcode.com/vlp/brokerage-business-latam-webinar/watch/`
 
+El registro persistido también funciona como cola de recuperación. El worker
+busca primero un lead reciente por email y evidencias del webinar; si el proxy
+general no lo creó, genera un lead con email, teléfono, UTM, fecha de sesión y
+URL personal. Para sesiones ya vencidas crea el lead con el gate de email
+apagado y lo normaliza después mediante una actualización, evitando mensajes
+retroactivos porque el workflow no se ejecuta en cambios.
+
 ## Mensajes del webinar
 
 El VPS crea tres entregas idempotentes por registro: confirmación inmediata,
@@ -81,17 +88,18 @@ en un número interno. Mientras tanto, la cola se llena sin enviar mensajes.
 
 ### Email desde Bitrix
 
-El template nativo de Lead `LATAM Webinar - Email sequence (18:00 UTC)
-[DRAFT]` (`ID 271`) exige `Registered Webinar = Yes` y que `Webinar Date /
+El template nativo de Lead `LATAM Webinar - Email sequence (18:00 UTC)`
+(`ID 271`) exige `Registered Webinar = Yes` y que `Webinar Date /
 Time`, `Webinar Access URL` y el email de trabajo estén completos. Dentro de
 esa rama envía la confirmación, espera hasta una hora antes del webinar, envía
 el recordatorio, espera hasta el comienzo y envía el enlace en directo. La
 rama alternativa está vacía y el proceso no cambia la etapa del lead.
 
-El autorun permanece desactivado hasta desplegar el campo `Webinar Access URL`
-y validar los tres mensajes con un lead interno. ActiveCampaign es únicamente
-un fallback: no debe activarse a la vez que la secuencia de Bitrix para evitar
-emails duplicados.
+El autorun se ejecuta únicamente al crear un lead; no se ejecuta al modificarlo
+ni se muestra en el menú de inicio manual. La prueba controlada verificó los
+tres emails y que un lead existente no recibió mensajes retroactivos.
+ActiveCampaign es únicamente un fallback: no debe activarse a la vez que la
+secuencia de Bitrix para evitar emails duplicados.
 
 ## Horario
 
