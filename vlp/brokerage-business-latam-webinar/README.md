@@ -48,11 +48,34 @@ identificador independiente `source_form=quadcode_latam_webinar`. Las respuestas
 abiertas, Telegram, país telefónico, URL personal del webinar y parámetros UTM
 se incluyen en el payload.
 
-La página confirma el registro después de que el endpoint responde. El envío
-del email debe dispararse por `Registered Webinar = Yes`, no por una etapa,
-usando la URL personal guardada en el registro:
+La página confirma el registro después de que el endpoint responde. Los avisos
+externos se programan desde el registro persistido, no desde una etapa de CRM,
+y usan una URL personal con el `registration_id`:
 
 `https://quadcode.com/vlp/brokerage-business-latam-webinar/watch/`
+
+## Mensajes del webinar
+
+El VPS crea tres entregas idempotentes por registro: confirmación inmediata,
+recordatorio una hora antes y aviso al comenzar. El worker usa la línea
+ChatApp Quadcode (`47962`) y nunca depende de la etapa del lead. Las entregas
+caducadas se omiten para evitar envíos tardíos.
+
+Los tres templates WABA deben aprobarse en español antes de activar el worker:
+
+- `qc_latam_webinar_registration_es`: `Hola, {{1}}. Tu registro para el webinar
+  Negocio de Brokerage en LATAM está confirmado para {{2}}. Tu enlace personal:
+  {{3}}. Te enviaremos otro recordatorio una hora antes.`
+- `qc_latam_webinar_reminder_1h_es`: `Hola, {{1}}. El webinar comienza en una
+  hora, a las {{2}}. Únete aquí con tu enlace personal: {{3}}.`
+- `qc_latam_webinar_live_es`: `Hola, {{1}}. El webinar ya comenzó. Entra ahora
+  con tu enlace personal: {{2}}.`
+
+Los IDs aprobados se guardan únicamente en el `.env` del VPS como
+`WEBINAR_CHATAPP_TEMPLATE_CONFIRMATION`,
+`WEBINAR_CHATAPP_TEMPLATE_REMINDER_1H` y `WEBINAR_CHATAPP_TEMPLATE_LIVE`.
+`WEBINAR_MESSAGES_ENABLED=true` se establece solo después de una prueba real
+en un número interno. Mientras tanto, la cola se llena sin enviar mensajes.
 
 ## Horario
 
