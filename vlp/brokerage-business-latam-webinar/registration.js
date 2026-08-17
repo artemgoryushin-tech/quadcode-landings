@@ -80,7 +80,7 @@
       window.QuadcodeWebinarSchedule?.formatSessionLabel?.(
         registration.sessionStart,
       ) ||
-      "16:00 UTC";
+      "18:00 UTC";
 
     cardHead.hidden = true;
     form.hidden = true;

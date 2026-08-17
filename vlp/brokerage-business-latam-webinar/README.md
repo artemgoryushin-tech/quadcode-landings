@@ -56,8 +56,8 @@ usando la URL personal guardada en el registro:
 
 ## Horario
 
-La sesión usa las `16:00 UTC`: 10:00 en Ciudad de México, 11:00 en Colombia y
-Perú, 12:00 en Venezuela y 13:00 en Argentina y São Paulo. La landing muestra
+La sesión usa las `18:00 UTC`: 12:00 en Ciudad de México, 13:00 en Colombia y
+Perú, 14:00 en Venezuela y 15:00 en Argentina y São Paulo. La landing muestra
 la hora local del navegador para evitar conversiones manuales, sin comunicar
 que la sesión se repite diariamente. Este valor también se envía al CRM y
 aparece en la confirmación. Actualiza
@@ -98,7 +98,7 @@ El botón `CC` permite activar o desactivar los subtítulos y guarda la
 preferencia en el navegador.
 
 La sala funciona como una sesión en directo programada: comienza cada día a
-las 16:00 UTC, dura 22:23 y termina al mismo tiempo relativo cada día. Antes
+las 18:00 UTC, dura 22:23 y termina al mismo tiempo relativo cada día. Antes
 del inicio, el player muestra un countdown y, cuando llega a cero, comienza
 automáticamente sin sonido para cumplir las restricciones de autoplay del
 navegador. El usuario puede activar el audio desde el control del player. El
@@ -118,8 +118,8 @@ en los que la presentadora comienza a responderlas:
 window.QUADCODE_WEBINAR = {
   videoSrc: "../assets/webinar-latam.mp4",
   durationSeconds: 1343.4,
-  sessionHourUtc: 16,
-  sessionTimeLabel: "16:00 UTC",
+  sessionHourUtc: 18,
+  sessionTimeLabel: "18:00 UTC",
   chatEndpoint: "",
   timedChat: window.QUADCODE_WEBINAR_CHAT,
 };

@@ -4,8 +4,8 @@
   const config = {
     videoSrc: "",
     durationSeconds: 1343.4,
-    sessionHourUtc: 16,
-    sessionTimeLabel: "16:00 UTC",
+    sessionHourUtc: 18,
+    sessionTimeLabel: "18:00 UTC",
     chatEndpoint: "",
     timedChat: [],
     ...(window.QUADCODE_WEBINAR || {}),
@@ -120,7 +120,7 @@
     Number.isFinite(requestedPreviewOffset);
   const previewClockStartedAt = Date.now();
   const previewSessionStart = new Date();
-  previewSessionStart.setUTCHours(Number(config.sessionHourUtc) || 16, 0, 0, 0);
+  previewSessionStart.setUTCHours(Number(config.sessionHourUtc) || 18, 0, 0, 0);
 
   const currentDate = () => {
     if (!hasPreviewClock) return new Date();

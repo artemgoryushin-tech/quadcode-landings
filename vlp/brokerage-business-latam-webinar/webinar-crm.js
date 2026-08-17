@@ -8,7 +8,7 @@
   const REGISTERED_WEBINAR_FIELD = "UF_CRM_1758615537942";
   const WEBINAR_DATE_TIME_FIELD = "UF_CRM_1760090758537";
   const SESSION_TIME =
-    "16:00 UTC (10:00 México; 11:00 Colombia y Perú; 13:00 Argentina)";
+    "18:00 UTC (12:00 México; 13:00 Colombia y Perú; 14:00 Venezuela; 15:00 Argentina y São Paulo)";
   const DEFAULT_WEBINAR_URL =
     "https://quadcode.com/vlp/brokerage-business-latam-webinar/watch/";
   const TRACKING_FIELDS = [

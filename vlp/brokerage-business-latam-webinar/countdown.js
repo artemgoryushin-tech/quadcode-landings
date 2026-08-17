@@ -1,9 +1,9 @@
 (() => {
   "use strict";
 
-  const SESSION_HOUR_UTC = 16;
+  const SESSION_HOUR_UTC = 18;
   const STARTING_WINDOW_MS = 60 * 1000;
-  const SESSION_TIME_LABEL = "16:00 UTC";
+  const SESSION_TIME_LABEL = "18:00 UTC";
 
   const asDate = (input) =>
     input instanceof Date ? new Date(input.getTime()) : new Date(input);
