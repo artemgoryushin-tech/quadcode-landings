@@ -2,10 +2,11 @@
   "use strict";
 
   const DEFAULT_ENDPOINT = "https://group.quadcode.com/api/notPopup";
-  const DEFAULT_STATUS_ID = "UC_SDFUX2";
   const SOURCE_FORM = "quadcode_latam_webinar";
   const SOURCE_SITE = "Quadcode Brokerage Solutions";
   const WEBINAR_TITLE = "Negocio de Brokerage en LATAM: ¿Cómo Empezar?";
+  const REGISTERED_WEBINAR_FIELD = "UF_CRM_1758615537942";
+  const WEBINAR_DATE_TIME_FIELD = "UF_CRM_1760090758537";
   const SESSION_TIME =
     "16:00 UTC (10:00 México; 11:00 Colombia y Perú; 13:00 Argentina)";
   const DEFAULT_WEBINAR_URL =
@@ -54,6 +55,27 @@
     }
   };
 
+  const webinarAccessUrlFor = (webinarUrl, registrationId) => {
+    try {
+      const url = new URL(webinarUrl);
+      if (value(registrationId)) url.searchParams.set("rid", value(registrationId));
+      return url.href;
+    } catch {
+      return webinarUrl;
+    }
+  };
+
+  const sessionStartFor = (registration, context) => {
+    const configured =
+      context.sessionStart ||
+      registration.sessionStart ||
+      globalThis.QuadcodeWebinarSchedule?.getNextSession?.();
+    const session = configured ? new Date(configured) : null;
+    return session && Number.isFinite(session.getTime())
+      ? session.toISOString()
+      : "";
+  };
+
   const getTracking = (pageUrl, storage) => {
     const tracking = {};
 
@@ -90,21 +112,25 @@
 
     const pageUrl = context.pageUrl || browserLocation;
     const pagePath = pageReference(pageUrl);
-    const statusId =
-      context.statusId || runtimeConfig.statusId || DEFAULT_STATUS_ID;
     const webinarUrl = webinarUrlFor(
       pageUrl,
       context.webinarUrl || runtimeConfig.webinarUrl,
     );
+    const accessUrl = webinarAccessUrlFor(
+      webinarUrl,
+      registration.registrationId,
+    );
+    const sessionStart = sessionStartFor(registration, context);
     const about = value(registration.about);
     const whyJoin = value(registration.whyJoin);
     const phoneCountry = value(registration.phoneCountry);
     const telegram = value(registration.telegram);
     const notes = [
       `Webinar: ${WEBINAR_TITLE}`,
-      `Etapa solicitada: registered webinar (${statusId})`,
+      "Registro de webinar: confirmado",
       `Hora de la sesión: ${SESSION_TIME}`,
-      `Webinar URL: ${webinarUrl}`,
+      sessionStart ? `Fecha de la sesión: ${sessionStart}` : "",
+      `Webinar URL: ${accessUrl}`,
       about ? `Sobre la persona:\n${about}` : "",
       whyJoin ? `Motivo para participar:\n${whyJoin}` : "",
       telegram ? `Telegram: ${telegram}` : "",
@@ -131,16 +157,19 @@
     payload.set("source_form", SOURCE_FORM);
     payload.set("source_site", SOURCE_SITE);
 
-    // The Quadcode proxy uses snake_case fields. STATUS_ID is also sent so a
-    // direct Bitrix field passthrough can place the lead in the same stage.
-    payload.set("status_id", statusId);
-    payload.set("STATUS_ID", statusId);
-    payload.set("stage_name", "registered webinar");
+    // Registration is metadata on the lead. It must not move the lead out of
+    // the normal sales funnel.
+    payload.set(REGISTERED_WEBINAR_FIELD, "1");
+    optionalSet(payload, WEBINAR_DATE_TIME_FIELD, sessionStart);
+    payload.set("registered_webinar", "1");
+    optionalSet(payload, "webinar_date_time", sessionStart);
+    optionalSet(payload, "registration_id", registration.registrationId);
     payload.set("lead_source", "webinar");
     payload.set("source", "webinar");
     payload.set("session_time", SESSION_TIME);
-    payload.set("webinar_url", webinarUrl);
-    payload.set("access_url", webinarUrl);
+    optionalSet(payload, "session_start", sessionStart);
+    payload.set("webinar_url", accessUrl);
+    payload.set("access_url", accessUrl);
 
     optionalSet(payload, "tg", telegram);
     optionalSet(payload, "comment", notes);
@@ -236,7 +265,8 @@
     constants: {
       endpoint: DEFAULT_ENDPOINT,
       sourceForm: SOURCE_FORM,
-      statusId: DEFAULT_STATUS_ID,
+      registeredWebinarField: REGISTERED_WEBINAR_FIELD,
+      webinarDateTimeField: WEBINAR_DATE_TIME_FIELD,
       sessionTime: SESSION_TIME,
       webinarUrl: DEFAULT_WEBINAR_URL,
     },

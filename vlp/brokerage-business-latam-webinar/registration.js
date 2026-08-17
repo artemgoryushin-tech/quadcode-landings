@@ -77,7 +77,9 @@
     successName.textContent = registration.firstName;
     successEmail.textContent = registration.email;
     successTime.textContent =
-      window.QuadcodeWebinarSchedule?.formatSessionLabel?.() ||
+      window.QuadcodeWebinarSchedule?.formatSessionLabel?.(
+        registration.sessionStart,
+      ) ||
       "16:00 UTC";
 
     cardHead.hidden = true;
@@ -125,7 +127,12 @@
     const data = Object.fromEntries(new FormData(form).entries());
     const about = data.about?.trim() || "";
     const whyJoin = data.whyJoin?.trim() || "";
+    const sessionStart =
+      window.QuadcodeWebinarSchedule?.getNextSession?.()?.toISOString?.() || "";
     const registration = {
+      registrationId:
+        window.QuadcodeWebinarTracking?.createRegistrationId?.() ||
+        `${Date.now()}-${Math.random().toString(16).slice(2)}`,
       firstName: data.firstName?.trim() || "",
       lastName: "",
       email: data.email?.trim() || "",
@@ -138,6 +145,8 @@
       company: data.company?.trim() || "",
       country: "LATAM",
       registeredAt: new Date().toISOString(),
+      sessionStart,
+      sourceForm: "quadcode_latam_webinar",
     };
 
     submitButton.disabled = true;
@@ -157,13 +166,23 @@
         await window.QuadcodeWebinarCRM.submit(registration);
       }
 
-      try {
-        localStorage.setItem(
-          "quadcodeLatamWebinarRegistration",
-          JSON.stringify(registration),
-        );
-      } catch {
-        // Access still works when storage is unavailable.
+      if (window.QuadcodeWebinarTracking) {
+        window.QuadcodeWebinarTracking.saveRegistration(registration);
+        if (!isLocalPreview) {
+          void window.QuadcodeWebinarTracking.register(registration).catch(
+            (trackingError) =>
+              console.warn("Webinar tracking queued", trackingError),
+          );
+        }
+      } else {
+        try {
+          localStorage.setItem(
+            "quadcodeLatamWebinarRegistration",
+            JSON.stringify(registration),
+          );
+        } catch {
+          // Access still works when storage is unavailable.
+        }
       }
 
       window.dispatchEvent(
@@ -176,7 +195,8 @@
       window.dataLayer.push({
         event: "lead_submit",
         form_id: "quadcode_latam_webinar",
-        lead_stage: "UC_SDFUX2",
+        registered_webinar: true,
+        webinar_session_start: sessionStart,
         page_location: window.location.href,
       });
 

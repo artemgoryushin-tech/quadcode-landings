@@ -41,14 +41,16 @@ En producción, `webinar-crm.js` envía el formulario al proxy existente:
 
 `https://group.quadcode.com/api/notPopup`
 
-La integración conserva la etapa Bitrix `UC_SDFUX2` (`registered webinar`) y
-usa un identificador independiente: `source_form=quadcode_latam_webinar`. Las
-respuestas abiertas, Telegram, país telefónico, URL del webinar y parámetros
-UTM se incluyen en el payload.
+La integración no cambia la etapa comercial del lead. Marca la inscripción en
+`Registered Webinar` (`UF_CRM_1758615537942`) y guarda el inicio de la sesión
+concreta en `Webinar Date / Time` (`UF_CRM_1760090758537`). También usa el
+identificador independiente `source_form=quadcode_latam_webinar`. Las respuestas
+abiertas, Telegram, país telefónico, URL personal del webinar y parámetros UTM
+se incluyen en el payload.
 
 La página confirma el registro después de que el endpoint responde. El envío
-del email debe seguir configurado como automatización de Bitrix para la etapa
-`registered webinar`, usando esta URL:
+del email debe dispararse por `Registered Webinar = Yes`, no por una etapa,
+usando la URL personal guardada en el registro:
 
 `https://quadcode.com/vlp/brokerage-business-latam-webinar/watch/`
 
@@ -63,6 +65,22 @@ aparece en la confirmación. Actualiza
 
 El selector telefónico prioriza países de Latinoamérica y empieza en México
 (`+52`).
+
+## Asistencia y no-show
+
+`webinar-tracking.js` registra la sesión elegida y genera un ID anónimo que se
+añade a la URL de acceso. La sala envía `joined` y heartbeats acumulativos solo
+cuando el video está reproduciéndose, la pestaña está visible y la sesión está
+en directo. Una apertura de página no cuenta como asistencia: el umbral es de
+60 segundos reales de reproducción.
+
+Los eventos se guardan primero en Postgres en el VPS. El sincronizador actualiza
+los campos de registro en Bitrix y añade una evidencia de asistencia al timeline
+del lead. Después de que termine la sesión y transcurra el periodo de gracia, un
+no-show puede pasar a `Doesn't attend webinar` (`UC_HKG926`) únicamente si el
+lead sigue en `New`, `To reach` o en la antigua etapa `Registered Webinar`. Si
+Sales ya lo movió a `Contacted`, `Good lead` u otra etapa, el sistema conserva
+la etapa y añade solo la nota de no-show.
 
 ## Video, transcripción y chat sincronizado
 

@@ -101,7 +101,9 @@
     }
   };
 
-  const registration = readStorage(REGISTRATION_KEY, {});
+  const registration =
+    globalThis.QuadcodeWebinarTracking?.readRegistration?.() ||
+    readStorage(REGISTRATION_KEY, {});
   const viewerFullName =
     [registration.firstName, registration.lastName].filter(Boolean).join(" ") ||
     "Invitado";
@@ -259,6 +261,84 @@
   let autoJoinPending = false;
   let controlsHideTimer = 0;
   let keyboardControlsPinned = false;
+  let attendanceSessionKey = "";
+  let watchedSeconds = 0;
+  let lastAttendanceTick = performance.now();
+  let lastSentWatchedSeconds = 0;
+  let joinedEventSessionKey = "";
+  const ATTENDANCE_KEY = "quadcodeLatamWebinarAttendance";
+  const ATTENDANCE_HEARTBEAT_SECONDS = 30;
+  const ATTENDANCE_THRESHOLD_SECONDS = 60;
+  const attendanceHistory = readStorage(ATTENDANCE_KEY, {});
+
+  const saveAttendanceProgress = () => {
+    if (!attendanceSessionKey) return;
+    attendanceHistory[attendanceSessionKey] = {
+      watchedSeconds: Math.floor(watchedSeconds),
+      updatedAt: new Date().toISOString(),
+    };
+    writeStorage(ATTENDANCE_KEY, attendanceHistory);
+  };
+
+  const loadAttendanceSession = (sessionKey) => {
+    attendanceSessionKey = sessionKey;
+    watchedSeconds = Math.max(
+      0,
+      Number(attendanceHistory[sessionKey]?.watchedSeconds) || 0,
+    );
+    lastSentWatchedSeconds = watchedSeconds;
+    lastAttendanceTick = performance.now();
+  };
+
+  const sendAttendance = (eventName) => {
+    if (
+      !registration.registrationId ||
+      !globalThis.QuadcodeWebinarTracking?.attendance ||
+      !attendanceSessionKey
+    ) {
+      return;
+    }
+
+    lastSentWatchedSeconds = Math.floor(watchedSeconds);
+    saveAttendanceProgress();
+    void globalThis.QuadcodeWebinarTracking.attendance({
+      event: eventName,
+      watchedSeconds,
+      actualSessionStart: attendanceSessionKey,
+      occurredAt: new Date().toISOString(),
+    }).catch(() => {
+      // The tracking module keeps the latest cumulative event for retry.
+    });
+  };
+
+  const isActivelyWatching = () =>
+    hasJoined &&
+    latestSessionState.state === "live" &&
+    !document.hidden &&
+    !video.paused &&
+    !video.ended &&
+    video.readyState >= 2;
+
+  const updateAttendance = () => {
+    const now = performance.now();
+    const elapsedSeconds = Math.min(3, Math.max(0, (now - lastAttendanceTick) / 1000));
+    lastAttendanceTick = now;
+    if (!isActivelyWatching()) return;
+
+    const previousSeconds = watchedSeconds;
+    watchedSeconds += elapsedSeconds;
+    const crossedAttendanceThreshold =
+      previousSeconds < ATTENDANCE_THRESHOLD_SECONDS &&
+      watchedSeconds >= ATTENDANCE_THRESHOLD_SECONDS;
+    const heartbeatDue =
+      watchedSeconds - lastSentWatchedSeconds >= ATTENDANCE_HEARTBEAT_SECONDS;
+
+    if (crossedAttendanceThreshold || heartbeatDue) {
+      sendAttendance("heartbeat");
+    } else if (Math.floor(watchedSeconds) % 10 === 0) {
+      saveAttendanceProgress();
+    }
+  };
 
   const renderStoredMessages = () => {
     chatMessages
@@ -276,6 +356,7 @@
   const switchSession = (sessionKey) => {
     if (sessionKey === currentSessionKey) return;
     currentSessionKey = sessionKey;
+    loadAttendanceSession(sessionKey);
     chatMessages
       .querySelectorAll("[data-timed-id]")
       .forEach((message) => message.remove());
@@ -412,6 +493,10 @@
     if (!hasJoined || latestSessionState.state !== "live" || !video.paused) return;
     try {
       await video.play();
+      if (joinedEventSessionKey !== currentSessionKey) {
+        joinedEventSessionKey = currentSessionKey;
+        sendAttendance("joined");
+      }
       showControls();
     } catch {
       // A user gesture may be required again by the browser.
@@ -539,6 +624,10 @@
 
     try {
       await video.play();
+      if (joinedEventSessionKey !== currentSessionKey) {
+        joinedEventSessionKey = currentSessionKey;
+        sendAttendance("joined");
+      }
       showControls();
     } catch {
       hasJoined = false;
@@ -686,8 +775,16 @@
   });
 
   document.addEventListener("visibilitychange", () => {
-    if (!document.hidden) updateSession({ forceMediaSync: true });
+    if (document.hidden) {
+      sendAttendance("heartbeat");
+      lastAttendanceTick = performance.now();
+      return;
+    }
+    lastAttendanceTick = performance.now();
+    updateSession({ forceMediaSync: true });
   });
+
+  window.addEventListener("pagehide", () => sendAttendance("leave"));
 
   const resizeChatInput = () => {
     chatInput.style.height = "auto";
@@ -770,6 +867,7 @@
 
   updateSession({ forceMediaSync: true });
   globalThis.setInterval(() => updateSession(), 1000);
+  globalThis.setInterval(updateAttendance, 1000);
 
   globalThis.QuadcodeLiveWebinar = {
     formatTime,
