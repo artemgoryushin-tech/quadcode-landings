@@ -15,6 +15,143 @@
   const successName = successPanel?.querySelector("[data-success-name]");
   const successEmail = successPanel?.querySelector("[data-success-email]");
   const successTime = successPanel?.querySelector("[data-success-time]");
+  const registrationOpenButtons = [
+    ...document.querySelectorAll("[data-registration-open]"),
+  ];
+  const registrationCloseButton = card?.querySelector(
+    "[data-registration-close]",
+  );
+  const registrationBackdrop = document.querySelector(
+    "[data-registration-backdrop]",
+  );
+  const mobileRegistrationMedia = window.matchMedia("(max-width: 639px)");
+  const cardAnchor = document.createComment("registration-card-anchor");
+  card?.parentNode?.insertBefore(cardAnchor, card);
+  let previouslyFocused = null;
+  let backdropTimer = 0;
+
+  const focusableSelector = [
+    "button:not([disabled])",
+    "a[href]",
+    "input:not([disabled])",
+    "select:not([disabled])",
+    "textarea:not([disabled])",
+    '[tabindex]:not([tabindex="-1"])',
+  ].join(",");
+
+  const setRegistrationExpanded = (expanded) => {
+    registrationOpenButtons.forEach((button) => {
+      button.setAttribute("aria-expanded", String(expanded));
+    });
+  };
+
+  const resetRegistrationDialog = ({ restoreFocus = false } = {}) => {
+    if (!card || !registrationBackdrop) return;
+
+    window.clearTimeout(backdropTimer);
+    card.classList.remove("is-open");
+    registrationBackdrop.classList.remove("is-visible");
+    document.body.classList.remove("registration-modal-open");
+    setRegistrationExpanded(false);
+
+    if (mobileRegistrationMedia.matches) {
+      card.setAttribute("aria-hidden", "true");
+      backdropTimer = window.setTimeout(() => {
+        registrationBackdrop.hidden = true;
+      }, 240);
+    } else {
+      registrationBackdrop.hidden = true;
+      card.removeAttribute("role");
+      card.removeAttribute("aria-modal");
+      card.removeAttribute("aria-hidden");
+    }
+
+    if (restoreFocus && previouslyFocused instanceof HTMLElement) {
+      previouslyFocused.focus({ preventScroll: true });
+    }
+    previouslyFocused = null;
+  };
+
+  const openRegistrationDialog = (trigger) => {
+    if (!card || !registrationBackdrop) return;
+
+    if (!mobileRegistrationMedia.matches) {
+      card.scrollIntoView({ behavior: "smooth", block: "center" });
+      window.setTimeout(() => form.querySelector("input")?.focus(), 260);
+      return;
+    }
+
+    window.clearTimeout(backdropTimer);
+    previouslyFocused = trigger instanceof HTMLElement ? trigger : document.activeElement;
+    registrationBackdrop.hidden = false;
+    card.setAttribute("role", "dialog");
+    card.setAttribute("aria-modal", "true");
+    card.setAttribute("aria-hidden", "false");
+    document.body.classList.add("registration-modal-open");
+    setRegistrationExpanded(true);
+
+    window.requestAnimationFrame(() => {
+      registrationBackdrop.classList.add("is-visible");
+      card.classList.add("is-open");
+      window.setTimeout(() => {
+        registrationCloseButton?.focus({ preventScroll: true });
+      }, 80);
+    });
+  };
+
+  registrationOpenButtons.forEach((button) => {
+    button.addEventListener("click", () => openRegistrationDialog(button));
+  });
+
+  registrationCloseButton?.addEventListener("click", () => {
+    resetRegistrationDialog({ restoreFocus: true });
+  });
+
+  registrationBackdrop?.addEventListener("click", () => {
+    resetRegistrationDialog({ restoreFocus: true });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!mobileRegistrationMedia.matches || !card?.classList.contains("is-open")) {
+      return;
+    }
+
+    if (event.key === "Escape") {
+      event.preventDefault();
+      resetRegistrationDialog({ restoreFocus: true });
+      return;
+    }
+
+    if (event.key !== "Tab") return;
+
+    const focusable = [...card.querySelectorAll(focusableSelector)].filter(
+      (element) => !element.hidden && element.getClientRects().length > 0,
+    );
+    if (!focusable.length) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
+  const syncRegistrationMode = () => {
+    resetRegistrationDialog();
+    if (mobileRegistrationMedia.matches) {
+      if (card && card.parentNode !== document.body) document.body.append(card);
+      card?.setAttribute("aria-hidden", "true");
+    } else if (card && cardAnchor.parentNode) {
+      cardAnchor.parentNode.insertBefore(card, cardAnchor.nextSibling);
+    }
+  };
+
+  mobileRegistrationMedia.addEventListener?.("change", syncRegistrationMode);
+  syncRegistrationMode();
 
   const messages = {
     firstName: "Ilagay ang pangalan mo.",

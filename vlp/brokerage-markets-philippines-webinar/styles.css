@@ -42,13 +42,13 @@
   --ink: #111316;
   --ink-soft: #535861;
   --ink-faint: #777b82;
-  --paper: #f8f6f2;
-  --paper-bright: #fffefa;
+  --paper: #f2f3f5;
+  --paper-bright: #ffffff;
   --white: #ffffff;
   --dark: #111316;
   --dark-raised: #181b20;
   --dark-soft: #22262c;
-  --line: #dcd8d1;
+  --line: #d8dde5;
   --line-dark: rgb(255 255 255 / 13%);
   --red: #e51d2a;
   --red-hover: #c81724;
@@ -171,7 +171,9 @@ svg {
   overflow: hidden;
   color: var(--ink);
   background-color: var(--paper);
-  background-image: url("./assets/hero-background-v2.webp");
+  background-image:
+    linear-gradient(90deg, rgb(242 243 245 / 94%) 0%, rgb(242 243 245 / 72%) 48%, rgb(242 243 245 / 18%) 100%),
+    url("./assets/hero-background-v2.webp");
   background-position: 62% bottom;
   background-repeat: no-repeat;
   background-size: auto 100%;
@@ -188,8 +190,8 @@ svg {
   left: 0;
   background: linear-gradient(
     180deg,
-    rgb(255 254 250 / 0%),
-    rgb(255 254 250 / 76%)
+    rgb(242 243 245 / 0%),
+    rgb(242 243 245 / 84%)
   );
   pointer-events: none;
 }
@@ -306,6 +308,12 @@ svg {
   margin-top: 24px;
 }
 
+.button.hero-registration-trigger {
+  display: none;
+  width: 100%;
+  margin-top: 24px;
+}
+
 .hero-resources__title {
   margin: 0 0 14px;
   color: var(--ink);
@@ -346,13 +354,18 @@ svg {
 }
 
 .registration-card {
+  position: relative;
   width: 100%;
   max-width: 520px;
   padding: 24px 20px;
-  border: 1px solid #d8d4cd;
+  border: 1px solid #d8dde5;
   border-radius: var(--radius-md);
-  background: rgb(255 254 250 / 94%);
-  box-shadow: 0 14px 36px rgb(86 59 48 / 10%);
+  background: rgb(255 255 255 / 96%);
+  box-shadow: 0 14px 36px rgb(17 23 34 / 10%);
+}
+
+.registration-card__close {
+  display: none;
 }
 
 .registration-card__head {
@@ -655,6 +668,16 @@ svg {
   background: var(--red);
 }
 
+.button--dark {
+  color: var(--white);
+  background: #111722;
+  box-shadow: 0 10px 24px rgb(17 23 34 / 18%);
+}
+
+.button--dark:hover {
+  background: #242c38;
+}
+
 .button--primary:hover {
   background: var(--red-hover);
 }
@@ -827,6 +850,214 @@ svg {
   padding: 28px 0 calc(28px + env(safe-area-inset-bottom));
   color: rgb(255 255 255 / 66%);
   background: var(--dark);
+}
+
+.registration-backdrop,
+.mobile-registration-bar {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  body.registration-modal-open {
+    overflow: hidden;
+  }
+
+  .registration-hero {
+    background-image:
+      linear-gradient(180deg, rgb(242 243 245 / 91%) 0%, rgb(242 243 245 / 84%) 62%, rgb(242 243 245 / 72%) 100%),
+      url("./assets/hero-background-v2.webp");
+    background-position: 64% bottom;
+  }
+
+  .registration-hero__inner {
+    gap: 0;
+    padding-bottom: 48px;
+  }
+
+  .registration-hero__copy {
+    max-width: none;
+    text-align: center;
+  }
+
+  .registration-hero h1 {
+    max-width: 390px;
+    margin-inline: auto;
+  }
+
+  .hero-lead {
+    max-width: 390px;
+    margin-inline: auto;
+  }
+
+  .session-countdown {
+    max-width: 390px;
+    margin-inline: auto;
+    text-align: left;
+  }
+
+  .button.hero-registration-trigger {
+    display: inline-flex;
+    max-width: 390px;
+    margin-inline: auto;
+  }
+
+  .hero-resources {
+    max-width: 390px;
+    margin-inline: auto;
+    text-align: left;
+  }
+
+  .registration-card {
+    width: 100%;
+    max-width: none;
+    max-height: calc(100dvh - max(16px, env(safe-area-inset-top)));
+    margin: 0;
+    padding: 36px 16px max(20px, env(safe-area-inset-bottom));
+    position: fixed;
+    z-index: 120;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 0;
+    border-radius: 24px 24px 0 0;
+    background: #fff;
+    box-shadow: 0 -18px 48px rgb(17 23 34 / 22%);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(102%);
+    transition:
+      transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 180ms ease,
+      visibility 240ms ease;
+  }
+
+  .registration-card::before {
+    content: "";
+    width: 38px;
+    height: 4px;
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    border-radius: 999px;
+    background: #cbd3df;
+    transform: translateX(-50%);
+  }
+
+  .registration-card.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .registration-card__close {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    z-index: 2;
+    top: 14px;
+    right: 14px;
+    padding: 0;
+    border: 1px solid #d8dde5;
+    border-radius: 50%;
+    color: var(--ink);
+    background: #fff;
+  }
+
+  .registration-card__close svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 1.7;
+  }
+
+  .registration-card__head {
+    padding-right: 46px;
+  }
+
+  .registration-card h2 {
+    font-size: 30px;
+  }
+
+  .registration-form {
+    gap: 12px;
+  }
+
+  .registration-form__grid,
+  .registration-form__questions {
+    gap: 12px;
+  }
+
+  .field textarea {
+    min-height: 96px;
+  }
+
+  .registration-backdrop {
+    display: block;
+    position: fixed;
+    z-index: 90;
+    inset: 0;
+    background: rgb(7 11 18 / 72%);
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+
+  .registration-backdrop.is-visible {
+    opacity: 1;
+  }
+
+  .mobile-registration-bar {
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px 9px 8px 12px;
+    position: fixed;
+    z-index: 80;
+    right: 12px;
+    bottom: max(10px, env(safe-area-inset-bottom));
+    left: 12px;
+    border: 1px solid rgb(207 218 232 / 96%);
+    border-radius: 16px;
+    background: rgb(255 255 255 / 96%);
+    box-shadow: 0 -8px 26px rgb(17 23 34 / 14%);
+    backdrop-filter: blur(12px);
+    transition:
+      opacity 180ms ease,
+      transform 180ms ease;
+  }
+
+  .mobile-registration-bar img {
+    width: 116px;
+    height: auto;
+  }
+
+  .mobile-registration-bar button {
+    min-height: 40px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    background: var(--red);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  body.registration-modal-open .mobile-registration-bar {
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  .site-footer {
+    padding-bottom: calc(108px + env(safe-area-inset-bottom));
+  }
 }
 
 .site-footer__inner {
