@@ -1,9 +1,9 @@
 (() => {
   "use strict";
 
-  const SESSION_HOUR_UTC = 9;
+  const SESSION_HOUR_UTC = 6;
   const STARTING_WINDOW_MS = 60 * 1000;
-  const SESSION_TIME_LABEL = "5:00 PM PHT";
+  const SESSION_TIME_LABEL = "2:00 PM PHT";
 
   const asDate = (input) =>
     input instanceof Date ? new Date(input.getTime()) : new Date(input);
@@ -71,7 +71,7 @@
 
       heading.textContent = isStarting
         ? "Magsisimula na ang webinar"
-        : "Magsisimula ang susunod na webinar sa";
+        : "Magsisimula ang webinar sa";
       sessionLabel.textContent = formatSessionLabel(target);
       hours.textContent = pad(remaining.hours);
       minutes.textContent = pad(remaining.minutes);

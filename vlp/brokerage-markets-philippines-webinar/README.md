@@ -25,7 +25,7 @@ Partial Content`.
 
 ## Schedule
 
-The scheduled session starts at `09:00 UTC`, which is `5:00 PM PHT`. The
+The scheduled session starts at `06:00 UTC`, which is `2:00 PM PHT`. The
 registration page renders that same start in the visitor's browser timezone so
 users outside the Philippines do not need to convert it manually. The public
 copy does not say that the recording repeats daily.

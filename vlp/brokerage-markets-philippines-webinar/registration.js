@@ -217,7 +217,7 @@
       window.QuadcodeWebinarSchedule?.formatSessionLabel?.(
         registration.sessionStart,
       ) ||
-      "5:00 PM PHT";
+      "2:00 PM PHT";
 
     cardHead.hidden = true;
     form.hidden = true;
