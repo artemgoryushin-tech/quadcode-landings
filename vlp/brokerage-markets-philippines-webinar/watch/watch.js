@@ -863,6 +863,7 @@
   });
 
   updateSession({ forceMediaSync: true });
+  sendAttendance("room_opened");
   globalThis.setInterval(() => {
     const state = schedule.getState(currentDate());
     syncTimedChat(state.state === "upcoming" ? 0 : state.offsetSeconds);

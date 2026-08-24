@@ -866,6 +866,7 @@
   });
 
   updateSession({ forceMediaSync: true });
+  sendAttendance("room_opened");
   globalThis.setInterval(() => updateSession(), 1000);
   globalThis.setInterval(updateAttendance, 1000);
 
