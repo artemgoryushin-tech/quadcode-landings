@@ -306,6 +306,11 @@ h1 strong {
   gap: 16px;
 }
 
+.application-form[hidden],
+.success-state[hidden] {
+  display: none !important;
+}
+
 .field-row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -539,6 +544,10 @@ h1 strong {
 
 .success-state:not([hidden]) {
   display: grid;
+}
+
+.success-state:focus {
+  outline: none;
 }
 
 .success-state__icon {

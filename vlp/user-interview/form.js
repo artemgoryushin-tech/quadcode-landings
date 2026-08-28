@@ -201,6 +201,10 @@
       card?.classList.add("is-success");
       successState.hidden = false;
       successState.focus({ preventScroll: true });
+      successState.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+        block: "center",
+      });
     } catch (error) {
       setStatus(error instanceof Error ? error.message : "We could not submit your application. Please try again.");
       if (recaptchaWidgetId !== null && window.grecaptcha) window.grecaptcha.reset(recaptchaWidgetId);
