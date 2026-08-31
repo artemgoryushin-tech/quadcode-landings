@@ -30,7 +30,7 @@
       href="https://quadcode.com/vlp/vibecode-brokerage-webinar/"
     />
     <link rel="icon" href="./assets/favicon.ico" sizes="any" />
-    <link rel="stylesheet" href="./styles.css?v=20260831-1" />
+    <link rel="stylesheet" href="./styles.css?v=20260831-2" />
   </head>
   <body class="registration-page">
     <!-- Google Tag Manager (noscript) -->
@@ -206,9 +206,9 @@
                         class="phone-code__button"
                         type="button"
                         data-phone-toggle
-                        aria-haspopup="listbox"
+                        aria-haspopup="dialog"
                         aria-expanded="false"
-                        aria-controls="phone-country-list"
+                        aria-controls="phone-country-popup"
                         aria-label="Country code, United Kingdom +44"
                       >
                         <span class="phone-code__flag" data-phone-flag aria-hidden="true">
@@ -221,11 +221,38 @@
                       </button>
                       <div
                         class="phone-code__menu"
-                        id="phone-country-list"
+                        id="phone-country-popup"
                         data-phone-menu
-                        role="listbox"
-                        aria-label="Country code list"
-                      ></div>
+                        role="dialog"
+                        aria-label="Choose a country code"
+                      >
+                        <label class="phone-code__search" for="phone-country-search">
+                          <svg viewBox="0 0 20 20" aria-hidden="true">
+                            <circle cx="8.5" cy="8.5" r="5.5"></circle>
+                            <path d="m12.5 12.5 4 4"></path>
+                          </svg>
+                          <input
+                            id="phone-country-search"
+                            type="search"
+                            inputmode="search"
+                            autocomplete="off"
+                            placeholder="Search country or code"
+                            aria-label="Search countries"
+                            data-phone-search
+                            aria-controls="phone-country-list"
+                          />
+                        </label>
+                        <div
+                          class="phone-code__options"
+                          id="phone-country-list"
+                          data-phone-options
+                          role="listbox"
+                          aria-label="Country code list"
+                        ></div>
+                        <p class="phone-code__empty" data-phone-empty hidden>
+                          No countries found
+                        </p>
+                      </div>
                     </div>
                     <input
                       id="phone"
@@ -425,7 +452,7 @@
       </button>
     </div>
 
-    <script src="./phone-picker.js?v=20260831-1" defer></script>
+    <script src="./phone-picker.js?v=20260831-2" defer></script>
     <script src="./webinar-crm.js?v=20260831-1" defer></script>
     <script src="./countdown.js?v=20260831-1" defer></script>
     <script src="./webinar-tracking.js?v=20260831-1" defer></script>
