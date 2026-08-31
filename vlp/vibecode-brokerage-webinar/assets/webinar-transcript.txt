@@ -1,0 +1,284 @@
+Hi. Hey, guys. Thank you for joining. I can see a few of you have been in the waiting room.
+Thank you for coming in early. I was thinking just, you know, well, first of all, let me know
+in the chat if you don't mind, if you can see me, if you can see the screen, if you can hear me,
+just confirm that everything is okay, say hi or let me know if everything is working correctly.
+And by the way, I... Perfect. Thank you so much, Omer. I know that we're supposed to start right now,
+but I was thinking to give maybe a minute or two for other people to join. So while we're waiting,
+I guess you can let me know if you guys have some experience. Have you worked with brokerages before?
+Have you... Were you an affiliate, an IB? Did you have your own brokerage in the past?
+Or did you just kind of consider starting your own brokerage? Not sure where to start?
+Which regions to target?
+Let me know. And let me just check the couple of things on my side as well.
+Okay. Looking good.
+Oh, nice. I see. I see. More people are joining. That's good to see. And I don't know how familiar
+you are, you know, with QuadCode. Have you heard of us before? Is this kind of your first introduction?
+I guess you can see on screen. I think we kind of... We can start with the introductions as people solely
+join as well. For us, we have been on the market, you know, building brokerages for 12 years now.
+And we have built over 50 brokerages. I think at this point, it's even closer to 60. But yeah,
+let's keep it conservative. And we are a huge organization with over 700 employees. And we have
+covered so far 169 countries. And that kind of gives us, we feel, pretty solid experience, you know,
+kind of an idea of how the markets work, and what's working best. So it's not that we're just running a
+brokerage in one country or in one region. No, we're truly global. So we kind of have the evidence of
+what's working in which region, because they are different. And you will see that, by the way,
+you will see that in our, in the presentation, we have found, like, there are some discrepancies,
+which are going to affect when you start to launch a brokerage, whether with us or alone.
+These decisions need to be made, and you need to make them very carefully. Okay, I think,
+I think we're good to go. It's been three minutes. So yeah, that's a little bit about us.
+Now, let's move on. Yeah, there it is, the next slide. So first of all, let's just really quickly
+cover the background question for all of this, which is, is the brokerage business dead in 2026?
+Soon to be 2027, I guess. Our answer is definitely not. So we at Quadcode, we have been building
+businesses, and we have been in this business on the other side, you know, running a brokerage for a long
+time. And if anything, we're busier than ever. So the demand is real, and the opportunity is real.
+And the brokerages that we've helped build, so over 50, again, closer to 60 at this point,
+they are a proof of that. Our clients typically see a return on investment within just three months,
+which I'm sure if you've started any business, you know, that's kind of a dream come true,
+almost unheard of. And so today, rather than debating, you know, whether it even makes sense,
+let's discuss on, you know, where it makes sense, what's going to work best for you. Again,
+whether you do this with us or do it alone. So first of all, what, what steps will you need to cover?
+What needs to happen for you to have a brokerage? Number one, you need to set up a platform and decide,
+you know, how you want to design it. What do you want to include? What do you want to offer to your
+clients, to the traders themselves? Then you need to choose the markets. And again, the instruments that
+you're going to offer, this is going to heavily depend on the markets that you decide to target.
+You need to understand the regulations. And this is also going to be decided by the, by the regions that
+you select. You need to form a legal entity, so the right structure for your region. You need to plan
+trader acquisition strategy. So how are you going to get clients on the platform? And more than that,
+once you get them on the platform, how are you going to incentivize them to start trading? You need to
+connect payment gateways, so you can actually accept money. Again, this is going to heavily depend on the,
+on the geography that you're targeting. And then you will need to integrate all of that software and set
+up your CRM. And then you're ready to launch essentially. So, and this is, by the way, whether you go with
+us or you do this alone, that's the process is going to be pretty much the same. So what you've heard in this
+list earlier, I mentioned, this is going to depend on geography, this is going to depend on geography,
+this is going to depend on the region, this is going to depend on the market. What all of that means is
+that it's really, truly, incredibly important where, what, what, again, what locale, what region you want
+to target. And what a lot of new brokers do is they, well, they just think that they need to target
+the region where they are from. So we need to spend a minute on that because we've done quite a bit of
+research on it. And the numbers show something different. So after screening worldwide markets,
+these five came out on top, Brazil, Indonesia, Colombia, Nigeria, and Philippines. All of these five,
+they're excellent markets to target, and you will want to consider them, consider opening there.
+However, what the numbers 92, 88, 80, 76, 72, what this is telling you is the order. So if we're looking
+at the spread, Brazil at 92, Philippines at 72, that's a 20 point gap between the top and bottom of the list.
+And this should point you to the priority, to this is essentially a priority list. So if someone tells you,
+oh, just launch everywhere, or just launch in your home country, this list points to why that actually
+doesn't work. And let's dive a bit deeper into specific reasons. And this is where it gets interesting.
+So the red here, this is the commercial opportunity. Essentially, how much money is on the table?
+And then gray is execution readiness. And then gray is execution readiness. Meaning, how quickly can you actually
+stand a brokerage up in these regions? So Brazil and Indonesia, they're tight. 92 against 84 and 88 against 82.
+Small gap, meaning what's on the paper is close to what you can actually execute.
+And these need to be your step one markets. This is where you want to start, especially again,
+when you're new to this, you want to go for what's tried and tested, you don't want to start with a
+difficult market first, you want to start where it's easier. And then you want to go where, you know,
+there might be higher risk, but higher opportunity, essentially. Now, comparing Nigeria and Philippines,
+Nigeria scores higher on the opportunity for sure. It's clear 76 against 72 points. But this is on pure
+opportunity ranking. Nigeria would go first. However, when we're looking at readiness, it's 58 against 62.
+So Nigeria has the widest gap on this whole chart. We are looking at 18 points. In this gap, this is
+payment. And that's, that's real profit. That's real profit that you might be missing out on. If, let's say you select
+Nigeria as your number one market. That's the issue. So Philippines, in this case, needs to go ahead of Nigeria. And
+even though Nigeria might have a bigger, you know, upside on the paper, this is not us being timid about it. We work there,
+we have open brokerages there. It's on the list. It's a, it's a good market that you want to target. However, as I said
+earlier, don't go to the hardest market first. First, learn to learn your own, learn your own operation. Start where it's
+easier. Oh, Joe can't see the screen. Oh, my goodness. I'm so sorry. I only now see can, can other people see the screen? Oh, my
+goodness. I hope I haven't been talking and not showing you anything. Oh, okay. Oh, you can see. Sorry about
+that. I was so I was looking at the numbers. I didn't even see the message. Sorry. Okay, good. You can see it.
+All right. So coming back to it. It's important to understand what's the difference between opportunity
+and execution. Next slide is going to show us how to then put all of this information together. And how
+that is going to inform your next steps. Again, whether you're doing this with us, or you're building a
+brokerage on your own, this is important information to have. This, again, you need to take this into
+consideration. So putting it all together, your step one, or wave one needs to be or should be Brazil
+Indonesia. That's where you can launch, prove your model, learn your funnel with the least amount of
+friction. That's where it's going to be the easiest. That's where you're, again, that's where you can
+learn to walk before you run. Step number two, that should be Colombia and the Philippines.
+So now you're scaling demand and you're localizing more deeply. And then step number three, that's going
+to be Nigeria. You're going with tighter risk and compliance controls for sure. But then you've got
+two previous steps of operating history behind you. You've got experience, and you've still got those
+people on your platform, knowing how well, you know, how well it works. And hopefully, you know,
+as you expand, as you grow, as your profits increase, you're able to offer more and more and more to them.
+So they're going to stay loyal customers as then you proceed further, and you can offer more to even the
+Nigerian market. So then they have a larger incentive to actually execute on the opportunity that we
+discussed before. Now, you see underneath it, the five drivers that define geo readiness. This is,
+this is essentially what's going to decide if a market is ready for you. So it's going to be a regulation,
+payments, acquisition, local fit, and retention. And this is the line you should really, you know,
+keep in mind when it comes to when it comes to this whole point. Geo choice only works when it
+connects to KYC, PSPs, CRM, risks, reporting, apps, and retention. So choosing Brazil is not going to be a
+decision that you just, you know, you spin the globe and put a put a finger somewhere and it lands on
+Brazil. No, this, this needs to be a decision whether your KYC providers cover Brazilian documents,
+whether your PSPs support picks, the most popular PSP over there, whether your CRM speaks Portuguese, whether your support
+team is in your risk team. Also, they are awake, and they also speak Portuguese during their, you know, in their time zone,
+all of this, you need to take into consideration. So it's a, it's a big decision. So it's important to have all of the
+the information in front of you, you know, when, before even you start. Now, that's what I was mentioning just now.
+Here's a breakdown of what we do. And again, whether you decide to go with us, or you want to build a brokerage on your own,
+you're going to need all of these. And you're going to need it contextually, regarding the region where you want to operate. So for us,
+all of the brokerages that we built, we make sure that they're ready to work out, you know, right out of the box. In any case,
+what you need, you need a dealing team, you need risk management, they have to protect you from market risk,
+industry, and just bad actors who are trying to abuse the platform. Like these are unavoidable. You need a billing system.
+So Visa, MasterCard, Apple Pay, Google Pay, crypto, local payment methods.
+Most important of all, local payment methods.
+I mean,
+this is going to be such a huge headache. I know because it is, it has been a headache for us.
+I know how many hoops we had to jump through to get recognized to get approved in each country.
+So as you open in different markets,
+expect that.
+Unless you go with us, since we have had those headaches for you.
+Then what else is going to be analytics and reporting.
+This is not just a requirement, but you also need to understand what channels are working for you and what needs more attention.
+And then, especially when it comes to reporting for us, we, in addition to, you know, what we have built on our own, we also pay a lot for a Metabase integration.
+If you're familiar with Metabase, you know, they are a behemoth in the industry, and they are very powerful analytics tool for business insights.
+So, in any case, recommend them. If you can afford them, highly recommend them.
+Liquidity.
+Liquidity. For us, we have already providers and data feed providers already integrated.
+You're going to need cybersecurity, you know, fraud protection, system security, your KYC and compliance reporting.
+I mean, this is just regulated in every single country.
+And then CRM is a huge one.
+You need a really good CRM that is deeply, deeply integrated with your platform.
+For us, because we know we have gone through the hell and we know what it looks like when it's, you know, when it's a third party.
+You're going to spend months integrating and then you're going to spend another year fixing all of the integration issues.
+And then still something may fall through the cracks.
+So, for us, we have built our own in-house CRM that everything is covered right away.
+You don't need to worry about anything.
+And then, of course, all of this looks great unless you have, you know, trade.
+So, you're also an affiliate and omnichannel modules.
+You know, these are essential for growing your trader base and then also managing retention.
+Because, again, it's one thing to have people show up.
+It's a different thing to have them start trading and, you know, start putting their money where their mouth is.
+And then, yeah, this is just something that, you know, this is the makeup on top of everything.
+So, everything, this is what you can expect from our platforms at least.
+We provide more than 150 CFDs, more than 70 cryptocurrencies, and 24-7 support.
+And also, we provide the web trading room, Android, iOS apps, progressive web app, and, of course, desktop.
+So, all of that can be fully customized.
+Oh, my goodness.
+I just realized we changed this.
+Okay.
+So, that can be fully custom.
+Not going back.
+Oh, no.
+Did my screen freeze?
+Oh, yeah.
+It did.
+Okay.
+Perfect.
+So, all of that is going to be fully customized.
+It's going to be fully branded.
+Your logo, your domain, all of that.
+Yeah.
+Interface, logo, colors, trading tools.
+Again, trading tools, you'll want to adjust this for geo.
+And also, you know your community.
+You know your niche.
+That needs to also kind of align.
+And then, numbers.
+Looking at numbers, you can see our brokerages start at $17,000.
+And you will hear, you will definitely look, just go Google it.
+You'll find people offering you a brokerage for $10,000 and even $5,000.
+But those offers usually cover only the basics. The rest of the stack is charged separately.
+[Brief connection interruption]
+Okay. Let's just pretend everything is okay.
+What these people are not telling you is then you're going to pay extra for a CRM, for the dealing desk, for the PSPs.
+I can tell you PSPs are also, I think I already mentioned, they're going to be a huge headache.
+You're going to need to get liquidity providers.
+They're also going to try to, you know, skin you alive.
+You're going to need to figure out KYC and all of the infrastructure that, you know, sits behind that I mentioned previously.
+Okay.
+With us, everything you need is included. It works right out of the box.
+And for us, another big upside, it takes us 14 days, two weeks to launch this.
+And then what we've seen in our experience, it's a three-month payback period, which is, again, if you've ever run a business before, that's a pretty good payback period.
+Yes, this is what I was mentioning.
+So, you can see, for us, it's going to be $17,000.
+Competitors will quote $5,000 or $10,000.
+And then you're going to end up overpaying, like, from $5 for every million traded.
+Then you're going to get 2,000 per month for the CRM.
+And these are conservative numbers.
+This is not just us, you know, pretending, oh, our competitors are words.
+No, genuinely, this is what you're going to hear.
+It's going to be starting at $1,000 for PSPs.
+I promise you, it's going to be way more.
+Liquidity, I mean, set up minimum 3,000.
+All these numbers, they're not coming out of thin air.
+They're coming out of our experience.
+In the end, it's going to cost you way more than it is if you just take it as a whole.
+Moving on.
+Oh, yeah.
+This is just a few quotes from the traders who are on the platforms that we have built, or the happy customers of the happy customers.
+And then here, you can essentially see what we're trying to do at the end.
+Your success is going to be our success.
+We want you to be as profitable as humanly possible, ideally from day one.
+So what do we do to help you with that?
+We provide the full brokerage launch checklist.
+And our team will go with you through it all to make sure that everything is especially useful.
+If you've got an IB or affiliate background, you will know exactly what this looks like, what this means.
+Business plans and blog resources.
+And then we also have a whole team who will be dedicated, an entire team of account managers who are going to be at your back-end call,
+making sure, again, that your platform works exactly as you want it to work and that it is profitable.
+We're here to give you advice.
+We're here to support you every step of the way.
+For us, it's not just, oh, here's a platform.
+You figure it out.
+It's a long-term partnership.
+And, yeah, these are just some of the next steps that you can take.
+Essentially, what I would like to do is invite you to a demo.
+Come.
+I'll explain exactly.
+I'll show you.
+Oh, my goodness.
+Streaming connection lost again.
+Is it?
+Am I?
+I hope I'm back online.
+Oh, terrible, terrible luck.
+So I'm inviting you to a one-on-one demo.
+I will sit down with you.
+I would like to hear more about your experience, hear more about what you want to achieve,
+exactly what kind of a brokerage you want to build, help you understand, you know, what we might be able to do,
+what path will probably be the best for you to take.
+At that point, if you do decide to go with us, we're going to customize your platform fully.
+So, again, the whole team asking you, hey, what do you want to do about this?
+And you'll just say, hey, I want to do that.
+I want to do this.
+When it's ready, you just sign the contract.
+The platform goes live.
+And at that point, the only thing that you need to worry about is getting a connection loss again.
+Jesus.
+We're going to help you when it comes to the strategies.
+You know, what do you need?
+What do you, should you, you know, create attorneys?
+Do you need live chats?
+Should you have challenges?
+Which, of course, you should.
+And then we're going to recommend what works best for your region.
+So, yeah.
+If you would like to chat with us, this is my personal WhatsApp.
+You can just scan the code.
+Message me.
+Let me know, you know, whatever date, time works for you.
+We'll arrange something.
+We will book a demo.
+Again, just an informal conversation.
+See what you would like to achieve and see if we can help.
+By the way, I forgot to mention this.
+I should have mentioned it earlier on.
+If you guys have any questions, you can feel free to drop them in the chat or message me on WhatsApp, whichever works best.
+More than happy to answer anything, show you, give you access again, give you access to the demo, whatever that may be.
+And, yeah.
+Oh, perfect.
+Yes.
+I see some of you are already messaging me.
+Yes, we'll connect.
+I think the webinar is coming to a close.
+Technically, it's supposed to go on for six more minutes.
+If there are no questions, I think we can even end up with earlier, give you some time back.
+But if you do have any questions, I'll hang around for a couple more minutes.
+Feel free to send anything in the chat.
+Oh, yeah.
+And one more thing.
+Because we are international, we have, as I mentioned, an international team.
+If you don't speak English, well, I don't know if you would understand me.
+But if you don't speak English or a friend of yours who wants to start a brokerage doesn't speak English, feel free to still reach out.
+Again, we have a lot of translators, a huge team.
+We can find a way to communicate.
+Yeah.
+I think that's fair enough.
+Reach out to us.
+Reach out to me.
+Feel free to let me know, you know, whatever, whenever you would like to start.
+Whatever questions you may have, and so on.
+Thank you so much for spending the time with me.
+And, yeah, hope to see you soon.
+Bye, guys.
