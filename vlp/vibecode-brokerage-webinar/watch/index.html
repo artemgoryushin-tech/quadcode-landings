@@ -12,7 +12,7 @@
     <meta name="robots" content="noindex, nofollow" />
     <link rel="icon" href="../assets/favicon.ico" sizes="any" />
     <link rel="stylesheet" href="../styles.css?v=20260831-1" />
-    <link rel="stylesheet" href="./watch.css?v=20260831-1" />
+    <link rel="stylesheet" href="./watch.css?v=20260831-2" />
   </head>
   <body class="watch-page">
     <a class="skip-link" href="#watch-main">Skip to the webinar</a>
@@ -181,7 +181,16 @@
         </header>
 
         <div class="chat-messages" id="chat-messages" aria-live="polite" aria-relevant="additions">
-          <article class="chat-message chat-message--host">
+          <div class="chat-empty-state" id="chat-empty-state" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M12 7v5l3 2"></path>
+            </svg>
+            <strong>Chat opens with the session</strong>
+            <p>Messages will appear here when the webinar starts.</p>
+          </div>
+
+          <article class="chat-message chat-message--host" data-chat-live-message>
             <span class="message-avatar" aria-hidden="true">Q</span>
             <div>
               <header>
@@ -196,7 +205,7 @@
             </div>
           </article>
 
-          <article class="chat-message chat-message--host">
+          <article class="chat-message chat-message--host" data-chat-live-message>
             <span class="message-avatar" aria-hidden="true">Q</span>
             <div>
               <header>
@@ -332,6 +341,6 @@
       };
     </script>
     <script src="../webinar-tracking.js?v=20260831-1" defer></script>
-    <script src="./watch.js?v=20260831-1" defer></script>
+    <script src="./watch.js?v=20260831-2" defer></script>
   </body>
 </html>

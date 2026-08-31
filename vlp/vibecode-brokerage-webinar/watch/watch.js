@@ -31,6 +31,7 @@
   const chatForm = document.querySelector("#chat-form");
   const chatInput = document.querySelector("#chat-input");
   const chatMessages = document.querySelector("#chat-messages");
+  const chatEmptyState = document.querySelector("#chat-empty-state");
   const chatStatus = document.querySelector("#chat-form-status");
   const chatSend = document.querySelector("#chat-send");
 
@@ -55,6 +56,7 @@
     !chatForm ||
     !chatInput ||
     !chatMessages ||
+    !chatEmptyState ||
     !chatStatus ||
     !chatSend ||
     !globalThis.QuadcodeLiveSchedule?.create
@@ -428,6 +430,12 @@
   };
 
   const setChatAvailability = (isLive) => {
+    chatEmptyState.hidden = isLive;
+    chatMessages
+      .querySelectorAll("[data-chat-live-message], [data-viewer-message-id]")
+      .forEach((message) => {
+        message.hidden = !isLive;
+      });
     chatInput.disabled = !isLive;
     chatSend.disabled = !isLive;
     chatInput.placeholder = isLive
@@ -509,11 +517,15 @@
     const sessionKey = latestSessionState.start.toISOString();
     switchSession(sessionKey);
 
-    const chatTime =
+    const playbackTime =
       latestSessionState.state === "upcoming"
         ? 0
         : latestSessionState.offsetSeconds;
-    renderProgress(chatTime);
+    const chatTime =
+      latestSessionState.state === "live"
+        ? latestSessionState.offsetSeconds
+        : 0;
+    renderProgress(playbackTime);
     syncTimedChat(chatTime);
 
     if (latestSessionState.state === "live") {
@@ -866,7 +878,7 @@
   sendAttendance("room_opened");
   globalThis.setInterval(() => {
     const state = schedule.getState(currentDate());
-    syncTimedChat(state.state === "upcoming" ? 0 : state.offsetSeconds);
+    syncTimedChat(state.state === "live" ? state.offsetSeconds : 0);
   }, 200);
   globalThis.setInterval(() => updateSession(), 1000);
   globalThis.setInterval(updateAttendance, 1000);
