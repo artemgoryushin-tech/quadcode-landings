@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!--
+      THESIS: Booking behaves like a clear event itinerary, not a marketing landing page.
+      OWN-WORLD: Quadcode's pale campaign surface, ink text, precise rules, and red action color.
+      STORY: Verify the request, choose Bangkok time, leave with a portable confirmation.
+      FIRST VIEWPORT: Event facts stay fixed at left while the active booking task owns the right.
+      FORM: Two-stage itinerary board, grounded candidate 4, seed 9e78a868.
+    -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f2f3f5" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Book a meeting at Affiliate World Asia | Quadcode</title>
+    <meta
+      name="description"
+      content="Choose a 30-minute meeting with Quadcode Brokerage Solutions at Affiliate World Asia 2026."
+    />
+    <link rel="icon" href="../../giveaway/assets/favicon-CHBHNiTC.ico" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="https://quadcode.com/vlp/affiliate-world-giveaway/" aria-label="Quadcode home">
+        <img src="../../giveaway/assets/bebroker-logo-CKXhlN7k.svg" alt="Quadcode" width="162" height="24" />
+      </a>
+      <p>Affiliate World Asia 2026</p>
+    </header>
+
+    <main class="booking-shell">
+      <aside class="event-rail" aria-label="Meeting details">
+        <p class="event-kicker">Bangkok / Booth A96</p>
+        <h1>Choose your time with Quadcode</h1>
+        <p class="event-intro">A focused 30-minute conversation with our Brokerage Solutions team.</p>
+
+        <dl class="event-facts">
+          <div>
+            <dt>Dates</dt>
+            <dd>9-10 December 2026</dd>
+          </div>
+          <div>
+            <dt>Hours</dt>
+            <dd>09:00-18:00 Bangkok time</dd>
+          </div>
+          <div>
+            <dt>Place</dt>
+            <dd>Booth A96</dd>
+          </div>
+          <div>
+            <dt>Duration</dt>
+            <dd>30 minutes</dd>
+          </div>
+        </dl>
+
+        <ol class="progress-list" aria-label="Booking progress">
+          <li class="is-current" data-progress="qualify"><span>1</span>About your business</li>
+          <li data-progress="schedule"><span>2</span>Meeting time</li>
+          <li data-progress="confirmed"><span>3</span>Confirmation</li>
+        </ol>
+      </aside>
+
+      <section class="task-surface" aria-live="polite">
+        <div id="globalMessage" class="message" role="status" hidden></div>
+
+        <section id="qualificationStep" class="step-panel">
+          <div class="step-heading">
+            <p>Step 1 of 2</p>
+            <h2>Tell us what to prepare for</h2>
+            <span>Use the same work email you submitted on the Affiliate World page.</span>
+          </div>
+
+          <form id="qualificationForm" class="qualification-form">
+            <label class="field field-wide">
+              <span>Work email</span>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </label>
+            <label class="field field-wide">
+              <span>Company / affiliate brand and website</span>
+              <input name="company" type="text" autocomplete="organization" maxlength="240" required />
+            </label>
+            <label class="field">
+              <span>Primary GEOs</span>
+              <input name="geos" type="text" maxlength="320" placeholder="For example: LATAM, SEA" required />
+            </label>
+            <label class="field">
+              <span>Traffic sources</span>
+              <input name="trafficSources" type="text" maxlength="320" placeholder="SEO, paid social, communities" required />
+            </label>
+            <fieldset class="field field-wide option-field">
+              <legend>Monthly FTD volume</legend>
+              <div class="segmented" role="radiogroup">
+                <label><input type="radio" name="monthlyFtd" value="0" required /><span>0</span></label>
+                <label><input type="radio" name="monthlyFtd" value="1-50" /><span>1-50</span></label>
+                <label><input type="radio" name="monthlyFtd" value="51-200" /><span>51-200</span></label>
+                <label><input type="radio" name="monthlyFtd" value="201-500" /><span>201-500</span></label>
+                <label><input type="radio" name="monthlyFtd" value="500+" /><span>500+</span></label>
+              </div>
+            </fieldset>
+            <label class="field field-wide">
+              <span>Meeting goal</span>
+              <select name="meetingGoal" required>
+                <option value="">Choose one</option>
+                <option value="launch_brokerage">Launch a brokerage</option>
+                <option value="white_label">Discuss white label</option>
+                <option value="improve_brokerage">Improve an existing brokerage</option>
+                <option value="affiliate_partnership">Affiliate partnership</option>
+                <option value="other">Other</option>
+              </select>
+            </label>
+            <label id="otherGoalField" class="field field-wide" hidden>
+              <span>What would you like to discuss?</span>
+              <input name="meetingGoalOther" type="text" maxlength="320" />
+            </label>
+            <div class="form-action field-wide">
+              <p>Your answers help us bring the right context to the meeting.</p>
+              <button class="primary-button" type="submit">Check available times</button>
+            </div>
+          </form>
+        </section>
+
+        <section id="scheduleStep" class="step-panel" hidden>
+          <div class="step-heading schedule-heading">
+            <div>
+              <p>Step 2 of 2</p>
+              <h2>Pick a Bangkok time</h2>
+              <span>Availability updates as other meetings are booked.</span>
+            </div>
+            <button id="backToDetails" class="text-button" type="button">Edit details</button>
+          </div>
+          <div id="dateTabs" class="date-tabs" role="tablist" aria-label="Event date"></div>
+          <div id="slotsGrid" class="slots-grid" role="tabpanel"></div>
+          <div class="schedule-action">
+            <p id="selectedSlotText">Choose a time to continue.</p>
+            <button id="confirmBooking" class="primary-button" type="button" disabled>Confirm meeting</button>
+          </div>
+        </section>
+
+        <section id="successStep" class="step-panel success-panel" hidden>
+          <div class="confirmation-mark" aria-hidden="true">✓</div>
+          <p class="confirmation-label">Meeting confirmed</p>
+          <h2 id="successDate">9 December at 09:00</h2>
+          <p id="successLocation">Bangkok time / Booth A96</p>
+          <div class="confirmation-actions">
+            <a id="calendarLink" class="primary-button" href="#">Add to calendar</a>
+            <button id="changeBooking" class="secondary-button" type="button">Change time</button>
+            <button id="cancelBooking" class="text-button danger-text" type="button">Cancel booking</button>
+          </div>
+          <p class="confirmation-note">We will send the details to your email and WhatsApp.</p>
+        </section>
+
+        <section id="closedStep" class="step-panel success-panel" hidden>
+          <p class="confirmation-label">Booking cancelled</p>
+          <h2>Your time has been released</h2>
+          <p>Contact the Quadcode team if you need help arranging another meeting.</p>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <span>Quadcode Brokerage Solutions</span>
+      <a href="https://quadcode.com/privacy-policy/">Privacy policy</a>
+    </footer>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
