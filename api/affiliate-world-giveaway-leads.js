@@ -142,8 +142,8 @@ export default async function handler(request, response) {
     appendIfPresent(payload, field, readString(body, field, 180));
   }
 
-  const formsApiUrl = process.env.FORMS_API_URL ?? DEFAULT_FORMS_API_URL;
-  const formsApiEndpoint = process.env.FORMS_API_ENDPOINT ?? DEFAULT_FORMS_API_ENDPOINT;
+  const formsApiUrl = process.env.AFFILIATE_WORLD_FORMS_API_URL ?? DEFAULT_FORMS_API_URL;
+  const formsApiEndpoint = process.env.AFFILIATE_WORLD_FORMS_API_ENDPOINT ?? DEFAULT_FORMS_API_ENDPOINT;
   const endpoint = new URL(formsApiEndpoint, formsApiUrl);
 
   if (process.env.FORMS_API_DRY_RUN === "true") {
