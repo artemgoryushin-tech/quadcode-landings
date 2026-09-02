@@ -11,6 +11,14 @@
       "destination": "/webinar/vibecode/thank-you/:path*"
     },
     {
+      "source": "/vlp/affiliate-world-giveaway/api/leads/",
+      "destination": "/api/affiliate-world-giveaway-leads"
+    },
+    {
+      "source": "/lp/affiliate-world-giveaway/api/leads/",
+      "destination": "/api/affiliate-world-giveaway-leads"
+    },
+    {
       "source": "/vlp/colombia-audience-to-broker/api/leads/",
       "destination": "/api/colombia-audience-to-broker-leads"
     },
