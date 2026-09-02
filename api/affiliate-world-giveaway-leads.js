@@ -1,4 +1,4 @@
-const DEFAULT_FORMS_API_URL = "https://group.quadcode.com";
+const DEFAULT_FORMS_API_URL = "https://quadcode.foach.site";
 const DEFAULT_FORMS_API_ENDPOINT = "/api/notPopup";
 const UTM_FIELDS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
 const SOURCE_FORM = "quadcode_aw_asia_2026_meeting_request";
