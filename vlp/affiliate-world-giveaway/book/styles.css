@@ -155,8 +155,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .date-tab { flex: 1; min-height: 46px; padding: 0 18px; color: #526076; background: transparent; border: 0; border-radius: 6px; cursor: pointer; font-weight: 700; }
 .date-tab[aria-selected="true"] { color: var(--ink); background: #fff; box-shadow: 0 3px 10px rgba(17, 23, 34, 0.1); }
 .slots-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 24px 0; }
-.slot-button { min-height: 64px; padding: 8px; color: var(--ink); background: #fff; border: 1px solid #bdc8d6; border-radius: 8px; cursor: pointer; display: grid; place-items: center; font-weight: 700; font-variant-numeric: tabular-nums; }
-.slot-button small { color: var(--muted); font-size: 11px; font-weight: 400; }
+.slot-button { min-height: 72px; padding: 8px 6px; color: var(--ink); background: #fff; border: 1px solid #bdc8d6; border-radius: 8px; cursor: pointer; display: grid; place-items: center; gap: 3px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.slot-button small { color: var(--muted); font-size: 10px; font-weight: 400; line-height: 1.25; text-align: center; }
 .slot-button:hover { border-color: #536177; }
 .slot-button.is-selected { color: #fff; background: #111722; border-color: #111722; }
 .slot-button.is-selected small { color: #c9d3df; }

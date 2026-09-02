@@ -176,9 +176,12 @@
       const bangkok = new Intl.DateTimeFormat("en-GB", {
         timeZone: "Asia/Bangkok", hour: "2-digit", minute: "2-digit", hour12: false,
       }).format(new Date(slot.start));
-      const local = new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit" }).format(new Date(slot.start));
-      button.innerHTML = `<span>${bangkok}</span><small>${local === bangkok ? `${slot.remaining} left` : `${local} local`}</small>`;
-      button.setAttribute("aria-label", `${bangkok} Bangkok time, ${slot.remaining} places remaining`);
+      const local = formatLocalTime(slot.start);
+      button.innerHTML = `<span>${local}</span><small>${bangkok} Bangkok time (GMT+7)</small>`;
+      button.setAttribute(
+        "aria-label",
+        `${local} in your local time zone, ${bangkok} Bangkok time, ${slot.remaining} places remaining`,
+      );
       button.addEventListener("click", () => {
         state.selectedSlot = slot.start;
         renderSlots();
@@ -189,14 +192,14 @@
     const selected = state.slots.find((slot) => slot.start === state.selectedSlot);
     elements.confirmBooking.disabled = !selected;
     elements.selectedSlotText.textContent = selected
-      ? `${state.selectedDate === "2026-12-09" ? "9 Dec" : "10 Dec"}, ${formatBangkokTime(selected.start)} Bangkok time`
+      ? `${state.selectedDate === "2026-12-09" ? "9 Dec" : "10 Dec"}, ${formatLocalTime(selected.start)} local time / ${formatBangkokTime(selected.start)} Bangkok time (GMT+7)`
       : "Choose a time to continue.";
   }
 
   function showConfirmation() {
     showStep("confirmed");
-    elements.successDate.textContent = `${state.booking.bangkokDate} at ${state.booking.bangkokTime}`;
-    elements.successLocation.textContent = `${state.booking.location} / Bangkok time`;
+    elements.successDate.textContent = formatLocalDateTime(state.booking.slotStart);
+    elements.successLocation.textContent = `${state.booking.bangkokDate} at ${state.booking.bangkokTime} Bangkok time (GMT+7) / ${state.booking.location}`;
     elements.calendarLink.href = `${API}/calendar.ics?token=${encodeURIComponent(state.manageToken)}`;
   }
 
@@ -247,6 +250,19 @@
   function formatBangkokTime(value) {
     return new Intl.DateTimeFormat("en-GB", {
       timeZone: "Asia/Bangkok", hour: "2-digit", minute: "2-digit", hour12: false,
+    }).format(new Date(value));
+  }
+
+  function formatLocalTime(value) {
+    return new Intl.DateTimeFormat("en-GB", {
+      hour: "2-digit", minute: "2-digit", hour12: false,
+    }).format(new Date(value));
+  }
+
+  function formatLocalDateTime(value) {
+    return new Intl.DateTimeFormat("en-GB", {
+      weekday: "short", day: "numeric", month: "short", year: "numeric",
+      hour: "2-digit", minute: "2-digit", hour12: false,
     }).format(new Date(value));
   }
 
