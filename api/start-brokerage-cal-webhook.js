@@ -1,6 +1,7 @@
 import { createHash, createHmac, timingSafeEqual } from "node:crypto";
 
-const DEFAULT_LEADS_API_URL = "https://quadcode.com/api/send";
+const DEFAULT_FORMS_API_URL = "https://quadcode.foach.site";
+const DEFAULT_FORMS_API_ENDPOINT = "/api/notPopup";
 const CAL_EVENT_TYPE_SLUG = "quadcode-meeting";
 const CAL_EVENT_TYPE_ID = 394995;
 const SOURCE_FORM = "quadcode_start_brokerage";
@@ -25,37 +26,23 @@ function readHeader(request, name) {
   if (Array.isArray(value) && value[0]) return value[0];
   if (typeof value === "string" && value) return value;
 
-  const packedHeaders = headers?.["x-vercel-sc-headers"];
-  if (typeof packedHeaders === "string") {
-    try {
-      const parsedHeaders = JSON.parse(packedHeaders);
-      const packedValue = Object.entries(parsedHeaders).find(
-        ([key]) => key.toLowerCase() === name.toLowerCase(),
-      )?.[1];
-      if (Array.isArray(packedValue) && packedValue[0]) return packedValue[0];
-      if (typeof packedValue === "string") return packedValue;
-    } catch {
-      return "";
+  if (headers && typeof headers === "object") {
+    const caseInsensitiveValue = Object.entries(headers).find(
+      ([key]) => key.toLowerCase() === name.toLowerCase(),
+    )?.[1];
+    if (Array.isArray(caseInsensitiveValue) && caseInsensitiveValue[0]) return caseInsensitiveValue[0];
+    if (typeof caseInsensitiveValue === "string") return caseInsensitiveValue;
+  }
+
+  if (Array.isArray(request.rawHeaders)) {
+    for (let index = 0; index < request.rawHeaders.length; index += 2) {
+      if (String(request.rawHeaders[index]).toLowerCase() === name.toLowerCase()) {
+        return String(request.rawHeaders[index + 1] || "");
+      }
     }
   }
 
   return "";
-}
-
-function requestHeaderNames(request) {
-  const names = new Set();
-  const headers = request.headers;
-  if (headers && typeof headers.keys === "function") {
-    for (const key of headers.keys()) names.add(String(key).toLowerCase());
-  } else if (headers && typeof headers === "object") {
-    for (const key of Object.keys(headers)) names.add(key.toLowerCase());
-  }
-  if (Array.isArray(request.rawHeaders)) {
-    for (let index = 0; index < request.rawHeaders.length; index += 2) {
-      names.add(String(request.rawHeaders[index]).toLowerCase());
-    }
-  }
-  return [...names].sort();
 }
 
 async function readRawBody(request) {
@@ -285,8 +272,6 @@ export default async function handler(request, response) {
         ? createHmac("sha256", secret).update(rawBody).digest("hex").slice(0, 12)
         : "",
       receivedSignaturePrefix: normalizedSignature.slice(0, 12),
-      requestHeadersType: request.headers?.constructor?.name || typeof request.headers,
-      requestHeaderNames: requestHeaderNames(request),
     });
     return response.status(401).json({ success: false, message: "Invalid webhook signature." });
   }
@@ -321,16 +306,26 @@ export default async function handler(request, response) {
     return response.status(200).json({ success: true, bookingUid: crmPayload.cal_booking_uid });
   }
 
-  const endpoint = process.env.QUADCODE_LEADS_API_URL ?? DEFAULT_LEADS_API_URL;
+  const endpoint = process.env.QUADCODE_LEADS_API_URL ?? new URL(
+    process.env.FORMS_API_ENDPOINT ?? DEFAULT_FORMS_API_ENDPOINT,
+    process.env.FORMS_API_URL ?? DEFAULT_FORMS_API_URL,
+  ).toString();
+  const crmFormData = new FormData();
+  for (const [key, value] of Object.entries(crmPayload)) {
+    if (value === true) crmFormData.set(key, "on");
+    else if (value !== false && value !== null && value !== undefined && value !== "") {
+      crmFormData.set(key, String(value));
+    }
+  }
   try {
     const crmResponse = await fetch(endpoint, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
         Accept: "application/json, text/plain, */*",
+        "X-Requested-With": "XMLHttpRequest",
         "Idempotency-Key": crmPayload.cal_booking_uid,
       },
-      body: JSON.stringify(crmPayload),
+      body: crmFormData,
       cache: "no-store",
     });
     const responseText = await crmResponse.text();

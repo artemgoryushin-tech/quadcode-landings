@@ -68,10 +68,6 @@ function createRequest(rawBody, signature, headerMode = "object") {
   request.method = "POST";
   if (headerMode === "web") {
     request.headers = new Headers({ "x-cal-signature-256": signature });
-  } else if (headerMode === "vercel-packed") {
-    request.headers = {
-      "x-vercel-sc-headers": JSON.stringify({ "X-Cal-Signature-256": signature }),
-    };
   } else {
     request.headers = { "x-cal-signature-256": signature };
   }
@@ -113,7 +109,7 @@ test("accepts a signed BOOKING_CREATED webhook in dry-run mode", async () => {
     const signature = createHmac("sha256", process.env.CAL_WEBHOOK_SECRET).update(rawBody).digest("hex");
     const response = createResponse();
 
-    await handler(addParsedBodyGuard(createRequest(rawBody, signature, "vercel-packed")), response);
+    await handler(addParsedBodyGuard(createRequest(rawBody, signature, "web")), response);
 
     assert.equal(response.statusCode, 200);
     assert.deepEqual(response.body, { success: true, bookingUid: "cal-booking-123" });
@@ -122,6 +118,53 @@ test("accepts a signed BOOKING_CREATED webhook in dry-run mode", async () => {
     else process.env.CAL_WEBHOOK_SECRET = previousSecret;
     if (previousDryRun === undefined) delete process.env.FORMS_API_DRY_RUN;
     else process.env.FORMS_API_DRY_RUN = previousDryRun;
+  }
+});
+
+test("forwards a confirmed booking to the server-to-server CRM gateway", async () => {
+  const previousSecret = process.env.CAL_WEBHOOK_SECRET;
+  const previousDryRun = process.env.FORMS_API_DRY_RUN;
+  const previousLeadsUrl = process.env.QUADCODE_LEADS_API_URL;
+  const previousFormsUrl = process.env.FORMS_API_URL;
+  const previousFormsEndpoint = process.env.FORMS_API_ENDPOINT;
+  const previousFetch = globalThis.fetch;
+  process.env.CAL_WEBHOOK_SECRET = "test-cal-secret";
+  delete process.env.FORMS_API_DRY_RUN;
+  delete process.env.QUADCODE_LEADS_API_URL;
+  delete process.env.FORMS_API_URL;
+  delete process.env.FORMS_API_ENDPOINT;
+
+  let forwarded;
+  globalThis.fetch = async (url, options) => {
+    forwarded = { url: String(url), options };
+    return new Response(JSON.stringify({ success: true }), { status: 200 });
+  };
+
+  try {
+    const rawBody = JSON.stringify({ triggerEvent: "BOOKING_CREATED", payload: booking });
+    const signature = createHmac("sha256", process.env.CAL_WEBHOOK_SECRET).update(rawBody).digest("hex");
+    const response = createResponse();
+
+    await handler(createRequest(rawBody, signature), response);
+
+    assert.equal(response.statusCode, 200);
+    assert.equal(forwarded.url, "https://quadcode.foach.site/api/notPopup");
+    assert.equal(forwarded.options.body.get("first_name"), "Ada Lovelace");
+    assert.equal(forwarded.options.body.get("email"), "ada@example.com");
+    assert.equal(forwarded.options.body.get("terms_agree"), "on");
+    assert.equal(forwarded.options.headers["X-Requested-With"], "XMLHttpRequest");
+  } finally {
+    globalThis.fetch = previousFetch;
+    if (previousSecret === undefined) delete process.env.CAL_WEBHOOK_SECRET;
+    else process.env.CAL_WEBHOOK_SECRET = previousSecret;
+    if (previousDryRun === undefined) delete process.env.FORMS_API_DRY_RUN;
+    else process.env.FORMS_API_DRY_RUN = previousDryRun;
+    if (previousLeadsUrl === undefined) delete process.env.QUADCODE_LEADS_API_URL;
+    else process.env.QUADCODE_LEADS_API_URL = previousLeadsUrl;
+    if (previousFormsUrl === undefined) delete process.env.FORMS_API_URL;
+    else process.env.FORMS_API_URL = previousFormsUrl;
+    if (previousFormsEndpoint === undefined) delete process.env.FORMS_API_ENDPOINT;
+    else process.env.FORMS_API_ENDPOINT = previousFormsEndpoint;
   }
 });
 
