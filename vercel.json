@@ -39,6 +39,10 @@
       "destination": "/api/start-brokerage-leads"
     },
     {
+      "source": "/vlp/start-brokerage/api/cal-webhook/",
+      "destination": "/api/start-brokerage-cal-webhook"
+    },
+    {
       "source": "/vlp/start-brokerage-id/api/leads/",
       "destination": "/api/start-brokerage-leads"
     },

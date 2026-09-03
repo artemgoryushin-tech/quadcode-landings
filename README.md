@@ -94,6 +94,18 @@ BeBroker Trading Traffic Meetup page copied 1:1 by structure and adapted only at
 
 BeBroker Giveaway page copied 1:1 by structure and adapted only at the brand layer: Quadcode fonts/assets, red accent color, Quadcode logos, favicon, and OG preview. Single-language static page with original giveaway layout and interactions preserved.
 
+### Start Forex Brokerage — Google Ads (`vlp/start-brokerage/`)
+
+English desktop-first acquisition landing for search campaigns around starting a Forex brokerage firm. The page preserves the structure, visuals, responsive behavior, and analytics of `vlp/start-brokerage-id/`, while adapting the copy and metadata to the campaign's English keyword intent. All primary CTAs open the `quadcode-team/quadcode-meeting` Cal.eu booking flow. The platform showcase reuses the official PWA, mobile, desktop, and browser interface assets from the current Quadcode website; localized copies live under `vlp/start-brokerage/assets/platform-showcase/`.
+
+Regenerate it after updating the master template with:
+
+```bash
+node vlp/start-brokerage/build.mjs
+```
+
+Confirmed Cal bookings are sent to Bitrix/CRM by `api/start-brokerage-cal-webhook.js`. Configure a Cal webhook for the `quadcode-meeting` event type with the `BOOKING_CREATED` trigger and subscriber URL `https://quadcode.com/vlp/start-brokerage/api/cal-webhook/`. The nested public URL is required because the production proxy sends the `/vlp/start-brokerage/` tree to this Vercel project; `vercel.json` rewrites it to the root serverless function. Set the same secret in Cal and the production `CAL_WEBHOOK_SECRET` environment variable. The handler verifies `X-Cal-Signature-256`, maps the live Cal fields (name, email, phone, “Tell about yourself”, and brokerage launch reason), and forwards them to `QUADCODE_LEADS_API_URL` or the existing Quadcode lead endpoint. Use `FORMS_API_DRY_RUN=true` only for integration tests.
+
 ### Start Brokerage Indonesia (`vlp/start-brokerage-id/`)
 
 Short mobile-first B2B landing for entrepreneurs who want to launch a brokerage under their own brand. Its CRM-connected modal follows the `td-business` form contract: full name, email, international phone, optional initial investment, required launch-goal/current-business answer, consent, and reCAPTCHA.
@@ -142,6 +154,9 @@ vlp/
 ├── start-brokerage-id/
 │   ├── index.html
 │   └── assets/
+├── start-brokerage/
+│   ├── build.mjs
+│   └── index.html
 ├── trading-traffic-meetup/
 │   ├── index.html
 │   ├── event-*.jpg / event-*.mp4
