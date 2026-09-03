@@ -25,6 +25,22 @@ function readHeader(request, name) {
   return Array.isArray(value) ? value[0] : typeof value === "string" ? value : "";
 }
 
+function requestHeaderNames(request) {
+  const names = new Set();
+  const headers = request.headers;
+  if (headers && typeof headers.keys === "function") {
+    for (const key of headers.keys()) names.add(String(key).toLowerCase());
+  } else if (headers && typeof headers === "object") {
+    for (const key of Object.keys(headers)) names.add(key.toLowerCase());
+  }
+  if (Array.isArray(request.rawHeaders)) {
+    for (let index = 0; index < request.rawHeaders.length; index += 2) {
+      names.add(String(request.rawHeaders[index]).toLowerCase());
+    }
+  }
+  return [...names].sort();
+}
+
 async function readRawBody(request) {
   const chunks = [];
   if (request && typeof request[Symbol.asyncIterator] === "function") {
@@ -252,6 +268,8 @@ export default async function handler(request, response) {
         ? createHmac("sha256", secret).update(rawBody).digest("hex").slice(0, 12)
         : "",
       receivedSignaturePrefix: normalizedSignature.slice(0, 12),
+      requestHeadersType: request.headers?.constructor?.name || typeof request.headers,
+      requestHeaderNames: requestHeaderNames(request),
     });
     return response.status(401).json({ success: false, message: "Invalid webhook signature." });
   }
