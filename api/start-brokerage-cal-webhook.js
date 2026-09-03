@@ -18,11 +18,28 @@ function readHeader(request, name) {
   const headers = request.headers;
   if (headers && typeof headers.get === "function") {
     const value = headers.get(name);
-    return typeof value === "string" ? value : "";
+    if (typeof value === "string" && value) return value;
   }
 
   const value = headers?.[name] ?? headers?.[name.toLowerCase()];
-  return Array.isArray(value) ? value[0] : typeof value === "string" ? value : "";
+  if (Array.isArray(value) && value[0]) return value[0];
+  if (typeof value === "string" && value) return value;
+
+  const packedHeaders = headers?.["x-vercel-sc-headers"];
+  if (typeof packedHeaders === "string") {
+    try {
+      const parsedHeaders = JSON.parse(packedHeaders);
+      const packedValue = Object.entries(parsedHeaders).find(
+        ([key]) => key.toLowerCase() === name.toLowerCase(),
+      )?.[1];
+      if (Array.isArray(packedValue) && packedValue[0]) return packedValue[0];
+      if (typeof packedValue === "string") return packedValue;
+    } catch {
+      return "";
+    }
+  }
+
+  return "";
 }
 
 function requestHeaderNames(request) {

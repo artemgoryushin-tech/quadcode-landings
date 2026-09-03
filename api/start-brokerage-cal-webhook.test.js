@@ -63,12 +63,18 @@ function createResponse() {
   };
 }
 
-function createRequest(rawBody, signature, useWebHeaders = false) {
+function createRequest(rawBody, signature, headerMode = "object") {
   const request = Readable.from([rawBody]);
   request.method = "POST";
-  request.headers = useWebHeaders
-    ? new Headers({ "x-cal-signature-256": signature })
-    : { "x-cal-signature-256": signature };
+  if (headerMode === "web") {
+    request.headers = new Headers({ "x-cal-signature-256": signature });
+  } else if (headerMode === "vercel-packed") {
+    request.headers = {
+      "x-vercel-sc-headers": JSON.stringify({ "X-Cal-Signature-256": signature }),
+    };
+  } else {
+    request.headers = { "x-cal-signature-256": signature };
+  }
   return request;
 }
 
@@ -107,7 +113,7 @@ test("accepts a signed BOOKING_CREATED webhook in dry-run mode", async () => {
     const signature = createHmac("sha256", process.env.CAL_WEBHOOK_SECRET).update(rawBody).digest("hex");
     const response = createResponse();
 
-    await handler(addParsedBodyGuard(createRequest(rawBody, signature, true)), response);
+    await handler(addParsedBodyGuard(createRequest(rawBody, signature, "vercel-packed")), response);
 
     assert.equal(response.statusCode, 200);
     assert.deepEqual(response.body, { success: true, bookingUid: "cal-booking-123" });
