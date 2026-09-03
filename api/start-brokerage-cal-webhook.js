@@ -1,4 +1,4 @@
-import { createHmac, timingSafeEqual } from "node:crypto";
+import { createHash, createHmac, timingSafeEqual } from "node:crypto";
 
 const DEFAULT_LEADS_API_URL = "https://quadcode.com/api/send";
 const CAL_EVENT_TYPE_SLUG = "quadcode-meeting";
@@ -235,6 +235,18 @@ export default async function handler(request, response) {
   const rawBody = await readRawBody(request);
   const signature = readHeader(request, "x-cal-signature-256");
   if (!rawBody.length || !verifySignature(rawBody, signature, secret)) {
+    const normalizedSignature = signature.trim().replace(/^sha256=/i, "");
+    console.warn("Cal webhook signature rejected", {
+      signaturePresent: Boolean(signature),
+      signatureLength: normalizedSignature.length,
+      secretLength: secret.length,
+      rawBodyLength: rawBody.length,
+      rawBodyFingerprint: createHash("sha256").update(rawBody).digest("hex").slice(0, 12),
+      expectedSignaturePrefix: rawBody.length
+        ? createHmac("sha256", secret).update(rawBody).digest("hex").slice(0, 12)
+        : "",
+      receivedSignaturePrefix: normalizedSignature.slice(0, 12),
+    });
     return response.status(401).json({ success: false, message: "Invalid webhook signature." });
   }
 
