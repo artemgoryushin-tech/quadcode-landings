@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const create = ({ sessionHourUtc = 13, durationSeconds = 1575.32 } = {}) => {
+  const create = ({ sessionHourUtc = 9, durationSeconds = 1575.32 } = {}) => {
     const hourUtc = Math.min(23, Math.max(0, Number(sessionHourUtc) || 0));
     const durationMs = Math.max(1, Number(durationSeconds) || 1) * 1000;
 

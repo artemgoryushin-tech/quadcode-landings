@@ -217,7 +217,7 @@
       window.QuadcodeWebinarSchedule?.formatSessionLabel?.(
         registration.sessionStart,
       ) ||
-      "3:00 PM CEST";
+      "12:00 PM GMT+3";
 
     cardHead.hidden = true;
     form.hidden = true;

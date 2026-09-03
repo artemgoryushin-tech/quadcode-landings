@@ -8,7 +8,7 @@
   const REGISTERED_WEBINAR_FIELD = "UF_CRM_1758615537942";
   const WEBINAR_DATE_TIME_FIELD = "UF_CRM_1760090758537";
   const WEBINAR_ACCESS_URL_FIELD = "UF_CRM_1786963871";
-  const SESSION_TIME = "13:00 UTC (15:00 CEST)";
+  const SESSION_TIME = "09:00 UTC (12:00 GMT+3)";
   const DEFAULT_WEBINAR_URL =
     "https://quadcode.com/vlp/vibecode-brokerage-webinar/watch/";
   const TRACKING_FIELDS = [

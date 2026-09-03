@@ -26,7 +26,7 @@ timeline overrides:
 
 ## Schedule and playback
 
-The session starts at `13:00 UTC` (`3:00 PM CEST`). The public page renders the
+The session starts at `09:00 UTC` (`12:00 PM GMT+3`). The public page renders the
 same start in the visitor's local timezone and does not describe the daily
 recurrence.
 
