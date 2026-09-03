@@ -63,10 +63,12 @@ function createResponse() {
   };
 }
 
-function createRequest(rawBody, signature) {
+function createRequest(rawBody, signature, useWebHeaders = false) {
   const request = Readable.from([rawBody]);
   request.method = "POST";
-  request.headers = { "x-cal-signature-256": signature };
+  request.headers = useWebHeaders
+    ? new Headers({ "x-cal-signature-256": signature })
+    : { "x-cal-signature-256": signature };
   return request;
 }
 
@@ -105,7 +107,7 @@ test("accepts a signed BOOKING_CREATED webhook in dry-run mode", async () => {
     const signature = createHmac("sha256", process.env.CAL_WEBHOOK_SECRET).update(rawBody).digest("hex");
     const response = createResponse();
 
-    await handler(addParsedBodyGuard(createRequest(rawBody, signature)), response);
+    await handler(addParsedBodyGuard(createRequest(rawBody, signature, true)), response);
 
     assert.equal(response.statusCode, 200);
     assert.deepEqual(response.body, { success: true, bookingUid: "cal-booking-123" });

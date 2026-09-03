@@ -15,7 +15,13 @@ export const config = {
 };
 
 function readHeader(request, name) {
-  const value = request.headers?.[name] ?? request.headers?.[name.toLowerCase()];
+  const headers = request.headers;
+  if (headers && typeof headers.get === "function") {
+    const value = headers.get(name);
+    return typeof value === "string" ? value : "";
+  }
+
+  const value = headers?.[name] ?? headers?.[name.toLowerCase()];
   return Array.isArray(value) ? value[0] : typeof value === "string" ? value : "";
 }
 
