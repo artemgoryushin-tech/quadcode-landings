@@ -70,6 +70,16 @@ function createRequest(rawBody, signature) {
   return request;
 }
 
+function addParsedBodyGuard(request) {
+  Object.defineProperty(request, "body", {
+    configurable: true,
+    get() {
+      throw new Error("Parsed request.body must not be read before the raw stream.");
+    },
+  });
+  return request;
+}
+
 test("maps the live Quadcode Cal questions to the existing CRM contract", () => {
   const payload = buildCrmPayloadFromBooking(booking);
 
@@ -95,7 +105,7 @@ test("accepts a signed BOOKING_CREATED webhook in dry-run mode", async () => {
     const signature = createHmac("sha256", process.env.CAL_WEBHOOK_SECRET).update(rawBody).digest("hex");
     const response = createResponse();
 
-    await handler(createRequest(rawBody, signature), response);
+    await handler(addParsedBodyGuard(createRequest(rawBody, signature)), response);
 
     assert.equal(response.statusCode, 200);
     assert.deepEqual(response.body, { success: true, bookingUid: "cal-booking-123" });

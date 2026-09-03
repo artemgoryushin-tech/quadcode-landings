@@ -20,9 +20,6 @@ function readHeader(request, name) {
 }
 
 async function readRawBody(request) {
-  if (Buffer.isBuffer(request.body)) return request.body;
-  if (typeof request.body === "string") return Buffer.from(request.body);
-
   const chunks = [];
   if (request && typeof request[Symbol.asyncIterator] === "function") {
     for await (const chunk of request) {
@@ -31,8 +28,14 @@ async function readRawBody(request) {
   }
   if (chunks.length) return Buffer.concat(chunks);
 
-  if (request.body && typeof request.body === "object") {
-    return Buffer.from(JSON.stringify(request.body));
+  // Vercel exposes request.body through a lazy parsing getter. Accessing that
+  // getter before consuming the request stream discards the exact bytes Cal
+  // signed, so only use the parsed-body fallback when no stream was available.
+  const parsedBody = request.body;
+  if (Buffer.isBuffer(parsedBody)) return parsedBody;
+  if (typeof parsedBody === "string") return Buffer.from(parsedBody);
+  if (parsedBody && typeof parsedBody === "object") {
+    return Buffer.from(JSON.stringify(parsedBody));
   }
   return Buffer.alloc(0);
 }
