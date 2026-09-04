@@ -623,7 +623,7 @@
       .platform-showcase {
         color: #f9fbfc;
         background: #161618;
-        padding: 120px 0;
+        padding: 104px 0;
         overflow: hidden;
       }
       .platform-showcase__container {
@@ -677,7 +677,7 @@
         background: linear-gradient(180deg, #ff564b 0%, #ff282b 100%);
         -webkit-background-clip: text;
         background-clip: text;
-        font-size: 46px;
+        font-size: 40px;
         font-weight: 500;
         line-height: 1;
       }
@@ -685,7 +685,7 @@
         display: block;
         margin-top: 5px;
         color: #7d8387;
-        font-size: 17px;
+        font-size: 16px;
         line-height: 1.2;
       }
       .platform-showcase__slider {
@@ -694,8 +694,8 @@
         gap: 20px;
       }
       .platform-showcase__controls {
-        display: grid;
-        grid-template-rows: repeat(4, 1fr);
+        display: flex;
+        flex-direction: column;
         gap: 12px;
         min-width: 0;
         height: 667px;
@@ -703,6 +703,11 @@
       .platform-showcase__control {
         position: relative;
         display: flex;
+        flex: 0 0 auto;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        aspect-ratio: 1;
         min-width: 0;
         padding: 0;
         cursor: pointer;
@@ -745,27 +750,87 @@
         outline-offset: 3px;
       }
       .platform-showcase__control > img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top center;
+        display: block;
+        flex: 0 0 auto;
+        max-width: none;
+        height: auto;
       }
-      .platform-showcase__control-label {
+      .platform-showcase__control[data-platform-tab="pwa"] > img,
+      .platform-showcase__control[data-platform-tab="mobile"] > img {
+        width: 69.333%;
+        margin-top: 10.667%;
+      }
+      .platform-showcase__control[data-platform-tab="desktop"] > img {
+        width: 100%;
+      }
+      .platform-showcase__control[data-platform-tab="browser"] > img {
+        width: 89.333%;
+        margin: 8.667% 0 0 10.667%;
+      }
+      .platform-showcase__control-badges {
         position: absolute;
         z-index: 3;
-        bottom: 12px;
-        left: 12px;
-        display: inline-flex;
+        bottom: 14px;
+        left: 14px;
+        display: flex;
         align-items: center;
         gap: 6px;
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 1;
       }
-      .platform-showcase__control-label img {
-        width: 15px;
-        height: 15px;
+      .platform-showcase__control-badge {
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: rgba(249, 251, 252, 0.1);
+        backdrop-filter: blur(20px);
+      }
+      .platform-showcase__control-badge img {
+        display: block;
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+      }
+      .platform-showcase__control-pwa {
+        position: absolute;
+        z-index: 3;
+        bottom: 14px;
+        left: 14px;
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+        min-height: 20px;
+        padding: 2px 6px;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        backdrop-filter: blur(20px);
+        font-size: 10px;
+        font-weight: 500;
+        line-height: .9;
+        text-transform: uppercase;
+      }
+      .platform-showcase__control-pwa img {
+        width: 12px;
+        height: 12px;
         filter: brightness(0) invert(1);
+      }
+      .platform-showcase__exclusive {
+        position: absolute;
+        z-index: 3;
+        top: 14px;
+        left: 14px;
+        display: inline-flex;
+        align-items: center;
+        min-height: 17px;
+        padding: 0 6px;
+        color: #6ce9a6;
+        background: rgba(249, 251, 252, 0.1);
+        border-radius: 6px;
+        backdrop-filter: blur(20px);
+        font-size: 10px;
+        font-weight: 500;
+        line-height: .9;
+        text-transform: uppercase;
       }
       .platform-showcase__stage {
         position: relative;
@@ -786,33 +851,34 @@
         display: block;
         max-width: none;
         height: auto;
-        filter: drop-shadow(0 24px 44px rgba(0, 0, 0, 0.24));
       }
       .platform-showcase__panel--pwa > img {
-        bottom: -22%;
+        top: 35px;
         left: 50%;
-        width: min(49%, 470px);
+        width: 401px;
         transform: translateX(-50%);
       }
       .platform-showcase__panel--mobile .platform-showcase__mobile-portrait {
-        bottom: -10%;
-        left: 8%;
-        width: 37%;
+        top: 62px;
+        left: 7%;
+        width: 432px;
       }
       .platform-showcase__panel--mobile .platform-showcase__mobile-landscape {
-        right: 5%;
-        bottom: 7%;
-        width: 62%;
+        top: 114px;
+        right: 0;
+        width: 593px;
       }
       .platform-showcase__panel--desktop > img {
-        right: 3%;
-        bottom: -5%;
-        width: 94%;
+        top: 54px;
+        left: 50%;
+        width: 948px;
+        transform: translateX(-50%);
       }
       .platform-showcase__panel--browser > img {
-        right: 3%;
-        bottom: 6%;
-        width: 94%;
+        top: 40px;
+        left: 50%;
+        width: 1040px;
+        transform: translateX(-50%);
       }
       .platform-showcase__detail {
         grid-column: 2;
@@ -898,6 +964,20 @@
         from { opacity: 0; transform: translateY(10px) scale(.995); }
         to { opacity: 1; transform: translateY(0) scale(1); }
       }
+      @media (max-width: 1599px) {
+        .platform-showcase__slider { grid-template-columns: 120px minmax(0, 1fr); }
+        .platform-showcase__controls { gap: 10px; height: 511px; }
+        .platform-showcase__stage { height: 511px; }
+        .platform-showcase__control-badges { bottom: 11px; left: 11px; gap: 5px; }
+        .platform-showcase__control-badge,
+        .platform-showcase__control-badge img { width: 16px; height: 16px; }
+        .platform-showcase__control-pwa { bottom: 11px; left: 11px; transform: scale(.82); transform-origin: bottom left; }
+        .platform-showcase__exclusive { top: 11px; left: 11px; transform: scale(.82); transform-origin: top left; }
+        .platform-showcase__panel--mobile .platform-showcase__mobile-portrait { left: -74px; width: 368px; }
+        .platform-showcase__panel--mobile .platform-showcase__mobile-landscape { top: 94px; right: -124px; width: 500px; }
+        .platform-showcase__panel--desktop > img { top: 46px; width: 701px; }
+        .platform-showcase__panel--browser > img { width: 780px; }
+      }
       @media (max-width: 1365px) {
         .platform-showcase__title {
           max-width: 80%;
@@ -905,9 +985,6 @@
           line-height: 68px;
         }
         .platform-showcase__subtitle { max-width: 80%; }
-        .platform-showcase__slider { grid-template-columns: 120px minmax(0, 1fr); }
-        .platform-showcase__controls,
-        .platform-showcase__stage { height: 511px; }
         .platform-showcase__detail { grid-column: 1 / -1; }
         .platform-showcase__detail-copy strong { font-size: 32px; line-height: 36px; }
       }
@@ -920,9 +997,18 @@
         .platform-showcase__summary-label { max-width: none; font-size: 14px; }
         .platform-showcase__numbers { max-width: 520px; }
         .platform-showcase__slider { grid-template-columns: 98px minmax(0, 1fr); }
-        .platform-showcase__controls,
+        .platform-showcase__controls { gap: 7px; height: 414px; }
         .platform-showcase__stage { height: 414px; }
         .platform-showcase__control { border-radius: 22px; }
+        .platform-showcase__control-badges { bottom: 9px; left: 9px; gap: 4px; }
+        .platform-showcase__control-badge,
+        .platform-showcase__control-badge img { width: 14px; height: 14px; }
+        .platform-showcase__control-pwa { bottom: 9px; left: 9px; transform: scale(.72); }
+        .platform-showcase__exclusive { top: 9px; left: 9px; transform: scale(.72); }
+        .platform-showcase__panel--mobile .platform-showcase__mobile-portrait { top: 32px; left: -174px; }
+        .platform-showcase__panel--mobile .platform-showcase__mobile-landscape { top: 64px; right: -304px; }
+        .platform-showcase__panel--desktop > img { top: 39px; width: 493px; }
+        .platform-showcase__panel--browser > img { top: 60px; width: 500px; }
         .platform-showcase__detail-copy strong { max-width: 210px; font-size: 28px; line-height: 28px; }
         .platform-showcase__detail-label,
         .platform-showcase__detail-item { font-size: 14px; }
@@ -940,21 +1026,25 @@
         .platform-showcase__stage { grid-row: 1; height: 414px; border-radius: 28px; }
         .platform-showcase__controls {
           grid-row: 2;
-          grid-template-rows: none;
-          grid-template-columns: repeat(4, 102px);
+          flex-direction: row;
+          gap: 8px;
           height: 102px;
           padding: 3px;
           overflow-x: auto;
           scrollbar-width: none;
         }
         .platform-showcase__controls::-webkit-scrollbar { display: none; }
-        .platform-showcase__control { border-radius: 20px; }
-        .platform-showcase__control-label { bottom: 10px; left: 10px; }
-        .platform-showcase__panel--pwa > img { bottom: -8%; width: min(68%, 310px); }
-        .platform-showcase__panel--mobile .platform-showcase__mobile-portrait { bottom: -2%; left: 3%; width: 49%; }
-        .platform-showcase__panel--mobile .platform-showcase__mobile-landscape { right: -5%; bottom: 13%; width: 70%; }
-        .platform-showcase__panel--desktop > img { right: -12%; bottom: 3%; width: 126%; }
-        .platform-showcase__panel--browser > img { right: -14%; bottom: 12%; width: 132%; }
+        .platform-showcase__control { flex-basis: 102px; border-radius: 20px; }
+        .platform-showcase__control-badges { bottom: 9px; left: 9px; gap: 4px; }
+        .platform-showcase__control-badge,
+        .platform-showcase__control-badge img { width: 16px; height: 16px; }
+        .platform-showcase__control-pwa { bottom: 9px; left: 9px; transform: scale(.76); }
+        .platform-showcase__exclusive { top: 9px; left: 9px; transform: scale(.76); }
+        .platform-showcase__panel--pwa > img { width: 301px; }
+        .platform-showcase__panel--mobile .platform-showcase__mobile-portrait { left: -214px; }
+        .platform-showcase__panel--mobile .platform-showcase__mobile-landscape { top: 44px; right: -354px; }
+        .platform-showcase__panel--desktop > img { top: 35px; left: calc(50% + 66px); width: 490px; }
+        .platform-showcase__panel--browser > img { top: 90px; width: 400px; }
         .platform-showcase__detail {
           grid-column: 1;
           flex-direction: column;
@@ -972,7 +1062,7 @@
         .platform-showcase__detail-item--browser { flex: 0 0 auto; padding: 0 5px; }
       }
       @media (max-width: 479px) {
-        .platform-showcase { padding: 88px 0; }
+        .platform-showcase { padding: 72px 0; }
         .platform-showcase__container { width: calc(100% - 40px); }
         .platform-showcase__title { font-size: 36px; line-height: 44px; }
         .platform-showcase__numbers { gap: 12px; }
@@ -984,6 +1074,10 @@
         .platform-showcase__detail-item { gap: 8px; padding: 0 8px; }
         .platform-showcase__detail-item img,
         .platform-showcase__detail-item--browser img { width: 40px; height: 40px; }
+        .platform-showcase__panel--mobile .platform-showcase__mobile-portrait { left: -154px; width: 268px; }
+        .platform-showcase__panel--mobile .platform-showcase__mobile-landscape { top: 84px; right: -154px; width: 364px; }
+        .platform-showcase__panel--desktop > img { top: 33px; left: calc(50% + 100px); }
+        .platform-showcase__panel--browser > img { top: 110px; width: 340px; }
       }
       @media (prefers-reduced-motion: reduce) {
         .platform-showcase__control { transition: none; }
@@ -1702,21 +1796,22 @@
 
           <div class="platform-showcase__slider" data-platform-showcase>
             <div class="platform-showcase__controls" role="tablist" aria-label="Trading platform interfaces">
-              <button class="platform-showcase__control" id="platform-tab-pwa" type="button" role="tab" aria-selected="true" aria-controls="platform-panel-pwa" data-platform-tab="pwa">
+              <button class="platform-showcase__control" id="platform-tab-pwa" type="button" role="tab" aria-label="PWA" aria-selected="true" aria-controls="platform-panel-pwa" data-platform-tab="pwa">
                 <img src="./assets/platform-showcase/slide1-thumb.webp" alt="" width="208" height="268" loading="lazy" decoding="async" />
-                <span class="platform-showcase__control-label"><img src="./assets/platform-showcase/browser.svg" alt="" />PWA</span>
+                <span class="platform-showcase__exclusive" aria-hidden="true">Exclusive</span>
+                <span class="platform-showcase__control-pwa" aria-hidden="true"><img src="./assets/platform-showcase/browser.svg" alt="" />PWA</span>
               </button>
-              <button class="platform-showcase__control" id="platform-tab-mobile" type="button" role="tab" aria-selected="false" aria-controls="platform-panel-mobile" tabindex="-1" data-platform-tab="mobile">
+              <button class="platform-showcase__control" id="platform-tab-mobile" type="button" role="tab" aria-label="Mobile apps" aria-selected="false" aria-controls="platform-panel-mobile" tabindex="-1" data-platform-tab="mobile">
                 <img src="./assets/platform-showcase/slide2-thumb.webp" alt="" width="208" height="268" loading="lazy" decoding="async" />
-                <span class="platform-showcase__control-label"><img src="./assets/platform-showcase/apple.svg" alt="" />Mobile</span>
+                <span class="platform-showcase__control-badges" aria-hidden="true"><span class="platform-showcase__control-badge"><img src="./assets/platform-showcase/android.svg" alt="" /></span><span class="platform-showcase__control-badge"><img src="./assets/platform-showcase/apple.svg" alt="" /></span></span>
               </button>
-              <button class="platform-showcase__control" id="platform-tab-desktop" type="button" role="tab" aria-selected="false" aria-controls="platform-panel-desktop" tabindex="-1" data-platform-tab="desktop">
+              <button class="platform-showcase__control" id="platform-tab-desktop" type="button" role="tab" aria-label="Standalone apps" aria-selected="false" aria-controls="platform-panel-desktop" tabindex="-1" data-platform-tab="desktop">
                 <img src="./assets/platform-showcase/slide3-thumb.webp" alt="" width="300" height="300" loading="lazy" decoding="async" />
-                <span class="platform-showcase__control-label"><img src="./assets/platform-showcase/windows.svg" alt="" />Desktop</span>
+                <span class="platform-showcase__control-badges" aria-hidden="true"><span class="platform-showcase__control-badge"><img src="./assets/platform-showcase/macos-app-store.webp" alt="" /></span><span class="platform-showcase__control-badge"><img src="./assets/platform-showcase/windows.svg" alt="" /></span></span>
               </button>
-              <button class="platform-showcase__control" id="platform-tab-browser" type="button" role="tab" aria-selected="false" aria-controls="platform-panel-browser" tabindex="-1" data-platform-tab="browser">
+              <button class="platform-showcase__control" id="platform-tab-browser" type="button" role="tab" aria-label="Any browser" aria-selected="false" aria-controls="platform-panel-browser" tabindex="-1" data-platform-tab="browser">
                 <img src="./assets/platform-showcase/slide4-thumb.webp" alt="" width="268" height="274" loading="lazy" decoding="async" />
-                <span class="platform-showcase__control-label"><img src="./assets/platform-showcase/browser.svg" alt="" />Browser</span>
+                <span class="platform-showcase__control-badges" aria-hidden="true"><span class="platform-showcase__control-badge"><img src="./assets/platform-showcase/chrome.webp" alt="" /></span><span class="platform-showcase__control-badge"><img src="./assets/platform-showcase/safari.webp" alt="" /></span><span class="platform-showcase__control-badge"><img src="./assets/platform-showcase/edge.webp" alt="" /></span><span class="platform-showcase__control-badge"><img src="./assets/platform-showcase/firefox.webp" alt="" /></span></span>
               </button>
             </div>
 
