@@ -619,6 +619,189 @@
         background: #e5e5e7;
       }
 
+      .webinar-preheader {
+        --webinar-banner-bg: #202024;
+        --webinar-banner-text: #f9fbfc;
+        --webinar-banner-muted: #b8bbc1;
+        --webinar-banner-chip: rgba(255, 255, 255, 0.08);
+        --webinar-banner-line: rgba(255, 255, 255, 0.18);
+        --webinar-banner-cta-bg: #f4f4f5;
+        --webinar-banner-cta-text: #18181b;
+        min-height: 46px;
+        color: var(--webinar-banner-text);
+        background: var(--webinar-banner-bg);
+        transition: background-color 180ms ease, color 180ms ease;
+      }
+      .webinar-preheader[data-banner-variant="red"] {
+        --webinar-banner-bg: #e62334;
+        --webinar-banner-text: #fff;
+        --webinar-banner-muted: rgba(255, 255, 255, 0.82);
+        --webinar-banner-chip: rgba(92, 0, 10, 0.16);
+        --webinar-banner-line: rgba(255, 255, 255, 0.3);
+        --webinar-banner-cta-bg: #fff;
+        --webinar-banner-cta-text: #b31221;
+      }
+      .webinar-preheader[data-banner-variant="ivory"] {
+        --webinar-banner-bg: #eee7dd;
+        --webinar-banner-text: #171719;
+        --webinar-banner-muted: #69625b;
+        --webinar-banner-chip: rgba(255, 255, 255, 0.52);
+        --webinar-banner-line: rgba(23, 23, 25, 0.18);
+        --webinar-banner-cta-bg: #1f1f22;
+        --webinar-banner-cta-text: #fff;
+      }
+      .webinar-preheader__inner {
+        width: min(1050px, calc(100% - 48px));
+        min-height: 46px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+      }
+      .webinar-preheader__badge {
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        min-height: 28px;
+        padding: 0 10px;
+        color: var(--webinar-banner-muted);
+        background: var(--webinar-banner-chip);
+        border: 1px solid var(--webinar-banner-line);
+        border-radius: 9px;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 1;
+      }
+      .webinar-preheader__badge svg {
+        width: 13px;
+        height: 13px;
+        color: currentColor;
+      }
+      .webinar-preheader__divider {
+        flex: 0 0 auto;
+        width: 1px;
+        height: 18px;
+        background: var(--webinar-banner-line);
+      }
+      .webinar-preheader__title {
+        min-width: 0;
+        margin: 0;
+        overflow: hidden;
+        color: var(--webinar-banner-text);
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 20px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .webinar-preheader__timer {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: var(--webinar-banner-text);
+        font-variant-numeric: tabular-nums;
+      }
+      .webinar-preheader__timer span {
+        display: grid;
+        place-items: center;
+        min-width: 30px;
+        height: 30px;
+        padding: 0 5px;
+        background: var(--webinar-banner-chip);
+        border: 1px solid var(--webinar-banner-line);
+        border-radius: 9px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1;
+      }
+      .webinar-preheader__timer i {
+        color: var(--webinar-banner-muted);
+        font-size: 13px;
+        font-style: normal;
+      }
+      .webinar-preheader__cta {
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        min-height: 32px;
+        padding: 0 16px;
+        color: var(--webinar-banner-cta-text);
+        background: var(--webinar-banner-cta-bg);
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1;
+        text-decoration: none;
+        transition: transform 180ms ease, opacity 180ms ease;
+      }
+      .webinar-preheader__cta:hover { opacity: 0.9; transform: translateY(-1px); }
+      .webinar-preheader__cta:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+      }
+      .webinar-preheader__cta svg {
+        width: 14px;
+        height: 14px;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.8;
+      }
+      .webinar-preheader__session {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      body .hero.hero--grow {
+        min-height: 866px;
+        padding-top: 158px;
+      }
+      @media (max-width: 900px) {
+        .webinar-preheader__inner { gap: 10px; }
+        .webinar-preheader__badge,
+        .webinar-preheader__divider { display: none; }
+        .webinar-preheader__title { flex: 1; }
+      }
+      @media (max-width: 760px) {
+        .webinar-preheader {
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          right: 0;
+          left: 0;
+          min-height: 44px;
+          padding-top: env(safe-area-inset-top, 0px);
+        }
+        .webinar-preheader__inner { min-height: 44px; }
+        .webinar-preheader__inner { width: calc(100% - 24px); }
+        .webinar-preheader__title { font-size: 13px; }
+        .webinar-preheader__timer span { min-width: 27px; height: 28px; font-size: 12px; }
+        .webinar-preheader__cta { min-height: 30px; padding: 0 12px; font-size: 13px; }
+        body .hero.hero--grow { padding-top: 156px; }
+      }
+      @media (max-width: 560px) {
+        .webinar-preheader__timer { display: none; }
+        .webinar-preheader__title { font-size: 12px; }
+        .webinar-preheader__cta { padding: 0 13px; }
+        body .hero.hero--grow { min-height: 584px; padding-top: 132px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .webinar-preheader,
+        .webinar-preheader__cta { transition: none; }
+      }
+
       /* Original Quadcode platform showcase, adapted from quadcode.com. */
       .platform-showcase {
         color: #f9fbfc;
@@ -1378,6 +1561,26 @@
     <!-- Roistat Counter End -->
 
     <header class="topbar topbar--grow">
+
+      <aside class="webinar-preheader" data-webinar-preheader data-banner-variant="graphite" data-optimization-mode="split" aria-label="Featured webinar">
+        <div class="webinar-preheader__inner">
+          <span class="webinar-preheader__badge" aria-hidden="true">
+            Webinar
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M13.7 4.2a2 2 0 0 0-1.4-1.4C11.1 2.5 8 2.5 8 2.5s-3.1 0-4.3.3a2 2 0 0 0-1.4 1.4C2 5.4 2 8 2 8s0 2.6.3 3.8a2 2 0 0 0 1.4 1.4c1.2.3 4.3.3 4.3.3s3.1 0 4.3-.3a2 2 0 0 0 1.4-1.4C14 10.6 14 8 14 8s0-2.6-.3-3.8ZM6.8 10.4V5.6L10.9 8l-4.1 2.4Z"/></svg>
+          </span>
+          <span class="webinar-preheader__divider" aria-hidden="true"></span>
+          <p class="webinar-preheader__title">Can You Vibe Code a Brokerage?</p>
+          <span class="webinar-preheader__divider" aria-hidden="true"></span>
+          <span class="webinar-preheader__session" data-banner-session>Daily at 12:00 PM GMT+3</span>
+          <span class="webinar-preheader__timer" role="timer" aria-live="off" aria-label="Time until the next webinar" data-banner-timer>
+            <span data-banner-hours>00</span><i aria-hidden="true">:</i><span data-banner-minutes>00</span><i aria-hidden="true">:</i><span data-banner-seconds>00</span>
+          </span>
+          <a class="webinar-preheader__cta" href="../vibecode-brokerage-webinar/" data-banner-cta>
+            <span>Join webinar</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg>
+          </a>
+        </div>
+      </aside>
       <div class="container">
         <div class="topbar-grow">
           <a class="topbar-grow__brand" href="#top" aria-label="Quadcode">
@@ -2531,5 +2734,6 @@
         });
       })();
     </script>
+    <script src="./banner-experiment.js?v=20260904-1" defer></script>
   </body>
 </html>
